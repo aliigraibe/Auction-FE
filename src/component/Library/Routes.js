@@ -3,6 +3,7 @@ import Home from "./Home";
 
 import SignupForm from "../Auctions/SignupForm";
 import Signin from "../Auctions/Signin";
+import CategoryList from "../Auctions/CategoryList";
 
 const Routes = () => {
   return (
@@ -13,7 +14,9 @@ const Routes = () => {
       <Route path={`/signin`}>
         <Signin />
       </Route>
-
+      <Route path="/category">
+        <CategoryList />
+      </Route>
       <Route exact path="/">
         <Home />
       </Route>
