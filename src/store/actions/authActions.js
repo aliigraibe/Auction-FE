@@ -2,14 +2,11 @@ import decode from "jwt-decode";
 import * as actionTypes from "./types";
 import instance from "./instance";
 
-export const signup = (userData, history) => {
+export const signup = (user, history) => {
   return async (dispatch) => {
     try {
-      const formData = new FormData();
-      for (const key in userData) formData.append(key, userData[key]);
-
-      const res = await instance.post(`/signup`, formData);
-      history.push("/signin");
+      const res = await instance.post(`/signup`, user);
+      history.push("/");
     } catch (error) {
       console.log(error);
     }
@@ -22,7 +19,7 @@ export const signin = (userData, history) => {
       const res = await instance.post(`/signin`, userData);
 
       dispatch(setUser(res.data.token));
-      history.push("/Home");
+      history.push("/");
     } catch (error) {
       console.log(error);
     }
