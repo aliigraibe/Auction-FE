@@ -1,8 +1,10 @@
 import decode from "jwt-decode";
-import * as actionTypes from "./types";
+
 import instance from "./instance";
+import * as actionTypes from "./types";
 
 export const signup = (user, history) => {
+  // @Octowl do you need `dispatch` here?
   return async (dispatch) => {
     try {
       const res = await instance.post(`/signup`, user);
@@ -45,6 +47,7 @@ export const checkForToken = () => {
     payload: null,
   };
 };
+
 const setUser = (token) => {
   if (token) {
     localStorage.setItem("myToken", token);

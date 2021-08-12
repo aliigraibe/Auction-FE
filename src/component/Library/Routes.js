@@ -1,9 +1,10 @@
-import { Switch, Route } from "react-router";
-import Home from "./Home";
+import { Route, Switch } from "react-router";
 
-import SignupForm from "../Auctions/SignupForm";
-import Signin from "../Auctions/Signin";
 import CategoryList from "../Auctions/CategoryList";
+/* @Octowl either they're SignupForm and SigninForm or they're Singup and Signin */
+import Signin from "../Auctions/Signin";
+import SignupForm from "../Auctions/SignupForm";
+import Home from "./Home";
 
 const Routes = () => {
   return (
