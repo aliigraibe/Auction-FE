@@ -1,15 +1,15 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router";
+//
 import { addAuction } from "../../store/actions/AuctionAction";
+import { FormCenter } from "../../styles";
 
 const AddAuction = () => {
   const dispatch = useDispatch();
-  const loading = useSelector((state) => state.categories.loading);
   const categories = useSelector((state) => state.categories.categories);
+  const loading = useSelector((state) => state.categories.loading);
   const user = useSelector((state) => state.user.user);
-  const history = useHistory();
-  console.log(user);
+
   const [auction, setAuction] = useState({
     name: "",
     description: "",
@@ -19,9 +19,9 @@ const AddAuction = () => {
     endTime: "",
     image: "",
     categoryId: "",
-    userId: user.id,
     minBiddingIncrement: "",
   });
+
   if (loading) return <p>loading...</p>;
 
   const foundCategories = categories.map((category) => (
@@ -30,25 +30,27 @@ const AddAuction = () => {
     </option>
   ));
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    dispatch(addAuction(auction));
-  };
   const handleChange = (event) => {
     setAuction({ ...auction, [event.target.name]: event.target.value });
   };
+
   const handleImage = (event) => {
-    setAuction({ ...auction, image: event.target.files });
+    setAuction({ ...auction, image: [...event.target.files] });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setAuction({ ...auction, userId: user.id });
+    dispatch(addAuction(auction));
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <FormCenter onSubmit={handleSubmit}>
       <div class="form-group">
         <label>name</label>
         <input
           type="text"
           class="form-control"
-          placeholder="name"
           name="name"
           value={auction.name}
           onChange={handleChange}
@@ -59,7 +61,6 @@ const AddAuction = () => {
         <input
           type="text"
           class="form-control"
-          placeholder="enter your description  "
           value={auction.description}
           name="description"
           onChange={handleChange}
@@ -70,7 +71,6 @@ const AddAuction = () => {
         <input
           type="number"
           class="form-control"
-          placeholder="enter your quantity  "
           name="quantity"
           value={auction.quantity}
           onChange={handleChange}
@@ -81,9 +81,18 @@ const AddAuction = () => {
         <input
           type="number"
           class="form-control"
-          placeholder="add your startingPrice  "
           value={auction.startingPrice}
           name="startingPrice"
+          onChange={handleChange}
+        />
+      </div>
+      <div class="form-group">
+        <label>Minimum Bidding Increment</label>
+        <input
+          type="number"
+          class="form-control"
+          value={auction.minBiddingIncrement}
+          name="minBiddingIncrement"
           onChange={handleChange}
         />
       </div>
@@ -97,7 +106,7 @@ const AddAuction = () => {
           name="startTime"
           onChange={handleChange}
         />
-      </div>{" "}
+      </div>
       <div class="form-group">
         <label>endTime</label>
         <input
@@ -110,17 +119,6 @@ const AddAuction = () => {
         />
       </div>
       <div class="form-group">
-        <label>minBiddingIncrement</label>
-        <input
-          type="number"
-          class="form-control"
-          placeholder="add your minBiddingIncrement  "
-          value={auction.minBiddingIncrement}
-          name="minBiddingIncrement"
-          onChange={handleChange}
-        />
-      </div>
-      <div class="form-group">
         <label>image</label>
         <input
           type="file"
@@ -129,24 +127,29 @@ const AddAuction = () => {
           name="image"
           onChange={handleImage}
         />
-
-
-
-
-        
       </div>
+      <label>Chose Category</label>
+      <br />
+
       <select
         onChange={handleChange}
         class="aria-select"
         value={auction.categoryId}
         name="categoryId"
       >
+        <option value="" disabled="disabled">
+          Choose{" "}
+        </option>
+
         {foundCategories}
-      </select>{" "}
+      </select>
+      <br />
+      <br />
+
       <button type="submit" class="btn btn-primary">
         add auction
       </button>
-    </form>
+    </FormCenter>
   );
 };
 

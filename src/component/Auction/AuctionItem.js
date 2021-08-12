@@ -1,15 +1,13 @@
 import { Link } from "react-router-dom";
-import SimpleImageSlider from "react-simple-image-slider";
 const AuctionItem = ({ auction }) => {
-  const images = [{ url: auction.image[0] }, { url: auction.image[1] }];
   return (
     <div>
       <Link to={`/auctions/${auction._id}`}>
-        <SimpleImageSlider
+        <img
           width={300}
           height={200}
-          images={images}
-          showBullets="true"
+          src={auction.image[0]}
+          alt={auction.name}
         />
       </Link>
       <p>{auction.name}</p>

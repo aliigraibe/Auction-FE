@@ -17,10 +17,10 @@ const Routes = () => {
       </Route>
       <Route path={`/signin`}>
         <Signin />
-      </Route>{" "}
+      </Route>
       <Route path={`/categories/:categoryId`}>
         <CategoryDetails />
-      </Route>{" "}
+      </Route>
       <Route path={`/categories`}>
         <CategoryList />
       </Route>
@@ -29,7 +29,7 @@ const Routes = () => {
       </Route>
       <Route path={`/addauction`}>
         <AddAuction />
-      </Route>{" "}
+      </Route>
       <Route path={`/auctions`}>
         <AuctionList />
       </Route>
