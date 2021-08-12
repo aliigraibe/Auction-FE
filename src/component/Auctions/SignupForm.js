@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router";
+
 import { signup } from "../../store/actions/authActions";
 
 const SignupForm = () => {
@@ -14,13 +15,16 @@ const SignupForm = () => {
     age: "",
     phoneNum: "",
   });
+
   const handleSubmit = (event) => {
     event.preventDefault();
     dispatch(signup(user, history));
   };
+
   const handleChange = (event) => {
     setUser({ ...user, [event.target.name]: event.target.value });
   };
+
   return (
     <form onSubmit={handleSubmit}>
       <div class="form-group">
