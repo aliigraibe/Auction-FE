@@ -1,18 +1,24 @@
 import * as actionType from "../actions/types";
 const initialState = {
-  categories: null,
+  auctions: null,
   loading: true,
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case actionType.FETCH_CATEGORY:
+    case actionType.FETCH_AUCTION:
       return {
         ...state,
-        categories: action.payload,
+        auctions: action.payload,
         loading: false,
       };
+    case actionType.ADD_AUCTION:
+      const { newAuction } = action.payload;
 
+      return {
+        ...state,
+        auctions: [...state.auctions, newAuction],
+      };
     default:
       return state;
   }
