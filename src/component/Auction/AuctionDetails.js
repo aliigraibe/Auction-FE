@@ -1,14 +1,17 @@
-import { Redirect, useParams } from "react-router";
+import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import SimpleImageSlider from "react-simple-image-slider";
 
 const AuctionDetails = (props) => {
   const auctions = useSelector((state) => state.auctions.auctions);
+  const loading = useSelector((state) => state.auctions.loading);
   const auctionId = useParams().auctionId;
 
+  if (loading) return <h3>Loading</h3>;
+
   const auction = auctions.find((auction) => auction._id === auctionId);
-  const images = [{ url: auction.image[0] }, { url: auction.image[1] }];
+  const images = auction.image.map((img) => ({ url: img }));
   return (
     <div>
       <>
@@ -18,11 +21,10 @@ const AuctionDetails = (props) => {
           images={images}
           showBullets="true"
         />{" "}
-        <p>{auction.name}</p>
-        <p>{auction.description}</p>
-        <p>{auction.quantity}</p>
-        <p>{auction.startingPrice}</p>
-        <p>{auction.price}</p>
+        <p>Name : {auction.name}</p>
+        <p>Description : {auction.description}</p>
+        <p>Quantity : {auction.quantity}</p>
+        <p>Price : {auction.startingPrice} JOD</p>
         <p>{auction.startTime}</p>
         <p>{auction.endTime}</p> <Link to="/categories">Go Back </Link>
       </>

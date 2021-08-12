@@ -4,8 +4,7 @@ const CategoryItem = ({ category }) => {
   return (
     <div>
       <Link to={`/categories/${category._id}`}>
-        {" "}
-        <img width="10%" src={category.image} />
+        <img width="10%" src={category.image} alt={category.name} />
       </Link>
       <p>{category.name}</p>
     </div>
