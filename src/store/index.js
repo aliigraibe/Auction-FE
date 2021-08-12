@@ -4,6 +4,7 @@ import thunk from "redux-thunk";
 import rootReducer from "./reducer/rootReducer";
 import { checkForToken } from "./actions/authActions";
 import { fetchCategory } from "./actions/categoryAction";
+import { fetchAuction } from "./actions/AuctionAction";
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
@@ -13,4 +14,5 @@ const store = createStore(
 
 store.dispatch(checkForToken());
 store.dispatch(fetchCategory());
+store.dispatch(fetchAuction());
 export default store;

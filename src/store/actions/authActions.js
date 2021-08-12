@@ -19,7 +19,7 @@ export const signin = (userData, history) => {
       const res = await instance.post(`/signin`, userData);
 
       dispatch(setUser(res.data.token));
-      history.push("/");
+      history.push("/category");
     } catch (error) {
       console.log(error);
     }
