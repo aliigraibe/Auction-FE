@@ -35,3 +35,33 @@ export const addAuction = (newAuction) => {
     }
   };
 };
+
+export const deleteAuction = (auctionId) => {
+  return async (dispatch) => {
+    try {
+      await instance.delete(`/deleteAuction`);
+      dispatch({
+        type: actionTypes.DELETE_AUCTION,
+        payload: { auctionId: auctionId },
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+export const updateAuction = (updateAuction) => {
+  return async (dispatch) => {
+    try {
+      const formData = new FormData();
+      for (const key in updateAuction) formData.append(key, updateAuction[key]);
+      const res = await instance.put(`/updateAuction`, formData);
+      dispatch({
+        type: actionTypes.UPDATE_AUCTION,
+        payload: { updateAuction: res.data },
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};

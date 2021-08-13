@@ -1,5 +1,10 @@
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { deleteAuction } from "../../store/actions/AuctionAction";
+
 const AuctionItem = ({ auction }) => {
+  const dispatch = useDispatch();
+
   return (
     <div>
       <Link to={`/auctions/${auction._id}`}>
@@ -13,6 +18,13 @@ const AuctionItem = ({ auction }) => {
       <p>{auction.name}</p>
       <p>{auction.startTime}</p>
       <p>{auction.endTime}</p>
+      <button
+        type="button"
+        class="btn btn-primary"
+        onClick={() => dispatch(deleteAuction(auction._id))}
+      >
+        Delete
+      </button>
     </div>
   );
 };

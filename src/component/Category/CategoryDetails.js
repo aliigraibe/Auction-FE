@@ -7,12 +7,12 @@ import AuctionList from "../Auction/AuctionList";
 const CategoryDetails = (props) => {
   const auctions = useSelector((state) => state.auctions.auctions);
   const loading = useSelector((state) => state.auctions.loading);
-  const categoryId = useParams().categoryId;
+  const categoryName = useParams().categoryName;
 
   if (loading) return <p>loading...</p>;
 
   const auctionList = auctions.filter(
-    (auction) => auction.categoryId._id == categoryId
+    (auction) => auction.categoryId.name == categoryName
   );
 
   return (
