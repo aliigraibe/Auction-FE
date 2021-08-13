@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 const CategoryItem = ({ category }) => {
   return (
     <div>
-      <Link to={`/categories/${category._id}`}>
+      <Link to={`/categories/${category.name}`}>
         <img width="10%" src={category.image} alt={category.name} />
       </Link>
+
       <p>{category.name}</p>
     </div>
   );

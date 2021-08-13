@@ -18,7 +18,7 @@ const Routes = () => {
       <Route path={`/signin`}>
         <Signin />
       </Route>
-      <Route path={`/categories/:categoryId`}>
+      <Route path={`/categories/:categoryName`}>
         <CategoryDetails />
       </Route>
       <Route path={`/categories`}>

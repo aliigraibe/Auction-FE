@@ -19,6 +19,22 @@ const reducer = (state = initialState, action) => {
         ...state,
         auctions: [...state.auctions, newAuction],
       };
+    case actionType.DELETE_AUCTION:
+      return {
+        ...state,
+        auctions: state.auctions.filter(
+          (auction) => auction._id !== action.payload.auctionId
+        ),
+      };
+    case actionType.UPDATE_AUCTION:
+      const { updateAuction } = action.payload; //3
+      return {
+        ...state,
+        auctions: state.auctions.map((auction) =>
+          auction._id === updateAuction.id ? updateAuction : auction
+        ),
+      };
+
     default:
       return state;
   }
