@@ -1,29 +1,33 @@
 // import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { FlexStyle } from "../../styles";
+import pic1 from "../../images/pic1.png";
 
 const NavBar = (props) => {
   // const user = useSelector((state) => state.user.user);
 
   return (
-    <FlexStyle style={{ marginBottom: "50px" }}>
-      <Link style={{ margin: "10px" }} exact to="/">
-        Home
+    <div>
+      <div>
+      <img className="logo" src={pic1} alt={"pic1"}/>
+      <Link className="home"  exact to="/">
+       Home
       </Link>
-      <Link to="/categories" style={{ margin: "10px" }}>
-        category
+      <Link className="category" to="/categories" >
+        Category
       </Link>
 
-      <Link to="/addauction" style={{ margin: "10px" }}>
-        addauctions
+      <Link className="addauction" to="/addauction" >
+        Add auctions
       </Link>
-      <Link to="/signup" style={{ margin: "10px" }}>
-        signup
+      <Link className="signin" to="/signin" >
+        Sign in
       </Link>
-      <Link to="/signin" style={{ margin: "10px" }}>
-        signin
+      <Link className="signup" to="/signup" >
+        Sign up
       </Link>
-    </FlexStyle>
+      </div>
+      </div>
   );
 };
 

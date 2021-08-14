@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router";
 import { signin } from "../../store/actions/authActions";
+import pic3 from "../../images/pic3.png";
 const Signin = () => {  
   const history = useHistory();
   const dispatch = useDispatch();
@@ -17,32 +18,35 @@ const Signin = () => {
     setUser({ ...user, [event.target.name]: event.target.value });
   };
   return (
+   
     <form onSubmit={handleSubmit}>
-      <div class="row">
-        <div class="col">
-          <label>username</label>
+      <div >
+      <img className="pic2" src={pic3} alt={"pic3"} />
+        <div >
+          <label></label>
           <input
             type="text"
-            class="form-control"
-            placeholder="add your username  "
+            class="username"
+            placeholder="      Add your username  "
             name="username"
             onChange={handleChange}
           />
         </div>
-        <div class="col">
-          <label>password</label>
+        <div >
+          <label></label>
           <input
             type="password"
-            class="form-control"
-            placeholder="add your password  "
+            class="password"
+            placeholder="      Add your password  "
             name="password"
             onChange={handleChange}
           />
         </div>
 
-      <button type="submit" class="btn btn-primary">
-        Login
-      </button>      </div>
+      <button type="submit" class="login">
+        Sign in
+      </button>     
+       </div>
 
     </form>
   );
