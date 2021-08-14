@@ -145,12 +145,24 @@ export const FlexStyleVer = styled.div`
 `;
 
 export const FormCenter = styled.form`
-  margin: auto;
-  width: 50%;
-  border: 3px solid white;
-  border-radius: 10px;
+position: absolute;
+  top:150px;
+  left:600px;
+  width: 500px;
+  border: 3px solid #394BF2;
+  border-radius: 30px;
   padding: 20px;
-  color: black;
+  color: white;
+  text-align: center;
+  animation-name: example;
+animation-duration: 2s;
+animation-iteration-count: infinite;
+animation-direction: alternate;
+}
+@keyframes example {
+  from {border: 5px solid #394BF2;;}
+  to {border: 5px solid white;;}
+}
 `;
 
 export const GlobalStyle = createGlobalStyle`
@@ -158,7 +170,7 @@ export const GlobalStyle = createGlobalStyle`
 
 body{
   
-  background: url("https://www.colorhexa.com/11224b.png") no-repeat center center fixed; 
+  background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Black_flag.svg/750px-Black_flag.svg.png") no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

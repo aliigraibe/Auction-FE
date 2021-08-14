@@ -47,7 +47,7 @@ const AddAuction = () => {
   return (
     <FormCenter onSubmit={handleSubmit}>
       <div class="form-group">
-        <label>name</label>
+        <label>Name</label>
         <input
           type="text"
           class="form-control"
@@ -57,7 +57,7 @@ const AddAuction = () => {
         />
       </div>
       <div class="form-group">
-        <label>description</label>
+        <label>Description</label>
         <input
           type="text"
           class="form-control"
@@ -67,7 +67,7 @@ const AddAuction = () => {
         />
       </div>
       <div class="form-group">
-        <label>quantity</label>
+        <label>Quantity</label>
         <input
           type="number"
           class="form-control"
@@ -77,7 +77,7 @@ const AddAuction = () => {
         />
       </div>
       <div class="form-group">
-        <label>startingPrice</label>
+        <label>Starting Price</label>
         <input
           type="number"
           class="form-control"
@@ -97,7 +97,7 @@ const AddAuction = () => {
         />
       </div>
       <div class="form-group">
-        <label>startTime</label>
+        <label>Start Time</label>
         <input
           type="datetime-local"
           class="form-control"
@@ -108,7 +108,7 @@ const AddAuction = () => {
         />
       </div>
       <div class="form-group">
-        <label>endTime</label>
+        <label>End Time</label>
         <input
           type="datetime-local"
           class="form-control"
@@ -119,7 +119,7 @@ const AddAuction = () => {
         />
       </div>
       <div class="form-group">
-        <label>image</label>
+        <label>Image</label>
         <input
           type="file"
           multiple="multiple"
@@ -128,7 +128,7 @@ const AddAuction = () => {
           onChange={handleImage}
         />
       </div>
-      <label>Chose Category</label>
+      <label>Choose Category</label>
       <br />
 
       <select
@@ -146,8 +146,8 @@ const AddAuction = () => {
       <br />
       <br />
 
-      <button type="submit" class="btn btn-primary">
-        add auction
+      <button type="submit" class="addauction2">
+        Add Auction
       </button>
     </FormCenter>
   );
