@@ -1,12 +1,9 @@
-import { Link } from "react-router-dom";
-
 const CategoryItem = ({ category, setSelect }) => {
-  setSelect(category);
-  return (
-    <div >
-      <Link to={`/categories/${category.slug}`}>{category.name}</Link>
-    </div>
-  );
+  const handelSubmet = () => {
+    setSelect(category._id);
+  };
+
+  return <button onClick={handelSubmet}>{category.name}</button>;
 };
 
 export default CategoryItem;
