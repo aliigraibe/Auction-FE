@@ -4,18 +4,20 @@ import { deleteAuction } from "../../store/actions/AuctionAction";
 
 const AuctionItem = ({ auction }) => {
   const dispatch = useDispatch();
-
+  console.log(auction);
   return (
     <div>
-      <Link to={`/auctions/${auction._id}`}>
-        <img
+      <Link to={`/auctions/${auction.slug}`}>
+        {/* <img
           width={300}
           height={200}
           src={auction.image[0]}
           alt={auction.name}
-        />
+        /> */}
       </Link>
-      <p>{auction.name}</p>
+      <Link to={`/auctions/${auction.slug}`}>
+        <p>{auction.name}</p>
+      </Link>{" "}
       <p>{auction.startTime}</p>
       <p>{auction.endTime}</p>
       <button
