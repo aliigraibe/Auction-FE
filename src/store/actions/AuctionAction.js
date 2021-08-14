@@ -39,7 +39,8 @@ export const addAuction = (newAuction) => {
 export const deleteAuction = (auctionId) => {
   return async (dispatch) => {
     try {
-      await instance.delete(`/deleteAuction`);
+      console.log(auctionId);
+      await instance.post(`/deleteAuction`, { _id: auctionId });
       dispatch({
         type: actionTypes.DELETE_AUCTION,
         payload: { auctionId: auctionId },
@@ -50,15 +51,19 @@ export const deleteAuction = (auctionId) => {
   };
 };
 
-export const updateAuction = (updateAuction) => {
+export const updateAuction = (auctionId) => {
   return async (dispatch) => {
     try {
+      console.log(auctionId);
       const formData = new FormData();
       for (const key in updateAuction) formData.append(key, updateAuction[key]);
-      const res = await instance.put(`/updateAuction`, formData);
+      const res = await instance.put(
+        `/updateAuction/${auctionId}`,
+        formData
+      );
       dispatch({
         type: actionTypes.UPDATE_AUCTION,
-        payload: { updateAuction: res.data },
+        payload: res.data 
       });
     } catch (error) {
       console.log(error);

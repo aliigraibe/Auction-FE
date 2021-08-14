@@ -7,22 +7,22 @@ import { deleteAuction } from "../../store/actions/AuctionAction";
 const AuctionDetails = (props) => {
   const auctions = useSelector((state) => state.auctions.auctions);
   const loading = useSelector((state) => state.auctions.loading);
-  const auctionId = useParams().auctionId;
+  const auctionSlug = useParams().auctionSlug;
   const dispatch = useDispatch();
 
   if (loading) return <h3>Loading</h3>;
-  const auction = auctions.find((auction) => auction._id === auctionId);
+  const auction = auctions.find((auction) => auction.slug === auctionSlug);
   console.log(auction.image);
   const images = auction.image.map((img) => ({ url: img }));
   return (
     <div>
       <>
-        <SimpleImageSlider
+        {/* <SimpleImageSlider
           width={300}
           height={200}
           images={images}
           showBullets="true"
-        />{" "}
+        />{" "} */}
         <p>Name : {auction.name}</p>
         <p>Description : {auction.description}</p>
         <p>Quantity : {auction.quantity}</p>
@@ -37,7 +37,7 @@ const AuctionDetails = (props) => {
           {" "}
           Delete
         </button>
-        <button to={`/updateAuction`}> update</button>
+        <Link to={`/updateauction`}> update</Link>
       </>
     </div>
   );

@@ -31,7 +31,7 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         auctions: state.auctions.map((auction) =>
-          auction._id === updateAuction.id ? updateAuction : auction
+          auction._id === updateAuction._id ? updateAuction : auction
         ),
       };
 

@@ -16,7 +16,7 @@ const NavBar = (props) => {
       <Link className="category" to="/categories" >
         Category
       </Link>
-
+z
       <Link className="addauction" to="/addauction" >
         Add auctions
       </Link>
