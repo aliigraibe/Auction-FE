@@ -9,25 +9,25 @@ const NavBar = (props) => {
   return (
     <div>
       <div>
-      <img className="logo" src={pic1} alt={"pic1"}/>
-      <Link className="home"  exact to="/">
-       Home
-      </Link>
-      <Link className="category" to="/categories" >
-        Category
-      </Link>
-z
-      <Link className="addauction" to="/addauction" >
-        Add auctions
-      </Link>
-      <Link className="signin" to="/signin" >
-        Sign in
-      </Link>
-      <Link className="signup" to="/signup" >
-        Sign up
-      </Link>
+        <img className="logo" src={pic1} alt={"pic1"} />
+        <Link className="home" exact to="/">
+          Home
+        </Link>
+        <Link className="category" to="/combine">
+          Category
+        </Link>
+        z
+        <Link className="addauction" to="/addauction">
+          Add auctions
+        </Link>
+        <Link className="signin" to="/signin">
+          Sign in
+        </Link>
+        <Link className="signup" to="/signup">
+          Sign up
+        </Link>
       </div>
-      </div>
+    </div>
   );
 };
 

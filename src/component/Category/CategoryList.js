@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 const CategoryList = ({ setSelect }) => {
   const loading = useSelector((state) => state.categories.loading);
   const categories = useSelector((state) => state.categories.categories);
-  console.log(categories);
   if (loading) return <p>loading...</p>;
   const categoryList = categories.map((category) => (
     <CategoryItem setSelect={setSelect} category={category} key={category.id} />
