@@ -8,12 +8,12 @@ const AuctionItem = ({ auction }) => {
   return (
     <div>
       <Link to={`/auctions/${auction.slug}`}>
-        {/* <img
+        <img
           width={300}
           height={200}
           src={auction.image[0]}
           alt={auction.name}
-        /> */}
+        />
       </Link>
       <Link to={`/auctions/${auction.slug}`}>
         <p>{auction.name}</p>

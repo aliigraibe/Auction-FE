@@ -10,6 +10,7 @@ import CategoryDetails from "../Category/CategoryDetails";
 import AuctionDetails from "../Auction/AuctionDetails";
 import { useSelector } from "react-redux";
 import UpdateAuction from "../Auction/UpdateAuction";
+import Combine from "../Auction/combine";
 
 const Routes = () => {
   const loading = useSelector((state) => state.auctions.loading);
@@ -31,13 +32,16 @@ const Routes = () => {
       <Route path={`/categories`}>
         <CategoryList />
       </Route>
+      <Route path="/combine">
+        <Combine />
+      </Route>{" "}
       <Route exact path="/auctions/:auctionSlug">
         <AuctionDetails />
       </Route>
       <Route path={`/addauction`}>
         <AddAuction />
       </Route>{" "}
-      <Route path={`/updateauction`}>
+      <Route path={`/updateauction/:auctionId`}>
         <UpdateAuction />
       </Route>
       <Route path={`/auctions`}>

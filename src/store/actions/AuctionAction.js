@@ -51,19 +51,16 @@ export const deleteAuction = (auctionId) => {
   };
 };
 
-export const updateAuction = (auctionId) => {
+export const updateAuction = (auctionId, auction) => {
   return async (dispatch) => {
     try {
       console.log(auctionId);
       const formData = new FormData();
-      for (const key in updateAuction) formData.append(key, updateAuction[key]);
-      const res = await instance.put(
-        `/updateAuction/${auctionId}`,
-        formData
-      );
+      for (const key in auction) formData.append(key, auction[key]);
+      const res = await instance.put(`/updateAuction/${auctionId}`, formData);
       dispatch({
         type: actionTypes.UPDATE_AUCTION,
-        payload: res.data 
+        payload: { auctionId: auctionId },
       });
     } catch (error) {
       console.log(error);
