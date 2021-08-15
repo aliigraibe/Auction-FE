@@ -11,6 +11,8 @@ import AuctionDetails from "../Auction/AuctionDetails";
 import { useSelector } from "react-redux";
 import UpdateAuction from "../Auction/UpdateAuction";
 import Combine from "../Auction/combine";
+import WalletList from "../Wallet/WalletList";
+import AddWallet from "../Wallet/AddWallet";
 
 const Routes = () => {
   const loading = useSelector((state) => state.auctions.loading);
@@ -47,6 +49,12 @@ const Routes = () => {
       <Route path={`/auctions`}>
         <AuctionList auctions={auctions} />
       </Route>{" "}
+      <Route path={`/addwallet`}>
+        <AddWallet />{" "}
+      </Route>{" "}
+      <Route path={`/wallets`}>
+        <WalletList />
+      </Route>
       <Route exact path="/">
         <Home />
       </Route>

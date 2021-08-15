@@ -10,11 +10,9 @@ const Combine = () => {
 
   return (
     <>
-      <div className="centered">
         <CategoryList setSelect={setSelect} />
 
         <AuctionList _auction={select} />
-      </div>
     </>
   );
 };

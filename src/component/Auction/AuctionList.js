@@ -9,9 +9,14 @@ const AuctionList = ({ _auction }) => {
   const [query, setQuery] = useState("");
 
   if (loading) return <p>loading...</p>;
-  console.log(auctions);
+  const a = auctions.map((auction) => auction.categoryId._id);
+  console.log(a);
   let auctionList = auctions
     .filter((auction) => auction.categoryId._id == _auction)
+    .filter((auction) => auction.name.includes(query.toLowerCase()))
+    .map((auction) => <AuctionItem auction={auction} key={auction.id} />);
+  let auctionListO = auctions
+
     .filter((auction) => auction.name.includes(query.toLowerCase()))
     .map((auction) => <AuctionItem auction={auction} key={auction.id} />);
 
@@ -20,6 +25,7 @@ const AuctionList = ({ _auction }) => {
       {" "}
       <SearchBar setQuery={setQuery} />
       {auctionList};
+      {a === "null" && { auctionListO }}
     </>
   );
 };

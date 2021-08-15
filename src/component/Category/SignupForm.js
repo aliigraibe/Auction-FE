@@ -24,19 +24,19 @@ const SignupForm = () => {
   };
   return (
     <form onSubmit={handleSubmit}>
-      <div >
-      <img className="pic3" src={pic4} alt={"pic4"} />
+      <div>
+        <img className="pic3" src={pic4} alt={"pic4"} />
         <label></label>
         <input
           type="text"
           class="username1"
           placeholder="username"
-          name="username1"
+          name="username"
           value={user.username}
           onChange={handleChange}
         />
       </div>
-      <div >
+      <div>
         <label></label>
         <input
           type="password"
@@ -47,7 +47,7 @@ const SignupForm = () => {
           onChange={handleChange}
         />
       </div>
-      <div >
+      <div>
         <label></label>
         <input
           type="email"
@@ -58,7 +58,7 @@ const SignupForm = () => {
           onChange={handleChange}
         />
       </div>
-      <div >
+      <div>
         <label></label>
         <input
           type="text"
@@ -69,7 +69,7 @@ const SignupForm = () => {
           onChange={handleChange}
         />
       </div>
-      <div >
+      <div>
         <label></label>
         <input
           type="number"
@@ -80,7 +80,7 @@ const SignupForm = () => {
           onChange={handleChange}
         />
       </div>{" "}
-      <div >
+      <div>
         <label></label>
         <input
           type="number"
