@@ -19,6 +19,7 @@ const AddAuction = () => {
     endTime: "",
     image: "",
     categoryId: "",
+    userId: user.id,
     minBiddingIncrement: "",
   });
 
@@ -37,10 +38,8 @@ const AddAuction = () => {
   const handleImage = (event) => {
     setAuction({ ...auction, image: [...event.target.files] });
   };
-
   const handleSubmit = (event) => {
     event.preventDefault();
-    setAuction({ ...auction, userId: user.id });
     dispatch(addAuction(auction));
   };
 

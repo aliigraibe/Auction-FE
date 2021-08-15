@@ -13,6 +13,7 @@ const AuctionDetails = (props) => {
   if (loading) return <h3>Loading</h3>;
   const auction = auctions.find((auction) => auction.slug === auctionSlug);
   const images = auction.image.map((img) => ({ url: img }));
+  console.log(images);
   return (
     <div>
       <>

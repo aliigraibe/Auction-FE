@@ -20,11 +20,15 @@ export const addAuction = (newAuction) => {
     try {
       const formData = new FormData();
       for (const key in newAuction) formData.append(key, newAuction[key]);
+
       // let productimages = [];
       // for (let i = 0; i < newAuction.image.length; i++) {
       //   productimages.push(newAuction.image[i]);
       // }
       // formData.append("image", productimages);
+      Array.from(newAuction.image).forEach((image) => {
+        formData.append("image", image);
+      });
       const res = await instance.post("createAuction", formData);
       dispatch({
         type: actionTypes.ADD_AUCTION,
