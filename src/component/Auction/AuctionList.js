@@ -10,7 +10,6 @@ const AuctionList = ({ _auction }) => {
 
   if (loading) return <p>loading...</p>;
   const a = auctions.map((auction) => auction.categoryId._id);
-  console.log(a);
   let auctionList = auctions
     .filter((auction) => auction.categoryId._id == _auction)
     .filter((auction) => auction.name.includes(query.toLowerCase()))
@@ -24,8 +23,7 @@ const AuctionList = ({ _auction }) => {
     <>
       {" "}
       <SearchBar setQuery={setQuery} />
-      {auctionList};
-      {a === "null" && { auctionListO }}
+      {auctionList};{a === "null" && { auctionListO }}
     </>
   );
 };
