@@ -367,23 +367,15 @@
 
 .category1 {
   /* Rectangle Copy */
-
-  position: absolute;
-  width: 195px;
-  height: 54px;
-  right: 1185px;
-  top: 150px;
+width: 195px  ;
+ 
   border: 2px solid #394bf2;
   border-radius: 200px;
-
-  /* Vehicles */
-
-  position: absolute;
-  width: 195px;
-  height: 54px;
-  left: 150px;
-  top: 150px;
-  text-decoration: none;
+position: relative;
+top: 100px;
+left:180px ;
+margin: 15px;
+ 
 
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-style: normal;
@@ -391,38 +383,21 @@
   font-size: 25px;
   line-height: 45px;
   text-align: center;
+background-color: black;
+color: white;
 
-  color: #ffffff;
 }
 .category2 {
-  /* Rectangle Copy */
+  /* bmw-530-xi-2018-wbaja7c57jwc75574-img1 1 */
 
-  position: absolute;
-  width: 195px;
-  height: 54px;
-  right: 960px;
-  top: 194px;
-  text-decoration: none;
-  background: #394bf2;
-  border-radius: 200px;
+position: absolute;
+width: 532px;
+height: 476px;
+left: 61px;
+top: 200px;
 
-  /* Buildings */
 
-  position: absolute;
-  width: 195px;
-  height: 54px;
-  left: 402px;
-  top: 150px;
 
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-    sans-serif Nunito Sans;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 25px;
-  line-height: 45px;
-  text-align: center;
-
-  color: #ffffff;
 }
 
 .category3 {
@@ -564,3 +539,300 @@
   /* left: 50%; */
   right: 50%;
 }
+.catdiv{
+  position:static;
+  width: 600px;
+  height: 10px;
+}
+
+.box{
+  /* Rectangle 53 */
+
+position: relative;
+width: 604px;
+height: 276px;
+left: 230px;
+top: 100px;
+margin-right: 50px;
+margin-bottom: 50px;
+
+background:transparent;
+border-radius: 30px;
+border: 2px solid #394bf2 ;
+animation-name: example;
+animation-duration: 1s;
+animation-iteration-count: infinite;
+animation-direction: alternate;
+}
+@keyframes example {
+  from {border: 2px solid #394BF2;;}
+  to {border: 2px solid black;;}
+}
+
+.vehicle{
+  /* Rectangle 54 */
+
+position: absolute;
+width: 230px;
+height: 242px;
+left: 20px;
+top: 17px;
+border-radius: 30px;
+
+}
+.name{
+  /* Bmw 2018 */
+
+position: absolute;
+width: 273px;
+height: 40px;
+left:300px;
+top: 10px;
+
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+font-style: normal;
+font-weight: 600;
+font-size: 25px;
+line-height: 34px;
+text-align: center;
+
+color: #FFFFFF;
+
+
+}
+.a1{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.time{
+  /* Current Bid */
+
+position: absolute;
+width:200px;
+height: 13px;
+left: 350px;
+top: 100px;
+color: white;
+}
+.time1{
+  /* Current Bid */
+
+position: absolute;
+width:200px;
+height: 13px;
+left: 350px;
+top: 125px;
+color: white;
+}
+.delete{
+ position: relative;
+
+top: 200px;
+left: 400px;
+border: 2px solid #394bf2;
+border-radius: 200px;
+background-color: transparent;
+color: white;
+
+}
+.name1{
+  /* Rectangle 19 */
+
+position: absolute;
+width: 195px;
+height: 69px;
+left: 1450px;
+top: 100px;
+
+background: transparent;
+border: 1px solid #000000;
+box-sizing: border-box;
+border-radius: 50px;
+border: 2px solid #394bf2;
+
+/* Vehicles */
+
+
+
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+font-style: normal;
+font-weight: 600;
+font-size: 25px;
+line-height: 67px;
+/* identical to box height */
+text-align: center;
+
+color: #FFFFFF;
+
+
+
+}
+
+.p1{
+ position: absolute;
+width: 591px;
+height: 397px;
+left:900px ;
+top: 200px;
+
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+font-style: normal;
+font-weight: normal;
+font-size: 30px;
+
+
+
+color: #FFFFFF;
+
+
+}
+.p2{
+  position: absolute;
+ width: 591px;
+ height: 397px;
+ left:900px ;
+ top: 250px;
+ 
+ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+ font-style: normal;
+ font-weight: normal;
+ font-size: 30px;
+ 
+ 
+ 
+ color: #FFFFFF;
+ 
+ 
+ }
+
+ .p3{
+  position: absolute;
+ width: 591px;
+ height: 397px;
+ left:900px ;
+ top: 300px;
+ 
+ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+ font-style: normal;
+ font-weight: normal;
+ font-size: 30px;
+ 
+ 
+ 
+ color: #FFFFFF;
+ 
+ 
+ }
+
+ .p4{
+  
+    position: absolute;
+   width: 591px;
+   height: 397px;
+   left:900px ;
+   top: 350px;
+   
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 30px;
+   
+   
+   
+   color: #FFFFFF;
+   
+   
+   
+ }
+ .p5{
+  
+  position: absolute;
+ width: 591px;
+ height: 397px;
+ left:900px ;
+ top: 400px;
+ 
+ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+ font-style: normal;
+ font-weight: normal;
+ font-size: 30px;
+ 
+ 
+ 
+ color: #FFFFFF;
+ 
+ 
+ 
+}
+
+.p6{
+  
+  position: absolute;
+ width: 195px;
+ height: 69px;
+ left:1300px ;
+ top: 500px;
+ border: 2px solid #394bf2;
+ border-radius: 60px;
+ background-color: transparent;
+ 
+ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+ font-style: normal;
+ font-weight: normal;
+ font-size: 30px;
+ 
+ 
+ 
+ color: #FFFFFF;
+ 
+ 
+ 
+}
+
+.p7{
+  position: absolute;
+  width: 195px;
+  height: 69px;
+  left:1100px ;
+  top: 500px;
+  border: 2px solid #394bf2;
+  border-radius: 60px;
+  background-color: transparent;
+  text-decoration: none;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  text-align: center;
+  line-height: 56px;
+  
+  color: #FFFFFF;
+
+
+}
+
+.p8{
+  position: absolute;
+  width: 195px;
+  height: 69px;
+  left:900px ;
+  top: 500px;
+  border: 2px solid #394bf2;
+  border-radius: 60px;
+  background-color: transparent;
+  text-decoration: none;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  text-align: center;
+  line-height: 56px;
+  
+  
+  color: #FFFFFF;
+
+}
+
+

@@ -10,6 +10,9 @@ const CategoryList = ({ setSelect }) => {
     <CategoryItem setSelect={setSelect} category={category} key={category.id} />
   ));
 
-  return <div className="centered">{categoryList}</div>;
+  return <div >
+    <div>{categoryList}</div>
+    <div ></div>
+    </div>;
 };
 export default CategoryList;

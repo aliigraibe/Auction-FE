@@ -23,7 +23,11 @@ const AuctionList = ({ _auction }) => {
     <>
       {" "}
       <SearchBar setQuery={setQuery} />
-      {auctionList};{a === "null" && { auctionListO }}
+
+      <div className="a1">
+      {auctionList};
+      {a === "null" && { auctionListO }}
+      </div>
     </>
   );
 };

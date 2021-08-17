@@ -13,38 +13,39 @@ const AuctionItem = ({ auction }) => {
 
   const dispatch = useDispatch();
   return (
-    <div>
+    <div className="box"> 
       <Link to={`/auctions/${auction.slug}`}>
         <img
-          width={300}
-          height={200}
+          className="vehicle"
           src={auction.image[0]}
           alt={auction.name}
+          
         />
       </Link>
       <Link to={`/auctions/${auction.slug}`}>
-        <p>{auction.name}</p>
+        <p className="name">{auction.name}</p>
       </Link>{" "}
       {new Date(auction.endTime) <= new Date() ? (
-        <p style={{ color: "white" }}>Auction end</p>
+        <p className="time" >Auction end</p>
       ) : (
         <>
           {new Date(auction.startTime) >= new Date() ? (
-            <p style={{ color: "white" }}>
+            <p className="time">
               Auction start :
               {timeAgo.format(new Date(auction.startTime) - 3 * 60 * 60 * 1000)}
             </p>
           ) : (
-            <p style={{ color: "white" }}>
+            <p className="time">
               Auction end :
               {timeAgo.format(new Date(auction.endTime) - 3 * 60 * 60 * 1000)}
             </p>
           )}
         </>
       )}
+
       <button
         type="button"
-        class="btn btn-primary"
+        class="delete"
         onClick={() => dispatch(deleteAuction(auction._id))}
       >
         Delete
