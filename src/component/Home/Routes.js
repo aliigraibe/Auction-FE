@@ -13,6 +13,7 @@ import UpdateAuction from "../Auction/UpdateAuction";
 import Combine from "../Auction/combine";
 import WalletList from "../Wallet/WalletList";
 import AddWallet from "../Wallet/AddWallet";
+import FavList from "../Fav/FavList";
 
 const Routes = () => {
   const loading = useSelector((state) => state.auctions.loading);
@@ -54,6 +55,9 @@ const Routes = () => {
       </Route>{" "}
       <Route path={`/wallets`}>
         <WalletList />
+      </Route>
+      <Route path={`/fav`}>
+        <FavList />
       </Route>
       <Route exact path="/">
         <Home />
