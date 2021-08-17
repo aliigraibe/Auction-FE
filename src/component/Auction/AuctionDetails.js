@@ -48,6 +48,7 @@ const AuctionDetails = (props) => {
             </Link>
           </>
         )}
+        
       </div>
     </div>
   );

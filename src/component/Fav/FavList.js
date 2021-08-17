@@ -21,7 +21,6 @@ const FavList = ({ _auction }) => {
   const list = favs.map((fav) => (
     <AuctionItem auction={fav.auctionId} key={fav.auctionId._id} />
   ));
-
   return <>{list}</>;
 };
 export default FavList;

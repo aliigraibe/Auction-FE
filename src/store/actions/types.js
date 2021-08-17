@@ -17,3 +17,5 @@ export const ADD_WALLET = "ADD_WALLET";
 
 // Fav Actions
 export const FETCH_FAVS = "FETCH_FAVS";
+export const ADD_FAVOURITE = "ADD_FAVOURITE";
+export const DELETE_FAVOURITE = "DELETE_FAVOURITE";

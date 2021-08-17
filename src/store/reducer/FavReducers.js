@@ -13,6 +13,18 @@ const reducer = (state = initialState, action) => {
         favs: action.payload,
         loading: false,
       };
+    case actionType.ADD_FAVOURITE:
+      const { newFavourite } = action.payload;
+
+      return {
+        ...state,
+        favs: [...state.favs, newFavourite],
+      };
+    case actionType.DELETE_FAVOURITE:
+      return {
+        ...state,
+        favs: state.favs.filter((fav) => fav._id !== action.payload.favId),
+      };
 
     default:
       return state;
