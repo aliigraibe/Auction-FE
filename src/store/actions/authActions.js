@@ -19,14 +19,15 @@ export const signin = (userData, history) => {
       const res = await instance.post(`/signin`, userData);
 
       dispatch(setUser(res.data.token));
-      history.push("/category");
+      history.push("/combine");
     } catch (error) {
       console.log(error);
     }
   };
 };
 
-export const signout = () => {
+export const signout = (history) => {
+  history.push("/");
   return setUser();
 };
 

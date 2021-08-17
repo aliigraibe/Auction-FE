@@ -15,17 +15,12 @@ export const fetchAuction = () => {
     }
   };
 };
-export const addAuction = (newAuction) => {
+export const addAuction = (newAuction, history) => {
   return async (dispatch) => {
     try {
       const formData = new FormData();
       for (const key in newAuction) formData.append(key, newAuction[key]);
 
-      // let productimages = [];
-      // for (let i = 0; i < newAuction.image.length; i++) {
-      //   productimages.push(newAuction.image[i]);
-      // }
-      // formData.append("image", productimages);
       Array.from(newAuction.image).forEach((image) => {
         formData.append("image", image);
       });
@@ -34,6 +29,7 @@ export const addAuction = (newAuction) => {
         type: actionTypes.ADD_AUCTION,
         payload: { newAuction: res.data },
       });
+      history.push("/combine");
     } catch (error) {
       console.log(error);
     }
@@ -43,7 +39,6 @@ export const addAuction = (newAuction) => {
 export const deleteAuction = (auctionId) => {
   return async (dispatch) => {
     try {
-      console.log(auctionId);
       await instance.post(`/deleteAuction`, { _id: auctionId });
       dispatch({
         type: actionTypes.DELETE_AUCTION,
@@ -58,7 +53,6 @@ export const deleteAuction = (auctionId) => {
 export const updateAuction = (auctionId, auction) => {
   return async (dispatch) => {
     try {
-      console.log(auctionId);
       const formData = new FormData();
       for (const key in auction) formData.append(key, auction[key]);
       const res = await instance.put(`/updateAuction/${auctionId}`, formData);
