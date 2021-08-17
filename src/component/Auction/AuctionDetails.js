@@ -16,29 +16,35 @@ const AuctionDetails = (props) => {
   console.log(images);
   return (
     <div>
-      <>
-        <SimpleImageSlider
-          width={300}
-          height={200}
+      
+      <div className="category2">
+        <SimpleImageSlider 
+       
+          width={600}
+          height={476}
           images={images}
           showBullets="true"
-        />{" "}
-        <p>Name : {auction.name}</p>
-        <p>Description : {auction.description}</p>
-        <p>Quantity : {auction.quantity}</p>
-        <p>Price : {auction.startingPrice} JOD</p>
-        <p>{auction.startTime}</p>
-        <p>{auction.endTime}</p> <Link to="/categories">Go Back </Link>
+        />
+        </div>
+        <div>
+        {" "}
+        <p className="name1">{auction.name}</p>
+        <p className="p1"> {auction.description}</p>
+        <p className="p2">Quantity : {auction.quantity}</p>
+        <p className="p3">Price : {auction.startingPrice} JOD</p>
+        <p className="p4">{auction.startTime}</p>
+        <p className="p5">{auction.endTime}</p> 
+        <Link className="p7" to="/categories">Go Back </Link>
         <button
           type="button"
-          class="btn btn-primary"
+          class="p6"
           onClick={() => dispatch(deleteAuction(auction._id))}
         >
           {" "}
           Delete
         </button>
-        <Link to={`/updateauction/${auction._id}`}> update</Link>
-      </>
+        <Link className="p8" to={`/updateauction/${auction._id}`}> update</Link>
+        </div>
     </div>
   );
 };

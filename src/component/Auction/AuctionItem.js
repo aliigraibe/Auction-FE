@@ -6,23 +6,23 @@ const AuctionItem = ({ auction }) => {
   const dispatch = useDispatch();
   console.log(auction);
   return (
-    <div>
+    <div className="box"> 
       <Link to={`/auctions/${auction.slug}`}>
         <img
-          width={300}
-          height={200}
+          className="vehicle"
           src={auction.image[0]}
           alt={auction.name}
+          
         />
       </Link>
       <Link to={`/auctions/${auction.slug}`}>
-        <p>{auction.name}</p>
+        <p className="name">{auction.name}</p>
       </Link>{" "}
-      <p>{auction.startTime}</p>
-      <p>{auction.endTime}</p>
+      <p className="time">{auction.startTime}</p>
+      <p className="time1">{auction.endTime}</p>
       <button
         type="button"
-        class="btn btn-primary"
+        class="delete"
         onClick={() => dispatch(deleteAuction(auction._id))}
       >
         Delete
