@@ -10,7 +10,7 @@ const reducer = (state = initialState, action) => {
     case actionType.FETCH_FAVS:
       return {
         ...state,
-        Favs: action.payload,
+        favs: action.payload,
         loading: false,
       };
 

@@ -8,7 +8,6 @@ import { checkForToken } from "./actions/authActions";
 import { fetchCategory } from "./actions/categoryAction";
 import { fetchAuction } from "./actions/AuctionAction";
 import { fetchWallet } from "./actions/WalletAction";
-import { fetchFavs } from "./actions/FavActions";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
@@ -20,6 +19,5 @@ store.dispatch(checkForToken());
 store.dispatch(fetchCategory());
 store.dispatch(fetchAuction());
 store.dispatch(fetchWallet());
-store.dispatch(fetchFavs());
 
 export default store;
