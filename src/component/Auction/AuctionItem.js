@@ -2,9 +2,16 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { deleteAuction } from "../../store/actions/AuctionAction";
 
+import TimeAgo from "javascript-time-ago";
+import en from "javascript-time-ago/locale/en";
+TimeAgo.addLocale(en);
+const timeAgo = new TimeAgo("en-US");
+
 const AuctionItem = ({ auction }) => {
+  if (new Date(auction.startTime) >= new Date()) console.log("true");
+  else console.log("false");
+
   const dispatch = useDispatch();
-  console.log(auction);
   return (
     <div className="box"> 
       <Link to={`/auctions/${auction.slug}`}>
@@ -18,8 +25,24 @@ const AuctionItem = ({ auction }) => {
       <Link to={`/auctions/${auction.slug}`}>
         <p className="name">{auction.name}</p>
       </Link>{" "}
-      <p className="time">{auction.startTime}</p>
-      <p className="time1">{auction.endTime}</p>
+      {new Date(auction.endTime) <= new Date() ? (
+        <p className="time" >Auction end</p>
+      ) : (
+        <>
+          {new Date(auction.startTime) >= new Date() ? (
+            <p className="time">
+              Auction start :
+              {timeAgo.format(new Date(auction.startTime) - 3 * 60 * 60 * 1000)}
+            </p>
+          ) : (
+            <p className="time">
+              Auction end :
+              {timeAgo.format(new Date(auction.endTime) - 3 * 60 * 60 * 1000)}
+            </p>
+          )}
+        </>
+      )}
+
       <button
         type="button"
         class="delete"
@@ -27,6 +50,7 @@ const AuctionItem = ({ auction }) => {
       >
         Delete
       </button>
+      )
     </div>
   );
 };
