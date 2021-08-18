@@ -31,7 +31,6 @@ const NavBar = (props) => {
         </Link>
         {user ? (
           <>
-           
             <Link className="category" to="/combine">
               Category
             </Link>
@@ -42,11 +41,12 @@ const NavBar = (props) => {
             <button className="signin1" onClick={handelSignout}>
               Sign out
             </button>
-            <Link to="/fav">fav</Link>
+            <Link className="fav" to="/fav">
+              <img className="fav1" src={pic5} alt="fav" />
+            </Link>
             <Button variant="primary" onClick={handleShow}>
               Wallet
             </Button>
-
           </>
         ) : (
           <>
@@ -57,7 +57,6 @@ const NavBar = (props) => {
               Sign up
             </Link>
           </>
-
         )}
 
         <Modal show={show} onHide={handleClose}>
@@ -65,9 +64,7 @@ const NavBar = (props) => {
             <AddWallet handleClose={handleClose} />
           </Modal.Body>
         </Modal>
-
       </div>
-     
     </div>
   );
 };
