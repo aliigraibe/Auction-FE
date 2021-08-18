@@ -1,6 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import pic1 from "../../images/pic1.png";
+import pic5 from "../../images/pic5.png";
+import pic7 from "../../images/pic7.png";
 import { signout } from "../../store/actions/authActions";
 import { Modal, Button } from "react-bootstrap";
 import { useState } from "react";
@@ -29,7 +31,7 @@ const NavBar = (props) => {
         </Link>
         {user ? (
           <>
-            <p className="signup">Hello {user.username}</p>
+           
             <Link className="category" to="/combine">
               Category
             </Link>
@@ -37,13 +39,14 @@ const NavBar = (props) => {
             <Link className="addauction" to="/addauction">
               Add auctions
             </Link>
-            <button className="signin" onClick={handelSignout}>
+            <button className="signin1" onClick={handelSignout}>
               Sign out
             </button>
             <Link to="/fav">fav</Link>
             <Button variant="primary" onClick={handleShow}>
               Wallet
             </Button>
+
           </>
         ) : (
           <>
@@ -54,6 +57,7 @@ const NavBar = (props) => {
               Sign up
             </Link>
           </>
+
         )}
 
         <Modal show={show} onHide={handleClose}>
@@ -61,7 +65,9 @@ const NavBar = (props) => {
             <AddWallet handleClose={handleClose} />
           </Modal.Body>
         </Modal>
+
       </div>
+     
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-
+import pic5 from "../../images/pic5.png";
+import pic6 from "../../images/pic6.png";
 import TimeAgo from "javascript-time-ago";
 import en from "javascript-time-ago/locale/en";
 import { addFouvarite, deleteFavourite } from "../../store/actions/FavActions";
@@ -30,18 +31,18 @@ const AuctionItem = ({ auction, props }) => {
       {!status ? (
         <button
           type="button"
-          class="p8"
+          class="p88"
           onClick={() => dispatch(addFouvarite(user.id, auction._id))}
         >
-          Add Favourite
+          <img className="fav1" src={pic5}/>
         </button>
       ) : (
         <button
           type="button"
-          class="p6"
+          class="p88"
           onClick={() => dispatch(deleteFavourite(user.id, auction._id))}
         >
-          remove from fav
+         <img className="fav1" src={pic6}/>
         </button>
       )}
       {new Date(auction.endTime) <= new Date() ? (
