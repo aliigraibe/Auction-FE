@@ -5,6 +5,7 @@ import rootReducer from "./reducer/rootReducer";
 
 //
 import { checkForToken } from "./actions/authActions";
+import { fetchUsers } from "./actions/authActions";
 import { fetchCategory } from "./actions/categoryAction";
 import { fetchAuction } from "./actions/AuctionAction";
 import { fetchWallet } from "./actions/WalletAction";
@@ -16,6 +17,7 @@ const store = createStore(
 );
 
 store.dispatch(checkForToken());
+store.dispatch(fetchUsers());
 store.dispatch(fetchCategory());
 store.dispatch(fetchAuction());
 store.dispatch(fetchWallet());

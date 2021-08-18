@@ -1,26 +1,19 @@
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
-import { fetchFavs } from "../../store/actions/FavActions";
 import AuctionItem from "../Auction/AuctionItem";
 import Loading from "../Loading/Loading";
 
-const FavList = ({ _auction }) => {
-  const dispatch = useDispatch();
-  const { user } = useSelector((state) => state.user);
+const FavList = () => {
+  const { user, users, loading } = useSelector((state) => state.user);
+  const { auctions, loading2 } = useSelector((state) => state.auctions);
 
-  useEffect(() => {
-    if (user) dispatch(fetchFavs(user.id));
-  }, [user]);
+  if (loading || loading2) return <Loading />;
 
-  const favs = useSelector((state) => state.favs.favs);
-  const loading = useSelector((state) => state.favs.loading);
+  const wantedUser = users.find((_user) => _user._id === user.id);
+  const list = auctions
+    .filter((auction) => wantedUser.fav.includes(auction._id))
+    .map((auction) => <AuctionItem auction={auction} key={auction._id} />);
 
-  if (loading) return <Loading />;
-
-  const list = favs.map((fav) => (
-    <AuctionItem auction={fav.auctionId} key={fav.auctionId._id} />
-  ));
   return <>{list}</>;
 };
 export default FavList;

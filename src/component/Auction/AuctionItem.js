@@ -2,21 +2,22 @@ import { Link } from "react-router-dom";
 
 import TimeAgo from "javascript-time-ago";
 import en from "javascript-time-ago/locale/en";
-import { addFouvarite } from "../../store/actions/FavActions";
+import { addFouvarite, deleteFavourite } from "../../store/actions/FavActions";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteAuction } from "../../store/actions/AuctionAction";
+import Loading from "../Loading/Loading";
+//
 TimeAgo.addLocale(en);
 const timeAgo = new TimeAgo("en-US");
 
-const AuctionItem = ({ auction,props }) => {
-  const user = useSelector((state) => state.user.user);
-  const favs = useSelector((state) => state.favs.favs);
+const AuctionItem = ({ auction, props }) => {
+  const { user, users, loading } = useSelector((state) => state.user);
   const dispatch = useDispatch();
-  let status = false;
-  favs.forEach((f) => {
-    if (f.auctionId._id === auction._id) status = true;
-  });
 
+  if (loading) return <Loading />;
+
+  const wantedUser = users.find((_user) => _user._id === user.id);
+
+  let status = wantedUser.fav.includes(auction._id);
 
   return (
     <div className="box">
@@ -26,7 +27,7 @@ const AuctionItem = ({ auction,props }) => {
       <Link to={`/auctions/${auction.slug}`}>
         <p className="name">{auction.name}</p>
       </Link>{" "}
-      {!status && (
+      {!status ? (
         <button
           type="button"
           class="p8"
@@ -34,14 +35,15 @@ const AuctionItem = ({ auction,props }) => {
         >
           Add Favourite
         </button>
+      ) : (
+        <button
+          type="button"
+          class="p6"
+          onClick={() => dispatch(deleteFavourite(user.id, auction._id))}
+        >
+          remove from fav
+        </button>
       )}
-      <button
-        type="button"
-        class="p6"
-        onClick={() => dispatch(deleteAuction())}
-      >
-        Delete
-      </button>
       {new Date(auction.endTime) <= new Date() ? (
         <p className="time">Auction end</p>
       ) : (

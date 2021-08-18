@@ -1,26 +1,12 @@
 import * as actionTypes from "./types";
 import instance from "./instance";
 
-export const fetchFavs = (userId) => {
+export const addFouvarite = (userId, auctionId) => {
   return async (dispatch) => {
     try {
-      const res = await instance.get(`/favourites/${userId}`);
-
-      dispatch({
-        type: actionTypes.FETCH_FAVS,
-        payload: res.data,
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  };
-};
-export const addFouvarite = (a, b) => {
-  return async (dispatch) => {
-    try {
-      const res = await instance.post("addFavourite", {
-        userId: a,
-        auctionId: b,
+      const res = await instance.post("addFav", {
+        userId: userId,
+        auctionId: auctionId,
       });
       dispatch({
         type: actionTypes.ADD_FAVOURITE,
@@ -32,16 +18,19 @@ export const addFouvarite = (a, b) => {
   };
 };
 
-export const deleteFavourite = (favouriteId) => {
+export const deleteFavourite = (userId, auctionId) => {
   return async (dispatch) => {
     try {
-      await instance.post(`/removeFavurite`, { favId: favouriteId });
+      const res = await instance.post("removeFav", {
+        userId: userId,
+        auctionId: auctionId,
+      });
       dispatch({
         type: actionTypes.DELETE_FAVOURITE,
-        payload: { favouriteId: favouriteId },
+        payload: { favourite: res.data },
       });
     } catch (error) {
       console.log(error);
     }
   };
-}
+};
