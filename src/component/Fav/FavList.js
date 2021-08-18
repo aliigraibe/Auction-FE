@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-
+import pic5 from "../../images/pic5.png";
 import AuctionItem from "../Auction/AuctionItem";
 import Loading from "../Loading/Loading";
 
@@ -14,6 +14,7 @@ const FavList = () => {
     .filter((auction) => wantedUser.fav.includes(auction._id))
     .map((auction) => <AuctionItem auction={auction} key={auction._id} />);
 
-  return <>{list}</>;
+  return <><div className="a1">
+    {list}</div></>;
 };
 export default FavList;

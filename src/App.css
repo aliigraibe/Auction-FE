@@ -44,12 +44,10 @@
   width: 281px;
   height: 92px;
   left: 60px;
-  top: 25px;
+  top: 15px;
 }
 .home {
-  /* Call Now */
-
-  /* Call Now */
+/* Call Now */
 
   position: absolute;
   width: 54px;
@@ -372,7 +370,7 @@ width: 195px  ;
   border: 2px solid #394bf2;
   border-radius: 200px;
 position: relative;
-top: 100px;
+top: 120px;
 left:180px ;
 margin: 15px;
  
@@ -552,7 +550,7 @@ position: relative;
 width: 604px;
 height: 276px;
 left: 230px;
-top: 100px;
+top: 140px;
 margin-right: 50px;
 margin-bottom: 50px;
 
@@ -566,7 +564,7 @@ animation-direction: alternate;
 }
 @keyframes example {
   from {border: 2px solid #394BF2;;}
-  to {border: 2px solid black;;}
+  to {border: 2px solid black;}
 }
 
 .vehicle{
@@ -836,3 +834,97 @@ color: #FFFFFF;
 }
 
 
+.fav{
+  position: absolute;
+  top: 45px;
+  left: 1150px;
+}
+
+.fav1{
+  width: 40px; ;
+  height: 40px;
+}
+.p88{
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  left:520px ;
+  top: 0px;
+ border: none;
+  background-color: transparent;
+  text-decoration: none;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  text-align: center;
+  line-height: 56px;
+  
+  
+  color: #FFFFFF;
+
+}
+.a11{
+  position: absolute;
+  top: 100px;
+}
+.signin1 {
+  /* Rectangle Copy */
+
+  position: absolute;
+  width: 150px;
+  height: 50px;
+  right: 160px;
+  top: 79px;
+  text-decoration: none;
+  background-color: transparent;
+  border: 2px solid #394bf2;
+  border-radius: 200px;
+
+  /* Call Now */
+
+  position: absolute;
+  width: 100px;
+  height: 30px;
+  right: 120px;
+  top: 50px;
+
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 27px;
+  /* identical to box height */
+  text-align: center;
+
+  color: #ffffff;
+}
+
+.search{
+  /* Rectangle 65 */
+
+position: absolute;
+width: 250px;
+height: 35px;
+left: 850px;
+top: 50px;
+background-color: transparent;
+border: 3px solid #394BF2;
+box-sizing: border-box;
+box-shadow: 1px 1px 4px 1px #394BF2;
+border-radius: 30px;
+color: white;
+
+
+}
+
+.fav2{
+  position: absolute;
+  width: 25px; ;
+  height: 25px;
+  left: 780px;
+  top: 50px;
+  color: white;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 25px;
+}

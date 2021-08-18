@@ -1,4 +1,13 @@
 const SearchBar = (props) => {
-  return <input onChange={(event) => props.setQuery(event.target.value)} />;
+  return (<div>  
+
+    <div className="fav2">Search</div>
+     <input className="search" onChange={(event)  => props.setQuery(event.target.value)} />
+     
+     
+     ;</div>
+
+  )
+  
 };
 export default SearchBar;
