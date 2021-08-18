@@ -4,6 +4,9 @@ import pic1 from "../../images/pic1.png";
 import pic5 from "../../images/pic5.png";
 import pic7 from "../../images/pic7.png";
 import { signout } from "../../store/actions/authActions";
+import { Modal, Button } from "react-bootstrap";
+import { useState } from "react";
+import AddWallet from "../Wallet/AddWallet";
 
 const NavBar = (props) => {
   const user = useSelector((state) => state.user.user);
@@ -14,6 +17,11 @@ const NavBar = (props) => {
     event.preventDefault();
     dispatch(signout(history));
   };
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   return (
     <div>
@@ -34,7 +42,11 @@ const NavBar = (props) => {
             <button className="signin1" onClick={handelSignout}>
               Sign out
             </button>
-            <Link className="fav" to="/fav"><img className="fav1" src={pic5} /></Link>
+            <Link to="/fav">fav</Link>
+            <Button variant="primary" onClick={handleShow}>
+              Wallet
+            </Button>
+
           </>
         ) : (
           <>
@@ -47,7 +59,13 @@ const NavBar = (props) => {
           </>
 
         )}
-        
+
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Body>
+            <AddWallet handleClose={handleClose} />
+          </Modal.Body>
+        </Modal>
+
       </div>
      
     </div>

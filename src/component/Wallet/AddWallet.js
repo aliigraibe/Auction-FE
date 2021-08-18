@@ -3,44 +3,54 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { addWallet } from "../../store/actions/WalletAction";
 import { FormCenter } from "../../styles";
+import Loading from "../Loading/Loading";
 
 const AddAuction = () => {
   const dispatch = useDispatch();
-  const wallets = useSelector((state) => state.wallets.wallets);
-  const loading = useSelector((state) => state.wallets.loading);
+  const { wallets, loading } = useSelector((state) => state.wallets);
   const user = useSelector((state) => state.user.user);
 
   const [wallet, setWallet] = useState({
-    balance: "",
-    userId: user.id,
+    amount: "",
+    walletId: "",
   });
 
-  if (loading) return <p>loading...</p>;
+  if (loading) return <Loading />;
+  const _wallet = wallets.find((wallet) => wallet.userId._id == user.id);
 
-  const handleChange = (event) => {
-    setWallet({ ...wallet, [event.target.name]: event.target.value });
+  const reset = () => {
+    setWallet({
+      amount: "",
+      walletId: "",
+    });
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     dispatch(addWallet(wallet));
+    reset();
   };
 
   return (
     <FormCenter onSubmit={handleSubmit}>
       <div class="form-group">
-        <label>Balance</label>
+        <label>Balance : {_wallet?.balance} $</label>
         <input
-          type="text"
+          type="number"
           class="form-control"
-          name="balance"
           value={wallet.balance}
-          onChange={handleChange}
+          onChange={(event) => {
+            setWallet({
+              ...wallet,
+              amount: event.target.value,
+              walletId: _wallet._id,
+            });
+          }}
         />
       </div>
 
       <button type="submit" class="addauction2">
-        Add Wallet{" "}
+        Add Balance
       </button>
     </FormCenter>
   );

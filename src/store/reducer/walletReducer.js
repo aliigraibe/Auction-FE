@@ -14,10 +14,17 @@ const reducer = (state = initialState, action) => {
       };
     case actionType.ADD_WALLET:
       const { newWallet } = action.payload;
-
+      console.log(newWallet);
       return {
         ...state,
-        wallets: [...state.wallets, newWallet],
+        wallets: state.wallets.map((wallet) =>
+          wallet._id === newWallet._id
+            ? {
+                ...wallet,
+                balance: newWallet.balance,
+              }
+            : wallet
+        ),
       };
 
     default:
