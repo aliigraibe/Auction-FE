@@ -2,6 +2,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import pic1 from "../../images/pic1.png";
 import { signout } from "../../store/actions/authActions";
+import { Modal, Button } from "react-bootstrap";
+import { useState } from "react";
+import AddWallet from "../Wallet/AddWallet";
 
 const NavBar = (props) => {
   const user = useSelector((state) => state.user.user);
@@ -12,6 +15,11 @@ const NavBar = (props) => {
     event.preventDefault();
     dispatch(signout(history));
   };
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   return (
     <div>
@@ -33,6 +41,9 @@ const NavBar = (props) => {
               Sign out
             </button>
             <Link to="/fav">fav</Link>
+            <Button variant="primary" onClick={handleShow}>
+              Wallet
+            </Button>
           </>
         ) : (
           <>
@@ -44,6 +55,12 @@ const NavBar = (props) => {
             </Link>
           </>
         )}
+
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Body>
+            <AddWallet handleClose={handleClose} />
+          </Modal.Body>
+        </Modal>
       </div>
     </div>
   );

@@ -6,6 +6,10 @@ const useSocket = (user, auction, dispatch) => {
     const socket = socketIOClient.connect("http://localhost:5000");
 
     socket.emit("join", user, auction);
+
+    socket.on("addUser", (user) => {
+      console.log(user.username, "Joined");
+    });
   }, [dispatch]);
 };
 

@@ -8,7 +8,6 @@ const Combine = () => {
   const [select, setSelect] = useState();
   const user = useSelector((state) => state.user.user);
 
-  console.log(user);
   if (!user) return <Redirect to="/" />;
 
   return (

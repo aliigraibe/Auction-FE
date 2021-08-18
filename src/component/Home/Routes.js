@@ -11,7 +11,6 @@ import AuctionDetails from "../Auction/AuctionDetails";
 import { useSelector } from "react-redux";
 import UpdateAuction from "../Auction/UpdateAuction";
 import Combine from "../Auction/combine";
-import WalletList from "../Wallet/WalletList";
 import AddWallet from "../Wallet/AddWallet";
 import FavList from "../Fav/FavList";
 
@@ -53,9 +52,6 @@ const Routes = () => {
       <Route path={`/addwallet`}>
         <AddWallet />{" "}
       </Route>{" "}
-      <Route path={`/wallets`}>
-        <WalletList />
-      </Route>
       <Route path={`/fav`}>
         <FavList />
       </Route>

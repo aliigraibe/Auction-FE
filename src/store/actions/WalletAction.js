@@ -18,7 +18,7 @@ export const fetchWallet = () => {
 export const addWallet = (newWallet) => {
   return async (dispatch) => {
     try {
-      const res = await instance.post("createWallet", newWallet);
+      const res = await instance.post("addbalance", newWallet);
       dispatch({
         type: actionTypes.ADD_WALLET,
         payload: { newWallet: res.data },
