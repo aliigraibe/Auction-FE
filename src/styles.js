@@ -160,8 +160,8 @@ animation-iteration-count: infinite;
 animation-direction: alternate;
 }
 @keyframes example {
-  from {border: 5px solid #394BF2;;}
-  to {border: 5px solid white;;}
+  from {border: 2px solid #394BF2;;}
+  to {border: 2px solid black;;}
 }
 `;
 
