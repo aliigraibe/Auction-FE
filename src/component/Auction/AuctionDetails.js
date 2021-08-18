@@ -4,6 +4,8 @@ import { useSelector, useDispatch } from "react-redux";
 import SimpleImageSlider from "react-simple-image-slider";
 import { deleteAuction } from "../../store/actions/AuctionAction";
 
+import useSocket from "../Socket/SocketConnect";
+
 const AuctionDetails = (props) => {
   const auctions = useSelector((state) => state.auctions.auctions);
   const loading = useSelector((state) => state.auctions.loading);
@@ -11,9 +13,11 @@ const AuctionDetails = (props) => {
   const auctionSlug = useParams().auctionSlug;
   const dispatch = useDispatch();
 
-  if (loading) return <h3>Loading</h3>;
+  // if (loading) return <h3>Loading</h3>;
   const auction = auctions.find((auction) => auction.slug === auctionSlug);
   const images = auction.image.map((img) => ({ url: img }));
+  useSocket(user, auction, dispatch);
+
   return (
     <div>
       <div className="category2">
@@ -48,7 +52,6 @@ const AuctionDetails = (props) => {
             </Link>
           </>
         )}
-        
       </div>
     </div>
   );
