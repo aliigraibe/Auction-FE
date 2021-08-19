@@ -11,6 +11,7 @@ export const FETCH_AUCTION = "FETCH_AUCTION";
 export const ADD_AUCTION = "ADD_AUCTION";
 export const DELETE_AUCTION = "DELETE_AUCTION";
 export const UPDATE_AUCTION = "UPDATE_AUCTION";
+export const BID = "BID";
 
 // Wallet Actions
 export const FETCH_WALLET = "FETCH_WALLET";

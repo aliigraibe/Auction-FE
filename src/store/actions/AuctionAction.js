@@ -65,3 +65,18 @@ export const updateAuction = (auctionId, auction) => {
     }
   };
 };
+
+export const addBid = (bid) => {
+  return async (dispatch) => {
+    try {
+      const res = await instance.post("/bid", bid);
+
+      dispatch({
+        type: actionTypes.BID,
+        payload: { bid: res.data },
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
