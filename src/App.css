@@ -73,7 +73,7 @@
   position: absolute;
   width: 54px;
   height: 21px;
-  right: 451px;
+  right: 440px;
   top: 55px;
   text-decoration: none;
 
@@ -611,8 +611,10 @@ position: absolute;
 width:200px;
 height: 13px;
 left: 350px;
-top: 100px;
-color: white;
+top: 70px;
+color:red;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+font-size: 25px;
 }
 .time1{
   /* Current Bid */
@@ -767,83 +769,58 @@ color: #FFFFFF;
 
 .p6{
   
-  position: absolute;
- width: 195px;
- height: 69px;
- left:1300px ;
- top: 500px;
- border: 2px solid #394bf2;
- border-radius: 60px;
- background-color: transparent;
- 
- font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
- font-style: normal;
- font-weight: normal;
- font-size: 30px;
- 
- 
- 
- color: #FFFFFF;
+  position: relative;
+  width: 45px;
+  height: 45px;
+  left:490px ;
+  top: 250px;
+  background-color: transparent;
+  border: 0px solid transparent;
  
  
  
 }
 
 .p7{
-  position: absolute;
-  width: 195px;
-  height: 69px;
-  left:1100px ;
-  top: 500px;
-  border: 2px solid #394bf2;
-  border-radius: 60px;
-  background-color: transparent;
-  text-decoration: none;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 30px;
-  text-align: center;
-  line-height: 56px;
+  position: relative;
+  width: 45px;
+  height: 45px;
+  left:440px ;
+  top: 250px;
   
-  color: #FFFFFF;
 
 
 }
 
 .p8{
-  position: absolute;
-  width: 195px;
-  height: 69px;
-  left:900px ;
-  top: 500px;
-  border: 2px solid #394bf2;
-  border-radius: 60px;
-  background-color: transparent;
-  text-decoration: none;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 30px;
-  text-align: center;
-  line-height: 56px;
+  position: relative;
+  width: 45px;
+  height: 45px;
+  left:450px ;
+  top: 250px;
   
-  
-  color: #FFFFFF;
-
 }
 
 
 .fav{
   position: absolute;
   top: 45px;
-  left: 1150px;
+  left: 1170px;
 }
 
 .fav1{
   width: 40px; ;
   height: 40px;
 }
+
+.fav3{
+  position: absolute;
+  top: 40px;
+  left: 1090px;
+  background-color: transparent !important;
+  border: 0px solid !important;
+}
+
 .p88{
   position: absolute;
   width: 45px;
@@ -906,7 +883,7 @@ color: #FFFFFF;
 position: absolute;
 width: 250px;
 height: 35px;
-left: 850px;
+left: 800px;
 top: 50px;
 background-color: transparent;
 border: 3px solid #394BF2;
@@ -922,9 +899,31 @@ color: white;
   position: absolute;
   width: 25px; ;
   height: 25px;
-  left: 780px;
+  left: 730px;
   top: 50px;
   color: white;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 25px;
+}
+
+.wallet{
+  position: absolute;
+  background-color: black;
+}
+.addauction3 {
+  background-color: transparent;
+  border: 2px solid transparent;
+  border-radius: 30px;
+  width: 60px;
+  height: 54px;
+  margin-top: 45px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: #ffffff;
+  font-size: 25px;
+}
+.balance{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 25px;
+  margin-bottom: 20px;
+  
 }

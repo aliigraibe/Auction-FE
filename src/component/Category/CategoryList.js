@@ -13,7 +13,7 @@ const CategoryList = ({ setSelect }) => {
   return (
     <div>
       <div>{categoryList}</div>
-      <div></div>
+     
     </div>
   );
 };

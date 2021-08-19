@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
+import pic9 from "../../images/pic9.png";
 import { addWallet } from "../../store/actions/WalletAction";
-import { FormCenter } from "../../styles";
+import { Center1 } from "../../styles";
 import Loading from "../Loading/Loading";
 
 const AddWallet = () => {
@@ -32,13 +32,13 @@ const AddWallet = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <Center1 className="wallet" onSubmit={handleSubmit}>
       <div class="form-group">
-        <label>Balance : {_wallet?.balance} $</label>
+        <label className="balance">Balance : {_wallet?.balance} $</label>
         <input
           type="number"
           class="form-control"
-          value={wallet.balance}
+          value={wallet.amount}
           onChange={(event) => {
             setWallet({
               ...wallet,
@@ -49,10 +49,10 @@ const AddWallet = () => {
         />
       </div>
 
-      <button type="submit" class="addauction2">
-        Add Balance
+      <button type="submit" class="addauction3">
+        <img class="fav1" src={pic9}/>
       </button>
-    </form>
+    </Center1>
   );
 };
 
