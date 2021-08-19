@@ -66,15 +66,11 @@ export const updateAuction = (auctionId, auction) => {
   };
 };
 
-export const addBid = (bid) => {
+export const addBid = (bid, socket) => {
   return async (dispatch) => {
     try {
       const res = await instance.post("/bid", bid);
-
-      dispatch({
-        type: actionTypes.BID,
-        payload: { bid: res.data },
-      });
+      socket.emit("newBid", res.data);
     } catch (error) {
       console.log(error);
     }
