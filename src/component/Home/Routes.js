@@ -1,7 +1,7 @@
 import { Switch, Route } from "react-router";
 import Home from "./Home";
 
-import SignupForm from "../Category/SignupForm";
+import Signup from "../Category/Signup";
 import Signin from "../Category/Signin";
 import CategoryList from "../Category/CategoryList";
 import AuctionList from "../Auction/AuctionList";
@@ -23,7 +23,7 @@ const Routes = () => {
   return (
     <Switch>
       <Route path={`/signup`}>
-        <SignupForm />
+        <Signup />
       </Route>
       <Route path={`/signin`}>
         <Signin />

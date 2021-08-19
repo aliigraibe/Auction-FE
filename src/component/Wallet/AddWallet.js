@@ -5,7 +5,7 @@ import { addWallet } from "../../store/actions/WalletAction";
 import { FormCenter } from "../../styles";
 import Loading from "../Loading/Loading";
 
-const AddAuction = () => {
+const AddWallet = () => {
   const dispatch = useDispatch();
   const { wallets, loading } = useSelector((state) => state.wallets);
   const user = useSelector((state) => state.user.user);
@@ -32,7 +32,7 @@ const AddAuction = () => {
   };
 
   return (
-    <FormCenter onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <div class="form-group">
         <label>Balance : {_wallet?.balance} $</label>
         <input
@@ -52,8 +52,8 @@ const AddAuction = () => {
       <button type="submit" class="addauction2">
         Add Balance
       </button>
-    </FormCenter>
+    </form>
   );
 };
 
-export default AddAuction;
+export default AddWallet;

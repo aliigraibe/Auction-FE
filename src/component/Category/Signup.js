@@ -4,7 +4,7 @@ import { useHistory } from "react-router";
 import { signup } from "../../store/actions/authActions";
 import pic4 from "../../images/pic4.png";
 
-const SignupForm = () => {
+const Signup = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const [user, setUser] = useState({
@@ -98,4 +98,4 @@ const SignupForm = () => {
   );
 };
 
-export default SignupForm;
+export default Signup;
