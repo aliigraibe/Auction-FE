@@ -11,11 +11,14 @@ import AddBid from "./AddBid";
 import { io } from "socket.io-client";
 
 import { useEffect, useState } from "react";
+import * as actionTypes from "../../store/actions/types";
+import Top3 from "./Top3";
+import ActiveUsers from "./ActiveUsers";
 
 const AuctionDetails = (props) => {
   const auctions = useSelector((state) => state.auctions.auctions);
   // const loading = useSelector((state) => state.auctions.loading);
-  const user = useSelector((state) => state.user.user);
+  const { user, users, loading } = useSelector((state) => state.user);
   const auctionSlug = useParams().auctionSlug;
   const dispatch = useDispatch();
   const [roomUsers, setRoomUsers] = useState([]);
@@ -27,14 +30,21 @@ const AuctionDetails = (props) => {
 
   useEffect(() => {
     if (socket) {
-      socket.emit("join", user);
+      socket.emit("join", { user, auctionSlug });
       socket.on("message", (message) => {
         setRoomUsers(message.map((u) => u.username));
+      });
+
+      socket.on("newBid", (bid) => {
+        dispatch({
+          type: actionTypes.BID,
+          payload: { bid },
+        });
       });
     }
   }, [socket]);
 
-  // if (loading) return <h3>Loading</h3>;
+  if (loading) return <h3>Loading</h3>;
   const auction = auctions.find((auction) => auction.slug === auctionSlug);
   const images = auction.image.map((img) => ({ url: img }));
 
@@ -47,11 +57,17 @@ const AuctionDetails = (props) => {
     if (bid.bid > highest.bid) highest = bid;
   });
 
-  console.log(auction);
+  const sort = auction.bidding.sort((b, a) =>
+    a.bid > b.bid ? 1 : b.bid > a.bid ? -1 : 0
+  );
+
+  console.log(sort);
+
+  const highestUser = users.find((user) => user._id === highest.userId);
 
   return (
     <div>
-      <p>{roomUsers}</p>
+      <p style={{ color: "white" }}>{roomUsers}</p>
       <div className="category2">
         <SimpleImageSlider
           width={600}
@@ -65,7 +81,9 @@ const AuctionDetails = (props) => {
         <p className="p1"> {auction.description}</p>
         <p className="p2">Quantity : {auction.quantity}</p>
         <p className="p3">Starting Price : {auction.startingPrice} JOD</p>
-        <p className="p4">highest bid : {highest.bid} JOD</p>
+        <p className="p4">
+          highest bid : {highest.bid} JOD by {highestUser?.username}
+        </p>
         {/* <p className="p4">{auction.startTime}</p> */}
         <p className="p5">{auction.endTime}</p>
         <Link className="p8" to="/combine">
@@ -86,7 +104,15 @@ const AuctionDetails = (props) => {
           </>
         )}
 
-        <AddBid highest={highest} user={user} auction={auction} />
+        <AddBid
+          highest={highest}
+          user={user}
+          auction={auction}
+          socket={socket}
+        />
+
+        <Top3 sort={sort} />
+        <ActiveUsers roomUsers={roomUsers} />
       </div>
     </div>
   );

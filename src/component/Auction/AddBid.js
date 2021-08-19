@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addBid } from "../../store/actions/AuctionAction";
 
-const AddBid = ({ highest, user, auction }) => {
+const AddBid = ({ highest, user, auction, socket }) => {
   const dispatch = useDispatch();
   const [placeBid, setPlaceBid] = useState({
     ...highest,
@@ -23,7 +23,7 @@ const AddBid = ({ highest, user, auction }) => {
     if (placeBid.bid <= highest.bid || placeBid.bid <= auction.startingPrice) {
       console.log("failed");
     } else {
-      dispatch(addBid(placeBid));
+      dispatch(addBid(placeBid, socket));
     }
   };
 
