@@ -46,17 +46,17 @@ const AuctionItem = ({ auction, props }) => {
         </button>
       )}
       {new Date(auction.endTime) <= new Date() ? (
-        <p className="time">Auction end</p>
+        <p className="time"> !! Auction ended !! </p>
       ) : (
         <>
           {new Date(auction.startTime) >= new Date() ? (
             <p className="time">
-              Auction start :
+              Auction start on :
               {timeAgo.format(new Date(auction.startTime) - 3 * 60 * 60 * 1000)}
             </p>
           ) : (
             <p className="time">
-              Auction end :
+              Auction end in :
               {timeAgo.format(new Date(auction.endTime) - 3 * 60 * 60 * 1000)}
             </p>
           )}

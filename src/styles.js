@@ -229,3 +229,25 @@ export const SearchBarStyled1 = styled.input`
   border-radius: 30px;
   right: 1px;
 `;
+
+export const Center1 = styled.form`
+position: absolute;
+  top:0px;
+  left:0px;
+  width: 500px;
+  border-radius: 0px;
+  border: 3px solid #394BF2;
+  height:250px ;
+  padding: 20px;
+  color: white;
+  text-align: center;
+  animation-name: example1;
+animation-duration: 1s;
+animation-iteration-count: infinite;
+animation-direction: alternate;
+}
+@keyframes example1 {
+  from {border: 2px solid green;;}
+  to {border: 2px solid black;;}
+}
+`

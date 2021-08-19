@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import pic1 from "../../images/pic1.png";
 import pic5 from "../../images/pic5.png";
-import pic7 from "../../images/pic7.png";
+import pic8 from "../../images/pic8.png";
 import { signout } from "../../store/actions/authActions";
 import { Modal, Button } from "react-bootstrap";
 import { useState } from "react";
@@ -44,8 +44,9 @@ const NavBar = (props) => {
             <Link className="fav" to="/fav">
               <img className="fav1" src={pic5} alt="fav" />
             </Link>
-            <Button variant="primary" onClick={handleShow}>
-              Wallet
+
+            <Button className="fav3"  onClick={handleShow}>
+            <img className="fav1" src={pic8} alt="fav" />
             </Button>
           </>
         ) : (
