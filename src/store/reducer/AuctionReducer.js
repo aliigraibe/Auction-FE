@@ -35,6 +35,17 @@ const reducer = (state = initialState, action) => {
         ),
       };
 
+    case actionType.BID:
+      const { bid } = action.payload;
+
+      return {
+        ...state,
+
+        auctions: state.auctions.map((auction) =>
+          auction._id === bid.auctionId ? bid : auction
+        ),
+      };
+
     default:
       return state;
   }
