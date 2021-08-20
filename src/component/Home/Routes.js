@@ -18,10 +18,13 @@ const Routes = () => {
   const loading = useSelector((state) => state.auctions.loading);
 
   const auctions = useSelector((state) => state.auctions.auctions);
+  // REVIEW: use your loading component here
   if (loading) return <p>loading...</p>;
 
   return (
     <Switch>
+      {/* REVIEW: In your paths, you don't have to put {} if it's just a string, 
+      put it inside "" only */}
       <Route path={`/signup`}>
         <Signup />
       </Route>

@@ -6,6 +6,7 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
+    // REVIEW: type should be FETCH_CATEGORIES not FETCH_CATEGORY
     case actionType.FETCH_CATEGORY:
       return {
         ...state,

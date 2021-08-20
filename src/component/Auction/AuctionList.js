@@ -9,13 +9,18 @@ const AuctionList = ({ _auction }) => {
   const [query, setQuery] = useState("");
 
   if (loading) return <p>loading...</p>;
+  // REVIEW: a? Seriously? Fix the variable name :))))
   const a = auctions.map((auction) => auction.categoryId._id);
+  // REVIEW: const not let
   let auctionList = auctions
+    // REVIEW: === not ==
     .filter((auction) => auction.categoryId._id == _auction)
     .filter((auction) => auction.name.includes(query.toLowerCase()))
     .map((auction) => <AuctionItem auction={auction} key={auction.id} />);
-  let auctionListO = auctions
 
+  // REVIEW: const not let
+  // REVIEW: bad variable name, fix it
+  let auctionListO = auctions
     .filter((auction) => auction.name.includes(query.toLowerCase()))
     .map((auction) => <AuctionItem auction={auction} key={auction.id} />);
 
@@ -23,10 +28,10 @@ const AuctionList = ({ _auction }) => {
     <>
       {" "}
       <SearchBar setQuery={setQuery} />
-
       <div className="a1">
-      {auctionList};
-      {a === "null" && { auctionListO }}
+        {/* null is not a string, it's a reserved word. 
+            You can simply say !a && auctionList0 */}
+        {auctionList};{a === "null" && { auctionListO }}
       </div>
     </>
   );

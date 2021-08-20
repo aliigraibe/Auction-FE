@@ -10,6 +10,8 @@ import Loading from "../Loading/Loading";
 TimeAgo.addLocale(en);
 const timeAgo = new TimeAgo("en-US");
 
+// REVIEW: Remove props if you're not using it.
+// Anyways props can't be inside the curly brackets
 const AuctionItem = ({ auction, props }) => {
   const { user, users, loading } = useSelector((state) => state.user);
   const dispatch = useDispatch();
@@ -18,6 +20,7 @@ const AuctionItem = ({ auction, props }) => {
 
   const wantedUser = users.find((_user) => _user._id === user.id);
 
+  // REVIEW: const not let
   let status = wantedUser.fav.includes(auction._id);
 
   return (
@@ -34,7 +37,7 @@ const AuctionItem = ({ auction, props }) => {
           class="p88"
           onClick={() => dispatch(addFouvarite(user.id, auction._id))}
         >
-          <img className="fav1" src={pic5}/>
+          <img className="fav1" src={pic5} />
         </button>
       ) : (
         <button
@@ -42,7 +45,7 @@ const AuctionItem = ({ auction, props }) => {
           class="p88"
           onClick={() => dispatch(deleteFavourite(user.id, auction._id))}
         >
-         <img className="fav1" src={pic6}/>
+          <img className="fav1" src={pic6} />
         </button>
       )}
       {new Date(auction.endTime) <= new Date() ? (

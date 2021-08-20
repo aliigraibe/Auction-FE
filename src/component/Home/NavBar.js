@@ -8,6 +8,7 @@ import { Modal, Button } from "react-bootstrap";
 import { useState } from "react";
 import AddWallet from "../Wallet/AddWallet";
 
+// REVIEW: Remove props if you're not using it
 const NavBar = (props) => {
   const user = useSelector((state) => state.user.user);
   const dispatch = useDispatch();
@@ -44,9 +45,8 @@ const NavBar = (props) => {
             <Link className="fav" to="/fav">
               <img className="fav1" src={pic5} alt="fav" />
             </Link>
-
-            <Button className="fav3"  onClick={handleShow}>
-            <img className="fav1" src={pic8} alt="fav" />
+            <Button className="fav3" onClick={handleShow}>
+              <img className="fav1" src={pic8} alt="fav" />
             </Button>
           </>
         ) : (

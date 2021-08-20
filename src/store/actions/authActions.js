@@ -5,6 +5,8 @@ import instance from "./instance";
 export const signup = (user, history) => {
   return async (dispatch) => {
     try {
+      // REVIEW: Why is the signup not signing in? Fix it
+      // REVIEW: Only use backticks `` if there is a variable inside the string
       const res = await instance.post(`/signup`, user);
       history.push("/");
     } catch (error) {
@@ -16,6 +18,7 @@ export const signup = (user, history) => {
 export const signin = (userData, history) => {
   return async (dispatch) => {
     try {
+      // REVIEW: Only use backticks `` if there is a variable inside the string
       const res = await instance.post(`/signin`, userData);
 
       dispatch(setUser(res.data.token));

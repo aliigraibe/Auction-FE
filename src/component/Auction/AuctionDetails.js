@@ -29,6 +29,7 @@ const AuctionDetails = (props) => {
     if (socket) {
       socket.emit("join", user);
       socket.on("message", (message) => {
+        // REVIEW: u???? Seriously?????? Change it
         setRoomUsers(message.map((u) => u.username));
       });
     }

@@ -24,6 +24,7 @@ const UpdateAuction = () => {
     minBiddingIncrement: "",
   });
 
+  // REVIEW: Use the loading component
   if (loading) return <p>loading...</p>;
 
   const foundCategories = categories.map((category) => (

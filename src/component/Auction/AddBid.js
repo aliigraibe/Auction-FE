@@ -11,6 +11,7 @@ const AddBid = ({ highest, user, auction }) => {
     auctionId: auction._id,
   });
 
+  // REVIEW: typo: handleIncrease
   const handelIncrease = (event) => {
     setPlaceBid({
       ...placeBid,
