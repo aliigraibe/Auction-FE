@@ -1,11 +1,11 @@
-import { FlexStyleVer } from "../../styles";
+import { FlexStyleVer1 } from "../../styles";
 
 const ActiveUsers = ({ roomUsers }) => {
   const list = roomUsers.map((user) => {
-    return <h3> {user}</h3>;
+    return <h3>{user} </h3>;
   });
 
-  return <FlexStyleVer style={{ color: "white" }}>{list}</FlexStyleVer>;
+  return <FlexStyleVer1 style={{ color: "white" }}>{list}</FlexStyleVer1>;
 };
 
 export default ActiveUsers;
