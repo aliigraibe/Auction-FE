@@ -12,16 +12,18 @@ const Top3 = ({ sort }) => {
   if (loading) return <Loading />;
 
   return (
-    <FlexStyleVer style={{ color: "white" }}>
-      <h3>
-        Top Bidder : {top1?.username} = {sort[0]?.bid}
+    <FlexStyleVer >
+      <div  className="top">
+      <h3 className="top1">
+        Top Bid  : {sort[0]?.bid}
       </h3>
-      <h3>
-        2nd Bidder : {top2?.username} = {sort[1]?.bid}{" "}
+      <h3 className="top2">
+        2nd Bid :  {sort[1]?.bid}{" "}
       </h3>
-      <h3>
-        3rd Bidder : {top3?.username} = {sort[2]?.bid}
+      <h3 className="top3">
+        3rd Bid :  {sort[2]?.bid}
       </h3>
+      </div>
     </FlexStyleVer>
   );
 };

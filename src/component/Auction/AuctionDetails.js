@@ -67,7 +67,7 @@ const AuctionDetails = (props) => {
 
   return (
     <div>
-      <p style={{ color: "white" }}>{roomUsers}</p>
+      <p style={{ color: "white" }}></p>
       <div className="category2">
         <SimpleImageSlider
           width={600}

@@ -643,8 +643,8 @@ color: white;
 position: absolute;
 width: 195px;
 height: 69px;
-left: 1450px;
-top: 100px;
+left: 250px;
+top: 720px;
 
 background: transparent;
 border: 1px solid #000000;
@@ -674,7 +674,7 @@ color: #FFFFFF;
  position: absolute;
 width: 591px;
 height: 397px;
-left:900px ;
+left:700px ;
 top: 200px;
 
 font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -692,7 +692,7 @@ color: #FFFFFF;
   position: absolute;
  width: 591px;
  height: 397px;
- left:900px ;
+ left:700px ;
  top: 250px;
  
  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -711,7 +711,7 @@ color: #FFFFFF;
   position: absolute;
  width: 591px;
  height: 397px;
- left:900px ;
+ left:700px ;
  top: 300px;
  
  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -731,7 +731,7 @@ color: #FFFFFF;
     position: absolute;
    width: 591px;
    height: 397px;
-   left:900px ;
+   left:700px ;
    top: 350px;
    
    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -751,7 +751,7 @@ color: #FFFFFF;
   position: absolute;
  width: 591px;
  height: 397px;
- left:900px ;
+ left:700px ;
  top: 400px;
  
  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -772,7 +772,7 @@ color: #FFFFFF;
   position: relative;
   width: 45px;
   height: 45px;
-  left:490px ;
+  left:390px ;
   top: 250px;
   background-color: transparent;
   border: 0px solid transparent;
@@ -785,7 +785,7 @@ color: #FFFFFF;
   position: relative;
   width: 45px;
   height: 45px;
-  left:440px ;
+  left:370px ;
   top: 250px;
   
 
@@ -796,7 +796,7 @@ color: #FFFFFF;
   position: relative;
   width: 45px;
   height: 45px;
-  left:450px ;
+  left:350px ;
   top: 250px;
   
 }
@@ -926,4 +926,153 @@ color: white;
   font-size: 25px;
   margin-bottom: 20px;
   
+}
+
+.top{
+  position:absolute;
+  border: 2px solid #394bf2;
+  left:1265px ;
+  width: 370px;
+  top: 200px;
+  padding: 50px;
+  border-radius: 30px;
+  height: 200px;
+  margin-top: 10px;
+}
+.top1{
+  color: #fff;
+  text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #0fa,
+    0 0 82px #0fa,
+    0 0 92px #0fa,
+    0 0 102px #0fa,
+    0 0 151px #0fa;
+
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 35px;
+  letter-spacing: 3px;
+ 
+}
+
+
+.top2{
+  position: absolute;
+  color: green;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 20px;
+  
+  top: 150px;
+  left: 10px;
+  padding-left: 20px;
+}
+.top3{
+  position: absolute;
+  color: green;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 35px;
+  right: 10px;
+  top: 150px;
+  font-size: 20px;
+  padding-right: 20px;
+}
+.bid{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 25px;
+  padding-bottom: 30px;
+}
+
+.b1{
+  position: absolute;
+  width: 60px;
+  left: 35px;
+  top: 150px;
+  border: 2px solid #394bf2;
+  border-radius: 10px;
+  color: white;
+  background-color: transparent !important;
+}
+.b2{
+  position: absolute;
+  width: 60px;
+  left: 115px;
+  top: 150px;
+  border: 2px solid #394bf2;
+  border-radius: 10px;
+  color: white;
+  background-color: transparent !important;
+}
+
+.b3{
+  position: absolute;
+  width: 60px;
+  left: 195px;
+  top: 150px;
+  border: 2px solid #394bf2;
+  border-radius: 10px;
+  color: white;
+  background-color: transparent !important;
+}
+.b4{
+  position: absolute;
+  width: 60px;
+  left: 275px;
+  top: 150px;
+  border: 2px solid #394bf2;
+  border-radius: 10px;
+  color: white;
+  background-color: transparent !important;
+ 
+  
+}
+
+.place{
+  position: absolute;
+  top: 240px;
+  left: 105px;
+  background-color: transparent;
+  border: 2px solid transparent;
+  width: 150px;
+  height: 50px;
+  padding:10px ;
+  border-radius: 15px;
+  color: white;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 20px;
+  padding:10px ;
+  animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px -10px #394bf2;
+  }
+  to {
+    box-shadow: 0 0 10px 10px #394bf2;
+  }
+}
+
+.user{
+  position: absolute;
+  
+  top: 120px;
+  left: 1270px;
+  width: 370px ;
+  height: 55px;
+  border: 2px solid #394bf2;
+  padding: 10px;
+  border-radius: 15px;
+  overflow-y: auto;
+  
+
+}
+.user1{
+  display:flex ;
+  flex-direction: row; 
+  flex-wrap: wrap;
+  
+  
+
 }

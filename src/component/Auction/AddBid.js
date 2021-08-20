@@ -1,4 +1,4 @@
-import { FormCenter } from "../../styles";
+import { Center2 } from "../../styles";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addBid } from "../../store/actions/AuctionAction";
@@ -29,9 +29,9 @@ const AddBid = ({ highest, user, auction, socket }) => {
 
   return (
     <>
-      <FormCenter onSubmit={handleSubmit}>
+      <Center2 onSubmit={handleSubmit}>
         <div class="form-group">
-          <label>Bid Ammount </label>
+          <label className="bid">Bid Ammount </label>
           <input
             type="number"
             class="form-control"
@@ -44,24 +44,24 @@ const AddBid = ({ highest, user, auction, socket }) => {
         </div>
 
         <div>
-          <button type="button" name="1" onClick={handelIncrease}>
+          <button type="button" className="b1" name="1" onClick={handelIncrease}>
             +1
           </button>
-          <button type="button" name="10" onClick={handelIncrease}>
+          <button type="button" className="b2" name="10" onClick={handelIncrease}>
             +10
           </button>
-          <button type="button" name="100" onClick={handelIncrease}>
+          <button type="button" className="b3" name="100" onClick={handelIncrease}>
             +100
           </button>
-          <button type="button" name="500" onClick={handelIncrease}>
+          <button type="button" className="b4" name="500" onClick={handelIncrease}>
             +500
           </button>
         </div>
 
-        <button type="submit" class="addauction2">
-          Place A Bid
+        <button className="place" type="submit" >
+          Place a Bid
         </button>
-      </FormCenter>
+      </Center2>
     </>
   );
 };

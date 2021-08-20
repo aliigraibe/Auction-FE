@@ -143,6 +143,23 @@ export const FlexStyleVer = styled.div`
   flex-direction: column;
   justify-content: space-between;
 `;
+export const FlexStyleVer1 = styled.div`
+  /* margin-top: 20px; */
+  position: absolute;
+  
+  top: 120px;
+  left: 1265px;
+  width: 370px ;
+  height: 55px;
+  border: 2px solid #394bf2;
+  padding: 10px;
+  border-radius: 15px;
+  overflow-x: auto;
+  display: flex;
+justify-content: space-between ;
+  flex-direction:row;
+  
+`;
 
 export const FormCenter = styled.form`
 position: absolute;
@@ -249,5 +266,21 @@ animation-direction: alternate;
 @keyframes example1 {
   from {border: 2px solid green;;}
   to {border: 2px solid black;;}
+}
+`
+
+export const Center2 = styled.form`
+position: absolute;
+  top:450px;
+  left:1270px;
+  width: 370px;
+  border-radius: 50px;
+  border: 3px solid #394BF2;
+  height:350px ;
+  padding: 20px;
+  color: white;
+  text-align: center;
+ 
+
 }
 `
