@@ -4,6 +4,7 @@ import { useParams } from "react-router";
 //
 import { updateAuction } from "../../store/actions/AuctionAction";
 import { FormCenter } from "../../styles";
+import Loading from "../Loading/Loading";
 
 const UpdateAuction = () => {
   const dispatch = useDispatch();
@@ -24,7 +25,7 @@ const UpdateAuction = () => {
     minBiddingIncrement: "",
   });
 
-  if (loading) return <p>loading...</p>;
+  if (loading) return <Loading />;
 
   const foundCategories = categories.map((category) => (
     <option key={category.name} value={category._id}>

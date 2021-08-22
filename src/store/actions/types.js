@@ -4,7 +4,7 @@ export const SET_USER = "SET_USER";
 export const FETCH_USERS = "FETCH_USERS";
 
 // Category Actions
-export const FETCH_CATEGORY = "FETCH_CATEGORY";
+export const FETCH_CATEGORIES = "FETCH_CATEGORIES ";
 
 // Auction Actions
 export const FETCH_AUCTION = "FETCH_AUCTION";

@@ -8,7 +8,7 @@ import { Modal, Button } from "react-bootstrap";
 import { useState } from "react";
 import AddWallet from "../Wallet/AddWallet";
 
-const NavBar = (props) => {
+const NavBar = () => {
   const user = useSelector((state) => state.user.user);
   const dispatch = useDispatch();
   const history = useHistory();
@@ -34,7 +34,7 @@ const NavBar = (props) => {
             <Link className="category" to="/combine">
               Category
             </Link>
-            
+
             <Link className="addauction" to="/addauction">
               Add auctions
             </Link>
@@ -45,8 +45,8 @@ const NavBar = (props) => {
               <img className="fav1" src={pic5} alt="fav" />
             </Link>
 
-            <Button className="fav3"  onClick={handleShow}>
-            <img className="fav1" src={pic8} alt="fav" />
+            <Button className="fav3" onClick={handleShow}>
+              <img className="fav1" src={pic8} alt="fav" />
             </Button>
           </>
         ) : (

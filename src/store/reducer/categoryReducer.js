@@ -6,7 +6,7 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case actionType.FETCH_CATEGORY:
+    case actionType.FETCH_CATEGORIES:
       return {
         ...state,
         categories: action.payload,

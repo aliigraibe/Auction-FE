@@ -4,7 +4,7 @@ import instance from "./instance";
 export const addFouvarite = (userId, auctionId) => {
   return async (dispatch) => {
     try {
-      const res = await instance.post("addFav", {
+      const res = await instance.post("/addFav", {
         userId: userId,
         auctionId: auctionId,
       });
@@ -21,7 +21,7 @@ export const addFouvarite = (userId, auctionId) => {
 export const deleteFavourite = (userId, auctionId) => {
   return async (dispatch) => {
     try {
-      const res = await instance.post("removeFav", {
+      const res = await instance.post("/removeFav", {
         userId: userId,
         auctionId: auctionId,
       });

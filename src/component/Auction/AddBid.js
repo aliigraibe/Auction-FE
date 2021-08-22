@@ -11,7 +11,7 @@ const AddBid = ({ highest, user, auction, socket }) => {
     auctionId: auction._id,
   });
 
-  const handelIncrease = (event) => {
+  const handleIncrease = (event) => {
     setPlaceBid({
       ...placeBid,
       bid: parseInt(placeBid.bid) + parseInt(event.target.name),
@@ -44,21 +44,41 @@ const AddBid = ({ highest, user, auction, socket }) => {
         </div>
 
         <div>
-          <button type="button" className="b1" name="1" onClick={handelIncrease}>
+          <button
+            type="button"
+            className="b1"
+            name="1"
+            onClick={handleIncrease}
+          >
             +1
           </button>
-          <button type="button" className="b2" name="10" onClick={handelIncrease}>
+          <button
+            type="button"
+            className="b2"
+            name="10"
+            onClick={handleIncrease}
+          >
             +10
           </button>
-          <button type="button" className="b3" name="100" onClick={handelIncrease}>
+          <button
+            type="button"
+            className="b3"
+            name="100"
+            onClick={handleIncrease}
+          >
             +100
           </button>
-          <button type="button" className="b4" name="500" onClick={handelIncrease}>
+          <button
+            type="button"
+            className="b4"
+            name="500"
+            onClick={handleIncrease}
+          >
             +500
           </button>
         </div>
 
-        <button className="place" type="submit" >
+        <button className="place" type="submit">
           Place a Bid
         </button>
       </Center2>

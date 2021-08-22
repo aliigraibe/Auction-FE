@@ -24,7 +24,7 @@ export const addAuction = (newAuction, history) => {
       Array.from(newAuction.image).forEach((image) => {
         formData.append("image", image);
       });
-      const res = await instance.post("createAuction", formData);
+      const res = await instance.post("auctions", formData);
       dispatch({
         type: actionTypes.ADD_AUCTION,
         payload: { newAuction: res.data },
@@ -39,7 +39,7 @@ export const addAuction = (newAuction, history) => {
 export const deleteAuction = (auctionId) => {
   return async (dispatch) => {
     try {
-      await instance.post(`/deleteAuction`, { _id: auctionId });
+      await instance.post(`/auction`, { _id: auctionId });
       dispatch({
         type: actionTypes.DELETE_AUCTION,
         payload: { auctionId: auctionId },
@@ -55,7 +55,7 @@ export const updateAuction = (auctionId, auction) => {
     try {
       const formData = new FormData();
       for (const key in auction) formData.append(key, auction[key]);
-      const res = await instance.put(`/updateAuction/${auctionId}`, formData);
+      const res = await instance.put(`/auctions/${auctionId}`, formData);
       dispatch({
         type: actionTypes.UPDATE_AUCTION,
         payload: { auctionId: auctionId },
