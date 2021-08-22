@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { useHistory } from "react-router";
 import { signin } from "../../store/actions/authActions";
 import pic3 from "../../images/pic3.png";
-const Signin = () => {  
+const Signin = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   const [user, setUser] = useState({
@@ -12,17 +12,16 @@ const Signin = () => {
   });
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(signin(user,history));
+    dispatch(signin(user, history));
   };
   const handleChange = (event) => {
     setUser({ ...user, [event.target.name]: event.target.value });
   };
   return (
-   
     <form onSubmit={handleSubmit}>
-      <div >
-      <img className="pic2" src={pic3} alt={"pic3"} />
-        <div >
+      <div>
+        <img className="pic2" src={pic3} alt={"pic3"} />
+        <div>
           <label></label>
           <input
             type="text"
@@ -32,7 +31,7 @@ const Signin = () => {
             onChange={handleChange}
           />
         </div>
-        <div >
+        <div>
           <label></label>
           <input
             type="password"
@@ -43,11 +42,10 @@ const Signin = () => {
           />
         </div>
 
-      <button type="submit" class="login">
-        Sign in
-      </button>     
-       </div>
-
+        <button type="submit" class="login">
+          Sign in
+        </button>
+      </div>
     </form>
   );
 };

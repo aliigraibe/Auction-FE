@@ -1,8 +1,8 @@
 import { Switch, Route } from "react-router";
 import Home from "./Home";
 
-import Signup from "../Category/Signup";
-import Signin from "../Category/Signin";
+import Signup from "../Auth/Signup";
+import Signin from "../Auth/Signin";
 import CategoryList from "../Category/CategoryList";
 import AuctionList from "../Auction/AuctionList";
 import AddAuction from "../Auction/AddAuction";
@@ -13,12 +13,13 @@ import UpdateAuction from "../Auction/UpdateAuction";
 import Combine from "../Auction/combine";
 import AddWallet from "../Wallet/AddWallet";
 import FavList from "../Fav/FavList";
+import Loading from "../Loading/Loading";
 
 const Routes = () => {
   const loading = useSelector((state) => state.auctions.loading);
 
   const auctions = useSelector((state) => state.auctions.auctions);
-  if (loading) return <p>loading...</p>;
+  if (loading) return <Loading />;
 
   return (
     <Switch>

@@ -3,7 +3,7 @@ import pic5 from "../../images/pic5.png";
 import pic6 from "../../images/pic6.png";
 import TimeAgo from "javascript-time-ago";
 import en from "javascript-time-ago/locale/en";
-import { addFouvarite, deleteFavourite } from "../../store/actions/FavActions";
+import { addFouvarite, deleteFavourite } from "../../store/actions/favActions";
 import { useDispatch, useSelector } from "react-redux";
 import Loading from "../Loading/Loading";
 //

@@ -93,7 +93,7 @@ const AuctionDetails = (props) => {
           <>
             <button
               type="button"
-              class="p6"
+              class="p9"
               onClick={() => dispatch(deleteAuction(auction._id))}
             >
               <img className="p6" src={pic12} alt="go back" />
