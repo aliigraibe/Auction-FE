@@ -12,6 +12,7 @@ export const ADD_AUCTION = "ADD_AUCTION";
 export const DELETE_AUCTION = "DELETE_AUCTION";
 export const UPDATE_AUCTION = "UPDATE_AUCTION";
 export const BID = "BID";
+export const WINNER = "WINNER";
 
 // Wallet Actions
 export const FETCH_WALLET = "FETCH_WALLET";
@@ -21,3 +22,6 @@ export const ADD_WALLET = "ADD_WALLET";
 export const FETCH_FAVS = "FETCH_FAVS";
 export const ADD_FAVOURITE = "ADD_FAVOURITE";
 export const DELETE_FAVOURITE = "DELETE_FAVOURITE";
+
+// Payment
+export const PAYMENT_INTENT = "PAYMENT_INTENT";

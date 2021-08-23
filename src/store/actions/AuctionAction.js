@@ -80,3 +80,17 @@ export const addBid = (bid, socket) => {
     }
   };
 };
+export const winner = (newWinner) => {
+  return async (dispatch) => {
+    try {
+      const res = await instance.post("/winner", newWinner);
+      dispatch({
+        type: actionTypes.WINNER,
+        payload:  newWinner 
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
