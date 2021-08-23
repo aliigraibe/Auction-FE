@@ -6,36 +6,18 @@ import { paymentIntent } from "../../store/actions/paymentAction";
 const CheckoutForm = ({ auction }) => {
   const dispatch = useDispatch();
   const [succeeded, setSucceeded] = useState(false);
-  const [clientSecret, setClientSecret] = useState('');
   const [error, setError] = useState(null);
   const [processing, setProcessing] = useState("");
   const [disabled, setDisabled] = useState(true);
   const stripe = useStripe();
   const elements = useElements();
 
-  // useEffect(() => {
-  //   dispatch(paymentIntent(auction._id));
-  // }, []);
-
   useEffect(() => {
-    // Create PaymentIntent as soon as the page loads
-    fetch("http://localhost:5000/create-payment-intent", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({items: [{ id:auction._id }]})
-      })
-      .then(res => {
-        return res.json();
-      })
-      .then(data => {
-        setClientSecret(data.clientSecret);
-      });
+    dispatch(paymentIntent(auction._id));
   }, []);
 
-console.log(clientSecret);
-  // const clientSecret = useSelector((state) => state.clientSecret.clientSecret);
+  const { clientSecret } = useSelector((state) => state.clientSecret);
+
   const cardStyle = {
     style: {
       base: {
@@ -66,7 +48,6 @@ console.log(clientSecret);
     setProcessing(true);
     const payload = await stripe.confirmCardPayment(clientSecret, {
       payment_method: {
-        type:"card",
         card: elements.getElement(CardElement),
       },
     });
