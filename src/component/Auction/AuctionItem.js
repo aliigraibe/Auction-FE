@@ -6,6 +6,7 @@ import en from "javascript-time-ago/locale/en";
 import { addFouvarite, deleteFavourite } from "../../store/actions/favActions";
 import { useDispatch, useSelector } from "react-redux";
 import Loading from "../Loading/Loading";
+import { winner } from "../../store/actions/AuctionAction";
 //
 TimeAgo.addLocale(en);
 const timeAgo = new TimeAgo("en-US");
@@ -20,6 +21,19 @@ const AuctionItem = ({ auction, props }) => {
 
   let status = wantedUser.fav.includes(auction._id);
 
+  const sort = auction.bidding.sort((b, a) =>
+    a.bid > b.bid ? 1 : b.bid > a.bid ? -1 : 0
+  );
+
+  const handleWinner = () => {
+    if (auction.bidding.length !== 0) {
+      const newWinner = {
+        auctionId: auction._id,
+        userId: sort[0].userId,
+      };
+      dispatch(winner(newWinner));
+    }
+  };
   return (
     <div className="box">
       <Link to={`/auctions/${auction.slug}`}>
@@ -46,25 +60,25 @@ const AuctionItem = ({ auction, props }) => {
         </button>
       )}
       {new Date(auction.endTime) <= new Date() ? (
-        <p className="time"> !! Auction ended !! </p>
+        <>
+          {!auction.winner && handleWinner()}
+          <p className="time"> !! Auction ended !! </p>
+        </>
       ) : (
         <>
           {new Date(auction.startTime) >= new Date() ? (
             <p className="time">
-              Auction start on :
-              {timeAgo.format(new Date(auction.startTime) - 3 * 60 * 60 * 1000)}
+              Auction start on :{timeAgo.format(new Date(auction.startTime))}
             </p>
           ) : (
             <p className="time">
-              Auction end in :
-              {timeAgo.format(new Date(auction.endTime) - 3 * 60 * 60 * 1000)}
+              Auction end in :{timeAgo.format(new Date(auction.endTime))}
             </p>
           )}
         </>
       )}
-         </div>
- )
- 
+    </div>
+  );
 };
 
 export default AuctionItem;

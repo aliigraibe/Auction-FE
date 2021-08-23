@@ -14,7 +14,10 @@ const FavList = () => {
     .filter((auction) => wantedUser.fav.includes(auction._id))
     .map((auction) => <AuctionItem auction={auction} key={auction._id} />);
 
-  return <><div className="a1">
-    {list}</div></>;
+  return (
+    <>
+      <div className="a1">{list}</div>
+    </>
+  );
 };
 export default FavList;

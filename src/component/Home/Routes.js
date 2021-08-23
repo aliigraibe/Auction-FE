@@ -14,6 +14,8 @@ import Combine from "../Auction/combine";
 import AddWallet from "../Wallet/AddWallet";
 import FavList from "../Fav/FavList";
 import Loading from "../Loading/Loading";
+import Cart from "../Cart/Cart";
+import Checkout from "../Payment/Checkout";
 
 const Routes = () => {
   const loading = useSelector((state) => state.auctions.loading);
@@ -29,9 +31,6 @@ const Routes = () => {
       <Route path={`/signin`}>
         <Signin />
       </Route>
-
-
-
       <Route path="/categories/:categorySlug">
         <CategoryDetails />
       </Route>
@@ -52,6 +51,12 @@ const Routes = () => {
       </Route>
       <Route path="/auctions">
         <AuctionList auctions={auctions} />
+      </Route>{" "}
+      <Route path="/cart">
+        <Cart auctions={auctions} />
+      </Route>{" "}
+      <Route path="/checkout">
+        <Checkout />
       </Route>
       <Route path="/addwallet">
         <AddWallet />

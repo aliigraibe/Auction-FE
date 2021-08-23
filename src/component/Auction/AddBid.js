@@ -28,61 +28,71 @@ const AddBid = ({ highest, user, auction, socket }) => {
   };
 
   return (
-    <>
-      <Center2 onSubmit={handleSubmit}>
-        <div class="form-group">
-          <label className="bid">Bid Ammount </label>
-          <input
-            type="number"
-            class="form-control"
-            name="Ammount"
-            value={placeBid.bid}
-            onChange={(event) =>
-              setPlaceBid({ ...placeBid, bid: event.target.value })
-            }
-          />
-        </div>
+    <Center2 onSubmit={handleSubmit}>
+      {new Date(auction.endTime) <= new Date() ? (
+        <p>auction ended</p>
+      ) : (
+        <>
+          {new Date(auction.startTime) >= new Date() ? (
+            <p>auction start after</p>
+          ) : (
+            <>
+              <div class="form-group">
+                <label className="bid">Bid Ammount </label>
+                <input
+                  type="number"
+                  class="form-control"
+                  name="Ammount"
+                  value={placeBid.bid}
+                  onChange={(event) =>
+                    setPlaceBid({ ...placeBid, bid: event.target.value })
+                  }
+                />
+              </div>
 
-        <div>
-          <button
-            type="button"
-            className="b1"
-            name="1"
-            onClick={handleIncrease}
-          >
-            +1
-          </button>
-          <button
-            type="button"
-            className="b2"
-            name="10"
-            onClick={handleIncrease}
-          >
-            +10
-          </button>
-          <button
-            type="button"
-            className="b3"
-            name="100"
-            onClick={handleIncrease}
-          >
-            +100
-          </button>
-          <button
-            type="button"
-            className="b4"
-            name="500"
-            onClick={handleIncrease}
-          >
-            +500
-          </button>
-        </div>
+              <div>
+                <button
+                  type="button"
+                  className="b1"
+                  name="1"
+                  onClick={handleIncrease}
+                >
+                  +1
+                </button>
+                <button
+                  type="button"
+                  className="b2"
+                  name="10"
+                  onClick={handleIncrease}
+                >
+                  +10
+                </button>
+                <button
+                  type="button"
+                  className="b3"
+                  name="100"
+                  onClick={handleIncrease}
+                >
+                  +100
+                </button>
+                <button
+                  type="button"
+                  className="b4"
+                  name="500"
+                  onClick={handleIncrease}
+                >
+                  +500
+                </button>
+              </div>
 
-        <button className="place" type="submit">
-          Place a Bid
-        </button>
-      </Center2>
-    </>
+              <button className="place" type="submit">
+                Place a Bid
+              </button>
+            </>
+          )}{" "}
+        </>
+      )}{" "}
+    </Center2>
   );
 };
 

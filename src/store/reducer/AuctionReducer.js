@@ -46,6 +46,17 @@ const reducer = (state = initialState, action) => {
         ),
       };
 
+      case actionType.WINNER:
+        const newWinner  = action.payload;
+  
+        return {
+          ...state,
+  
+          auctions: state.auctions.map((auction) =>
+          auction._id === newWinner._id ? newWinner : auction
+          ),
+        };
+
     default:
       return state;
   }

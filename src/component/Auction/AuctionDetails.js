@@ -9,12 +9,15 @@ import pic12 from "../../images/pic12.png";
 import AddBid from "./AddBid";
 
 import { io } from "socket.io-client";
-
+import TimeAgo from "javascript-time-ago";
+import en from "javascript-time-ago/locale/en";
 import { useEffect, useState } from "react";
 import * as actionTypes from "../../store/actions/types";
 import Top3 from "./Top3";
 import ActiveUsers from "./ActiveUsers";
-
+import Loading from "../Loading/Loading";
+TimeAgo.addLocale(en);
+const timeAgo = new TimeAgo("en-US");
 const AuctionDetails = (props) => {
   const auctions = useSelector((state) => state.auctions.auctions);
   // const loading = useSelector((state) => state.auctions.loading);
@@ -46,7 +49,7 @@ const AuctionDetails = (props) => {
     }
   }, [socket]);
 
-  if (loading) return <h3>Loading</h3>;
+  if (loading) return <Loading />;
   const auction = auctions.find((auction) => auction.slug === auctionSlug);
   const images = auction.image.map((img) => ({ url: img }));
 
@@ -81,13 +84,26 @@ const AuctionDetails = (props) => {
       <div>
         <p className="name1">{auction.name}</p>
         <p className="p1"> {auction.description}</p>
-        <p className="p2">Quantity : {auction.quantity}</p>
-        <p className="p3">Starting Price : {auction.startingPrice} JOD</p>
-        <p className="p4">
+        {/* <p className="p2">Quantity : {auction.quantity}</p> */}
+        <p className="p2">Starting Price : {auction.startingPrice} JOD</p>
+        <p className="p3">
           highest bid : {highest.bid} JOD by {highestUser?.username}
         </p>
-        {/* <p className="p4">{auction.startTime}</p> */}
-        <p className="p5">{auction.endTime}</p>
+        {new Date(auction.endTime) <= new Date() ? (
+          <p className="p4"> !! Auction ended !! </p>
+        ) : (
+          <>
+            {new Date(auction.startTime) >= new Date() ? (
+              <p className="p4">
+                Auction start on :{timeAgo.format(new Date(auction.startTime))}
+              </p>
+            ) : (
+              <p className="p4">
+                Auction end in :{timeAgo.format(new Date(auction.endTime))}
+              </p>
+            )}
+          </>
+        )}
         <Link className="p8" to="/combine">
           <img className="p8" src={pic10} alt="go back" />
         </Link>
@@ -96,8 +112,11 @@ const AuctionDetails = (props) => {
             <button
               type="button"
               class="p9"
-              onClick={() => dispatch(deleteAuction(auction._id),history.replace("/categories"))
-                
+              onClick={() =>
+                dispatch(
+                  deleteAuction(auction._id),
+                  history.replace("/categories")
+                )
               }
             >
               <img className="p6" src={pic12} alt="go back" />

@@ -14,7 +14,6 @@ const reducer = (state = initialState, action) => {
       };
     case actionType.ADD_WALLET:
       const { newWallet } = action.payload;
-      console.log(newWallet);
       return {
         ...state,
         wallets: state.wallets.map((wallet) =>

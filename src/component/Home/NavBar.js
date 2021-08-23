@@ -31,8 +31,11 @@ const NavBar = () => {
         </Link>
         {user ? (
           <>
-            <Link className="category" to="/categories" >
+            <Link className="category" to="/categories">
               Category
+            </Link>{" "}
+            <Link className="" to="/cart">
+              cart
             </Link>
             <Link className="addauction" to="/addauction">
               Add auctions
@@ -43,7 +46,6 @@ const NavBar = () => {
             <Link className="fav" to="/fav">
               <img className="fav1" src={pic5} alt="fav" />
             </Link>
-
             <Button className="fav3" onClick={handleShow}>
               <img className="fav1" src={pic8} alt="fav" />
             </Button>

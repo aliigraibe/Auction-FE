@@ -12,6 +12,7 @@ const AuctionList = ({ _auction }) => {
   if (loading) return <Loading />;
   const wantedAuction = auctions.map((auction) => auction.categoryId._id);
   const auctionList = auctions
+    // .filter((auction) => new Date(auction.endTime) >= new Date())
     .filter((auction) => auction.categoryId._id === _auction)
     .filter((auction) =>
       auction.name.toLowerCase().includes(query.toLowerCase())
