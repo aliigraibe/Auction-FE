@@ -3,16 +3,17 @@ import { useSelector } from "react-redux";
 
 //components
 import AuctionList from "../Auction/AuctionList";
+import Loading from "../Loading/Loading";
 
-const CategoryDetails = (props) => {
+const CategoryDetails = () => {
   const auctions = useSelector((state) => state.auctions.auctions);
   const loading = useSelector((state) => state.auctions.loading);
   const categorySlug = useParams().categorySlug;
 
-  if (loading) return <p>loading...</p>;
+  if (loading) return <Loading/>
 
   const auctionList = auctions.filter(
-    (auction) => auction.categoryId.name == categorySlug
+    (auction) => auction.categoryId.name === categorySlug
   );
 console.log(categorySlug);
   return (

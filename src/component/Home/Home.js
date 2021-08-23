@@ -8,6 +8,6 @@ const Home = () => {
         You’ve just found the easiest online auction platform to use
       </p>
     </div>
-  );
-};
-export default Home;
+  )
+}
+export default Home

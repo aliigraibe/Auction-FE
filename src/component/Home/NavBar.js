@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useHistory, useParams } from "react-router-dom";
 import pic1 from "../../images/pic1.png";
 import pic5 from "../../images/pic5.png";
 import pic8 from "../../images/pic8.png";
@@ -31,10 +31,9 @@ const NavBar = () => {
         </Link>
         {user ? (
           <>
-            <Link className="category" to="/combine">
+            <Link className="category" to="/categories" >
               Category
             </Link>
-
             <Link className="addauction" to="/addauction">
               Add auctions
             </Link>

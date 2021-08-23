@@ -1,14 +1,17 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router";
 //
 import { addAuction } from "../../store/actions/AuctionAction";
 import { FormCenter } from "../../styles";
+import Loading from "../Loading/Loading";
 
 const AddAuction = () => {
   const dispatch = useDispatch();
   const categories = useSelector((state) => state.categories.categories);
   const loading = useSelector((state) => state.categories.loading);
   const user = useSelector((state) => state.user.user);
+  const history = useHistory();
 
   const [auction, setAuction] = useState({
     name: "",
@@ -23,7 +26,7 @@ const AddAuction = () => {
     minBiddingIncrement: "",
   });
 
-  if (loading) return <p>loading...</p>;
+  if (loading) return <Loading/>
 
   const foundCategories = categories.map((category) => (
     <option key={category.name} value={category._id}>
@@ -40,7 +43,7 @@ const AddAuction = () => {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(addAuction(auction));
+    dispatch(addAuction(auction,history));
   };
 
   return (

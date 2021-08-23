@@ -29,7 +29,7 @@ export const addAuction = (newAuction, history) => {
         type: actionTypes.ADD_AUCTION,
         payload: { newAuction: res.data },
       });
-      history.push("/combine");
+      history.push("/categories");
     } catch (error) {
       console.log(error);
     }
@@ -55,6 +55,10 @@ export const updateAuction = (auctionId, auction) => {
     try {
       const formData = new FormData();
       for (const key in auction) formData.append(key, auction[key]);
+
+      Array.from(auction.image).forEach((image) => {
+        formData.append("image", image);
+      });
       const res = await instance.put(`/auctions/${auctionId}`, formData);
       dispatch({
         type: actionTypes.UPDATE_AUCTION,

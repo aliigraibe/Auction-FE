@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import Loading from "../Loading/Loading";
 import AuctionItem from "./AuctionItem";
 import SearchBar from "./SearchBar";
 
@@ -8,24 +9,19 @@ const AuctionList = ({ _auction }) => {
   const auctions = useSelector((state) => state.auctions.auctions);
   const [query, setQuery] = useState("");
 
-  if (loading) return <p>loading...</p>;
+  if (loading) return <Loading />;
   const wantedAuction = auctions.map((auction) => auction.categoryId._id);
   const auctionList = auctions
     .filter((auction) => auction.categoryId._id === _auction)
-    .filter((auction) => auction.name.toLowerCase().includes(query.toLowerCase()))
+    .filter((auction) =>
+      auction.name.toLowerCase().includes(query.toLowerCase())
+    )
     .map((auction) => <AuctionItem auction={auction} key={auction.id} />);
-  // let auctionListO = auctions
-
-  //   .filter((auction) => auction.name.includes(query.toLowerCase()))
-  //   .map((auction) => <AuctionItem auction={auction} key={auction.id} />);
 
   return (
     <>
-      {" "}
       <SearchBar setQuery={setQuery} />
-      <div className="a1">
-        {auctionList};
-      </div>
+      <div className="a1">{auctionList};</div>
     </>
   );
 };

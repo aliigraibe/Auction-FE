@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router";
+import { useHistory, useParams } from "react-router";
 //
 import { updateAuction } from "../../store/actions/AuctionAction";
 import { FormCenter } from "../../styles";
@@ -12,6 +12,7 @@ const UpdateAuction = () => {
   const categories = useSelector((state) => state.categories.categories);
   const loading = useSelector((state) => state.categories.loading);
   const user = useSelector((state) => state.user.user);
+  const history = useHistory();
 
   const [auction, setAuction] = useState({
     name: "",
@@ -44,7 +45,7 @@ const UpdateAuction = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     setAuction({ ...auction, userId: user.id });
-    dispatch(updateAuction(auctionId, auction));
+    dispatch(updateAuction(auctionId, auction), history.push("/categories"));
   };
 
   return (

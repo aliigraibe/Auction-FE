@@ -62,9 +62,9 @@ const AuctionItem = ({ auction, props }) => {
           )}
         </>
       )}
-      )
-    </div>
-  );
+         </div>
+ )
+ 
 };
 
 export default AuctionItem;

@@ -5,10 +5,10 @@ import { useState } from "react";
 import { Redirect } from "react-router";
 
 const Combine = () => {
-  const [select, setSelect] = useState();
-  const user = useSelector((state) => state.user.user);
+  const [select, setSelect] = useState()
+  const user = useSelector((state) => state.user.user)
 
-  if (!user) return <Redirect to="/" />;
+  if (!user) return <Redirect to="/" />
 
   return (
     <>
@@ -16,7 +16,7 @@ const Combine = () => {
 
       <AuctionList _auction={select} />
     </>
-  );
-};
+  )
+}
 
-export default Combine;
+export default Combine

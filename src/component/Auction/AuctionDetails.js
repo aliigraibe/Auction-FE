@@ -1,4 +1,4 @@
-import { useParams } from "react-router";
+import { useHistory, useParams } from "react-router";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import SimpleImageSlider from "react-simple-image-slider";
@@ -21,6 +21,8 @@ const AuctionDetails = (props) => {
   const { user, users, loading } = useSelector((state) => state.user);
   const auctionSlug = useParams().auctionSlug;
   const dispatch = useDispatch();
+  const history = useHistory();
+
   const [roomUsers, setRoomUsers] = useState([]);
   const [socket, setSocket] = useState();
 
@@ -94,7 +96,9 @@ const AuctionDetails = (props) => {
             <button
               type="button"
               class="p9"
-              onClick={() => dispatch(deleteAuction(auction._id))}
+              onClick={() => dispatch(deleteAuction(auction._id),history.replace("/categories"))
+                
+              }
             >
               <img className="p6" src={pic12} alt="go back" />
             </button>

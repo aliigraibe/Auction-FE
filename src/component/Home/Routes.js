@@ -29,31 +29,34 @@ const Routes = () => {
       <Route path={`/signin`}>
         <Signin />
       </Route>
+
+
+
       <Route path="/categories/:categorySlug">
         <CategoryDetails />
       </Route>
-      <Route path={`/categories`}>
+      {/* <Route path={`/categories`}>
         <CategoryList />
-      </Route>
-      <Route path="/combine">
+      </Route> */}
+      <Route path="/categories">
         <Combine />
-      </Route>{" "}
+      </Route>
       <Route exact path="/auctions/:auctionSlug">
         <AuctionDetails />
       </Route>
-      <Route path={`/addauction`}>
+      <Route path="/addauction">
         <AddAuction />
-      </Route>{" "}
-      <Route path={`/updateauction/:auctionId`}>
+      </Route>
+      <Route path="/updateauction/:auctionId">
         <UpdateAuction />
       </Route>
-      <Route path={`/auctions`}>
+      <Route path="/auctions">
         <AuctionList auctions={auctions} />
-      </Route>{" "}
-      <Route path={`/addwallet`}>
-        <AddWallet />{" "}
-      </Route>{" "}
-      <Route path={`/fav`}>
+      </Route>
+      <Route path="/addwallet">
+        <AddWallet />
+      </Route>
+      <Route path="/fav">
         <FavList />
       </Route>
       <Route exact path="/">
