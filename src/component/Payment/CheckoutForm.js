@@ -3,6 +3,7 @@ import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import "./Checkout.css";
 import { useDispatch, useSelector } from "react-redux";
 import { paymentIntent } from "../../store/actions/paymentAction";
+
 const CheckoutForm = ({ auction }) => {
   const dispatch = useDispatch();
   const [succeeded, setSucceeded] = useState(false);
@@ -11,6 +12,7 @@ const CheckoutForm = ({ auction }) => {
   const [disabled, setDisabled] = useState(true);
   const stripe = useStripe();
   const elements = useElements();
+  const [email, setEmail] = useState("");
 
   useEffect(() => {
     dispatch(paymentIntent(auction._id));
@@ -47,6 +49,7 @@ const CheckoutForm = ({ auction }) => {
     ev.preventDefault();
     setProcessing(true);
     const payload = await stripe.confirmCardPayment(clientSecret, {
+      receipt_email: email,
       payment_method: {
         card: elements.getElement(CardElement),
       },
@@ -64,6 +67,14 @@ const CheckoutForm = ({ auction }) => {
 
   return (
     <form id="payment-form" onSubmit={handleSubmit}>
+      <input
+        className="input0"
+        type="text"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="Enter email address"
+      />
+
       <CardElement
         id="card-element"
         options={cardStyle}

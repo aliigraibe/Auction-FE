@@ -599,6 +599,7 @@ color: #FFFFFF;
 
 }
 .a1{
+  width: 1400px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -769,10 +770,10 @@ color: #FFFFFF;
 
 .p6{
   
-  position: relative;
+  position: absolute;
   width: 45px;
   height: 45px;
-  left:390px ;
+  left:410px ;
   top: 250px;
   background-color: transparent;
   border: 0px solid transparent;
@@ -785,7 +786,7 @@ color: #FFFFFF;
   position: relative;
   width: 45px;
   height: 45px;
-  left:370px ;
+  left:380px ;
   top: 250px;
   
 
@@ -796,9 +797,10 @@ color: #FFFFFF;
   position: relative;
   width: 45px;
   height: 45px;
-  left:350px ;
+  left:325px ;
   top: 250px;
-  
+  background-color: transparent;
+  border: 0px solid transparent;
 }
 
 
