@@ -6,7 +6,7 @@ function App() {
   return (
     <div>
       <GlobalStyle />
-      <NavBar />
+      <NavBar className="nb" />
 
       <Routes />
     </div>

@@ -26,11 +26,11 @@ const CartItem = ({ auction, props }) => {
       <img className="vehicle" src={auction.image[0]} alt={auction.name} />
       <p className="name">{auction.name}</p>
       <p className="time">Price: {sort[0].bid}$</p>
-      <button  className="checkout" onClick={handleShow}><img className="fav1" src={pic17} alt="CART" /></button>
+      <button  className="checkout" onClick={handleShow}>Checkout</button>
       <Modal show={show} onHide={handleClose}>
         <Modal.Body>
           <FlexStyleVer>
-            <img src={auction.image[0]} alt={auction.name} />
+            <img className="images" src={auction.image[0]} alt={auction.name} />
 
             <p>{auction.name}</p>
 

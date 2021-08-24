@@ -28,7 +28,7 @@ const NavBar = () => {
   const handleShow = () => setShow(true);
 
   return (
-    <div>
+    <div className="nb">
       <div>
         <Link className="logo" exact to="/">
           <img className="logo" src={pic1} alt={"pic1"} />

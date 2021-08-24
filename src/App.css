@@ -370,7 +370,7 @@ width: 195px  ;
   border: 2px solid #394bf2;
   border-radius: 200px;
 position: relative;
-top: 120px;
+top: 140px;
 left:180px ;
 margin: 15px;
  
@@ -554,17 +554,10 @@ top: 190px;
 margin-right: 50px;
 margin-bottom: 50px;
 
-background:transparent;
+background:#0F0E0E;
 border-radius: 30px;
-border: 2px solid #394bf2 ;
-animation-name: example;
-animation-duration: 1s;
-animation-iteration-count: infinite;
-animation-direction: alternate;
-}
-@keyframes example {
-  from {border: 2px solid #394BF2;;}
-  to {border: 2px solid black;}
+
+
 }
 
 .vehicle{
@@ -584,8 +577,8 @@ border-radius: 30px;
 position: absolute;
 width: 273px;
 height: 40px;
-left:300px;
-top: 10px;
+left:180px;
+top: 30px;
 
 font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 font-style: normal;
@@ -602,17 +595,18 @@ color: #FFFFFF;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  width: 1400px;
 }
 
 .time{
   /* Current Bid */
 
 position: absolute;
-width:200px;
+width:300px;
 height: 13px;
-left: 350px;
-top: 70px;
-color:red;
+left: 289px;
+top: 120px;
+color:white;
 font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 font-size: 25px;
 }
@@ -891,7 +885,7 @@ position: absolute;
 width: 250px;
 height: 35px;
 left: 300px;
-top: 220px;
+top: 230px;
 background-color: transparent;
 border: 3px solid #394BF2;
 box-sizing: border-box;
@@ -1085,8 +1079,24 @@ color: white;
 }
 .checkout{
 position: absolute;
-top:20px;
-left: 530px;
+top:220px;
+left: 500px;
   background-color: transparent;
-  border: 0px solid;
+  border: 2px solid #394bf2;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: white;
+  border-radius: 30px ;
+}
+
+.nb{
+  position:absolute;
+width: 1730px;
+}
+
+.images{
+  position: relative;
+  left: 80px;
+  width: 300px;
+  height: 300px;
+  margin-bottom: 100px;
 }
