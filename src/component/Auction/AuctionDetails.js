@@ -111,7 +111,9 @@ const AuctionDetails = (props) => {
           <>
             <button
               type="button"
+
               class="p6"
+
               onClick={() =>
                 dispatch(
                   deleteAuction(auction._id),

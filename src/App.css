@@ -599,6 +599,7 @@ color: #FFFFFF;
 
 }
 .a1{
+  width: 1400px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -772,8 +773,11 @@ color: #FFFFFF;
   position: absolute;
   width: 45px;
   height: 45px;
+
   left:435px ;
   top: 300px;
+
+
   background-color: transparent;
   border: 0px solid transparent;
  
@@ -785,8 +789,10 @@ color: #FFFFFF;
   position: absolute;
   width: 45px;
   height: 45px;
+
   left:395px ;
   top: 300px;
+
   
 
 
@@ -796,11 +802,13 @@ color: #FFFFFF;
   position: absolute;
   width: 45px;
   height: 45px;
+
   left:355px ;
   top: 300px;
   background-color: transparent;
   border: 0px solid transparent;
  
+
 }
 
 
