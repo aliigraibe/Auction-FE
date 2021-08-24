@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import pic5 from "../../images/pic5.png";
-import pic6 from "../../images/pic6.png";
+import pic17 from "../../images/pic17.png";
 import { useDispatch, useSelector } from "react-redux";
 import { FlexStyleVer } from "../../styles";
 //
@@ -26,7 +26,7 @@ const CartItem = ({ auction, props }) => {
       <img className="vehicle" src={auction.image[0]} alt={auction.name} />
       <p className="name">{auction.name}</p>
       <p className="time">Price: {sort[0].bid}$</p>
-      <button onClick={handleShow}>checkout</button>
+      <button  className="checkout" onClick={handleShow}><img className="fav1" src={pic17} alt="CART" /></button>
       <Modal show={show} onHide={handleClose}>
         <Modal.Body>
           <FlexStyleVer>
