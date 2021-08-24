@@ -3,6 +3,10 @@ import { Link, useHistory, useParams } from "react-router-dom";
 import pic1 from "../../images/pic1.png";
 import pic5 from "../../images/pic5.png";
 import pic8 from "../../images/pic8.png";
+import pic13 from "../../images/pic13.png";
+import pic14 from "../../images/pic14.png";
+import pic15 from "../../images/pic15.png";
+import pic16 from "../../images/pic16.png";
 import { signout } from "../../store/actions/authActions";
 import { Modal, Button } from "react-bootstrap";
 import { useState } from "react";
@@ -32,16 +36,16 @@ const NavBar = () => {
         {user ? (
           <>
             <Link className="category" to="/categories">
-              Category
+            <img className="fav1" src={pic14} alt="CART" />
             </Link>{" "}
-            <Link className="" to="/cart">
-              cart
+            <Link className="fav4" to="/cart">
+            <img className="fav1" src={pic13} alt="CART" />
             </Link>
             <Link className="addauction" to="/addauction">
-              Add auctions
+            <img className="fav1" src={pic15} alt="CART" />
             </Link>
             <button className="signin1" onClick={handelSignout}>
-              Sign out
+            <img className="fav1" src={pic16} alt="fav" />
             </button>
             <Link className="fav" to="/fav">
               <img className="fav1" src={pic5} alt="fav" />
