@@ -18,18 +18,15 @@ export const ProductsStyle = styled.div`
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-
   margin-bottom: 100px;
 `;
 
 export const Item = styled.div`
   text-align: center;
-
   :hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 4%;
   }
-
   p {
     font-weight: bold;
   }
@@ -40,7 +37,6 @@ export const ItemDetail = styled.div`
   margin-top: 50px;
   margin-bottom: 50px;
   height: 25 rem;
-
   display: flex;
   justify-content: center;
 `;
@@ -50,7 +46,6 @@ export const DetaledImage = styled.img`
   height: 20rem;
   border-radius: 5%;
   position: absolute;
-
   left: 390px;
   top: 270px;
   border: 0px solid;
@@ -105,7 +100,6 @@ export const LinkItem = styled(NavLink)`
   background-color: ${(props) => props.theme.backGroundColor};
   color: ${(props) => props.theme.textColor};
   padding: 5px;
-
   &.active {
     background-color: ${(props) => props.theme.textColor};
     color: ${(props) => props.theme.backGroundColor};
@@ -131,14 +125,12 @@ export const ButtonLink = styled(Link)`
 
 export const FlexStyle = styled.div`
   /* margin-top: 20px; */
-
   display: flex;
   justify-content: center;
 `;
 
 export const FlexStyleVer = styled.div`
   /* margin-top: 20px; */
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -183,8 +175,6 @@ animation-direction: alternate;
 `;
 
 export const GlobalStyle = createGlobalStyle`
-
-
 body{
   
   background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Black_flag.svg/750px-Black_flag.svg.png") no-repeat center center fixed; 
@@ -281,6 +271,5 @@ position: absolute;
   color: white;
   text-align: center;
  
-
 }
 `
