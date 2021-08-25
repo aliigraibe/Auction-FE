@@ -723,20 +723,11 @@ color: black;
  .p4{
   
     position: absolute;
-   width: 591px;
+   width: 500px;
    height: 397px;
    left:700px ;
    top: 350px;
-   
-   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-   font-style: normal;
-   font-weight: normal;
-   font-size: 30px;
-   
-   
-   
-   color: black;
-   
+     
    
    
  }
