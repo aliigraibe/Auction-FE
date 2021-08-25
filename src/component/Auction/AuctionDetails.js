@@ -62,7 +62,7 @@ const AuctionDetails = (props) => {
     a.bid > b.bid ? 1 : b.bid > a.bid ? -1 : 0
   );
 
-  const highestUser = users.find((user) => user._id === sort[0].userId);
+  const highestUser = users.find((user) => user._id === sort[0]?.userId);
 
   return (
     <div>
@@ -81,7 +81,7 @@ const AuctionDetails = (props) => {
         {/* <p className="p2">Quantity : {auction.quantity}</p> */}
         <p className="p2">Starting Price : {auction.startingPrice} JOD</p>
         <p className="p3">
-          highest bid : {sort[0].bid} JOD by {highestUser?.username}
+          highest bid : {sort[0]?.bid} JOD by {highestUser?.username}
         </p>
         {new Date(auction.endTime) <= new Date() ? (
           <p className="p4"> !! Auction ended !! </p>

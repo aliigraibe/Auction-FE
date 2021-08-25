@@ -20,7 +20,7 @@ const AddBid = ({ highest, user, auction, socket }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (placeBid.bid <= highest.bid || placeBid.bid <= auction.startingPrice) {
+    if (placeBid.bid <= highest?.bid || placeBid.bid <= auction.startingPrice) {
       console.log("failed");
     } else {
       dispatch(addBid(placeBid, socket));
