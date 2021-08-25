@@ -86,7 +86,7 @@ export const winner = (newWinner) => {
       const res = await instance.post("/winner", newWinner);
       dispatch({
         type: actionTypes.WINNER,
-        payload:  newWinner 
+        payload: newWinner,
       });
     } catch (error) {
       console.log(error);
@@ -94,3 +94,18 @@ export const winner = (newWinner) => {
   };
 };
 
+export const fetch = (auctionSlug) => {
+  return async (dispatch) => {
+    try {
+      const res = await instance.get(`/auction/${auctionSlug}`);
+
+      console.log(res.data);
+      dispatch({
+        type: actionTypes.WINNER,
+        payload: res.data,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};

@@ -138,19 +138,18 @@ export const FlexStyleVer = styled.div`
 export const FlexStyleVer1 = styled.div`
   /* margin-top: 20px; */
   position: absolute;
-  
+  color: white;
   top: 120px;
   left: 1265px;
-  width: 370px ;
+  width: 370px;
   height: 55px;
   border: 2px solid #394bf2;
   padding: 10px;
   border-radius: 15px;
   overflow-x: auto;
   display: flex;
-justify-content: space-between ;
-  flex-direction:row;
-  
+  justify-content: space-between;
+  flex-direction: row;
 `;
 
 export const FormCenter = styled.form`
@@ -257,7 +256,7 @@ animation-direction: alternate;
   from {border: 2px solid green;;}
   to {border: 2px solid black;;}
 }
-`
+`;
 
 export const Center2 = styled.form`
 position: absolute;
@@ -272,4 +271,4 @@ position: absolute;
   text-align: center;
  
 }
-`
+`;

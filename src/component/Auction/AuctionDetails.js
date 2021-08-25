@@ -1,23 +1,28 @@
+import * as actionTypes from "../../store/actions/types";
 import { useHistory, useParams } from "react-router";
-import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import SimpleImageSlider from "react-simple-image-slider";
-import { deleteAuction } from "../../store/actions/AuctionAction";
-import pic10 from "../../images/pic10.png";
-import pic11 from "../../images/pic11.png";
-import pic12 from "../../images/pic12.png";
-import AddBid from "./AddBid";
-
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { io } from "socket.io-client";
 import TimeAgo from "javascript-time-ago";
 import en from "javascript-time-ago/locale/en";
-import { useEffect, useState } from "react";
-import * as actionTypes from "../../store/actions/types";
+import SimpleImageSlider from "react-simple-image-slider";
+//images
+import pic10 from "../../images/pic10.png";
+import pic11 from "../../images/pic11.png";
+import pic12 from "../../images/pic12.png";
+//Actions
+import { deleteAuction } from "../../store/actions/AuctionAction";
+//components
+import AddBid from "./AddBid";
 import Top3 from "./Top3";
 import ActiveUsers from "./ActiveUsers";
 import Loading from "../Loading/Loading";
+
+//TimeAgo
 TimeAgo.addLocale(en);
 const timeAgo = new TimeAgo("en-US");
+
 const AuctionDetails = (props) => {
   const auctions = useSelector((state) => state.auctions.auctions);
   // const loading = useSelector((state) => state.auctions.loading);
@@ -53,22 +58,11 @@ const AuctionDetails = (props) => {
   const auction = auctions.find((auction) => auction.slug === auctionSlug);
   const images = auction.image.map((img) => ({ url: img }));
 
-  let highest = {
-    userId: "",
-    bid: 0,
-  };
-
-  auction.bidding.forEach((bid) => {
-    if (bid.bid > highest.bid) highest = bid;
-  });
-
   const sort = auction.bidding.sort((b, a) =>
     a.bid > b.bid ? 1 : b.bid > a.bid ? -1 : 0
   );
 
-  console.log(sort);
-
-  const highestUser = users.find((user) => user._id === highest.userId);
+  const highestUser = users.find((user) => user._id === sort[0].userId);
 
   return (
     <div>
@@ -87,7 +81,7 @@ const AuctionDetails = (props) => {
         {/* <p className="p2">Quantity : {auction.quantity}</p> */}
         <p className="p2">Starting Price : {auction.startingPrice} JOD</p>
         <p className="p3">
-          highest bid : {highest.bid} JOD by {highestUser?.username}
+          highest bid : {sort[0].bid} JOD by {highestUser?.username}
         </p>
         {new Date(auction.endTime) <= new Date() ? (
           <p className="p4"> !! Auction ended !! </p>
@@ -111,9 +105,7 @@ const AuctionDetails = (props) => {
           <>
             <button
               type="button"
-
               class="p6"
-
               onClick={() =>
                 dispatch(
                   deleteAuction(auction._id),
@@ -130,7 +122,7 @@ const AuctionDetails = (props) => {
         )}
 
         <AddBid
-          highest={highest}
+          highest={sort[0]}
           user={user}
           auction={auction}
           socket={socket}

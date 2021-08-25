@@ -1,6 +1,7 @@
 import * as actionType from "../actions/types";
 const initialState = {
   auctions: null,
+  auction: null,
   loading: true,
 };
 
@@ -10,6 +11,12 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         auctions: action.payload,
+        loading: false,
+      };
+    case actionType.FETCH:
+      return {
+        ...state,
+        auction: action.payload,
         loading: false,
       };
     case actionType.ADD_AUCTION:
@@ -46,16 +53,16 @@ const reducer = (state = initialState, action) => {
         ),
       };
 
-      case actionType.WINNER:
-        const newWinner  = action.payload;
-  
-        return {
-          ...state,
-  
-          auctions: state.auctions.map((auction) =>
+    case actionType.WINNER:
+      const newWinner = action.payload;
+
+      return {
+        ...state,
+
+        auctions: state.auctions.map((auction) =>
           auction._id === newWinner._id ? newWinner : auction
-          ),
-        };
+        ),
+      };
 
     default:
       return state;

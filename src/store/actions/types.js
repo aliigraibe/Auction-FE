@@ -13,6 +13,7 @@ export const DELETE_AUCTION = "DELETE_AUCTION";
 export const UPDATE_AUCTION = "UPDATE_AUCTION";
 export const BID = "BID";
 export const WINNER = "WINNER";
+export const FETCH = "FETCH";
 
 // Wallet Actions
 export const FETCH_WALLET = "FETCH_WALLET";
