@@ -140,10 +140,10 @@ export const FlexStyleVer1 = styled.div`
   position: absolute;
   color: white;
   top: 120px;
-  left: 1265px;
+  left: 1450px;
   width: 370px;
   height: 55px;
-  border: 2px solid #394bf2;
+  
   padding: 10px;
   border-radius: 15px;
   overflow-x: auto;
@@ -169,14 +169,14 @@ animation-direction: alternate;
 }
 @keyframes example {
   from {border: 2px solid #394BF2;;}
-  to {border: 2px solid black;;}
+  to {border: 2px solid white;;}
 }
 `;
 
 export const GlobalStyle = createGlobalStyle`
 body{
   
-  background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Black_flag.svg/750px-Black_flag.svg.png") no-repeat center center fixed; 
+ 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

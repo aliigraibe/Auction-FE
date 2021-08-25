@@ -49,7 +49,7 @@ const AddAuction = () => {
   return (
     <FormCenter onSubmit={handleSubmit}>
       <div class="form-group">
-        <label>Name</label>
+        <label className="b22">Name</label>
         <input
           type="text"
           class="form-control"
@@ -59,7 +59,7 @@ const AddAuction = () => {
         />
       </div>
       <div class="form-group">
-        <label>Description</label>
+        <label className="b22">Description</label>
         <input
           type="text"
           class="form-control"
@@ -69,7 +69,7 @@ const AddAuction = () => {
         />
       </div>
       <div class="form-group">
-        <label>Quantity</label>
+        <label className="b22">Quantity</label>
         <input
           type="number"
           class="form-control"
@@ -79,7 +79,7 @@ const AddAuction = () => {
         />
       </div>
       <div class="form-group">
-        <label>Starting Price</label>
+        <label className="b22">Starting Price</label>
         <input
           type="number"
           class="form-control"
@@ -89,7 +89,7 @@ const AddAuction = () => {
         />
       </div>
       <div class="form-group">
-        <label>Minimum Bidding Increment</label>
+        <label className="b22">Minimum Bidding Increment</label>
         <input
           type="number"
           class="form-control"
@@ -99,7 +99,7 @@ const AddAuction = () => {
         />
       </div>
       <div class="form-group">
-        <label>Start Time</label>
+        <label className="b22">Start Time</label>
         <input
           type="datetime-local"
           class="form-control"
@@ -110,7 +110,7 @@ const AddAuction = () => {
         />
       </div>
       <div class="form-group">
-        <label>End Time</label>
+        <label className="b22">End Time</label>
         <input
           type="datetime-local"
           class="form-control"
@@ -121,7 +121,7 @@ const AddAuction = () => {
         />
       </div>
       <div class="form-group">
-        <label>Image</label>
+        <label className="b22">Image</label>
         <input
           type="file"
           multiple="multiple"
@@ -130,7 +130,7 @@ const AddAuction = () => {
           onChange={handleImage}
         />
       </div>
-      <label>Choose Category</label>
+      <label className="b22">Choose Category</label>
       <br />
 
       <select
