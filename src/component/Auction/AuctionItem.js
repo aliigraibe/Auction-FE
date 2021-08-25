@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import pic5 from "../../images/pic5.png";
 import pic6 from "../../images/pic6.png";
+import pic19 from "../../images/pic19.png";
 import TimeAgo from "javascript-time-ago";
 import en from "javascript-time-ago/locale/en";
 import { addFouvarite, deleteFavourite } from "../../store/actions/favActions";
@@ -40,10 +41,31 @@ const AuctionItem = ({ auction, props }) => {
         <div class="flip-card-inner">
       <Link class="flip-card-front" to={`/auctions/${auction.slug}`}>
         <img className="vehicle" src={auction.image[0]} alt={auction.name} />
+        <p className="name2">{auction.name}</p>
+        {new Date(auction.endTime) <= new Date() ? (
+        <>
+          {!auction.winner && handleWinner()}
+          <p className="time"> !! Auction ended !! </p>
+        </>
+      ) : (
+        <>
+          {new Date(auction.startTime) >= new Date() ? (
+            <p className="time">
+            Starts : {timeAgo.format(new Date(auction.startTime))}
+            </p>
+          ) : (
+            <p className="time">
+            Ends : {timeAgo.format(new Date(auction.endTime))}
+            </p>
+          )}
+        </>
+      )}
       </Link>
+     
       <div class="flip-card-back">
       <Link to={`/auctions/${auction.slug}`}>
-        <p className="name">{auction.name}</p>
+      <img className="vehicle1" src={auction.image[1]} alt={auction.name} />
+        
       </Link>{" "}
       {!status ? (
         <button
@@ -62,24 +84,7 @@ const AuctionItem = ({ auction, props }) => {
           <img className="fav1" src={pic6} />
         </button>
       )}
-       {new Date(auction.endTime) <= new Date() ? (
-        <>
-          {!auction.winner && handleWinner()}
-          <p className="time"> !! Auction ended !! </p>
-        </>
-      ) : (
-        <>
-          {new Date(auction.startTime) >= new Date() ? (
-            <p className="time">
-            Starts in :{timeAgo.format(new Date(auction.startTime))}
-            </p>
-          ) : (
-            <p className="time">
-            Ends in :{timeAgo.format(new Date(auction.endTime))}
-            </p>
-          )}
-        </>
-      )}
+       
       
       
       </div>

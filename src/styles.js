@@ -157,7 +157,7 @@ position: absolute;
   top:150px;
   left:600px;
   width: 500px;
-  border: 2px solid black;
+  border: 1px solid black;
   border-radius: 10px;
   padding: 20px;
   color: white;
