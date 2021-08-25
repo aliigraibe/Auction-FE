@@ -30,11 +30,11 @@ const AddBid = ({ highest, user, auction, socket }) => {
   return (
     <Center2 onSubmit={handleSubmit}>
       {new Date(auction.endTime) <= new Date() ? (
-        <p className="b22" > !! Auction ended !!</p>
+        <p className="b221" > !! Auction ended !!</p>
       ) : (
         <>
           {new Date(auction.startTime) >= new Date() ? (
-            <p className="b22">!! Auction Starts After 24 HOURS!!</p>
+            <p className="b221">!! Auction Starts After 24 HOURS!!</p>
           ) : (
             <>
               <div class="form-group">

@@ -116,7 +116,7 @@
   right: 160px;
   top: 79px;
   text-decoration: none;
-  border: 2px solid #394bf2;
+  border: 2px solid #CA183B;
   border-radius: 200px;
  
 
@@ -136,7 +136,7 @@
   /* identical to box height */
   text-align: center;
 
-  color: #394bf2;
+  color: #000000;
 }
 
 .signup {
@@ -149,7 +149,7 @@
   top: 79px;
   text-decoration: none;
 
-  background: #394bf2;
+  background: #CA183B;
   border-radius: 200px;
 
   /* Call Now */
@@ -179,8 +179,8 @@
   left: 1100px;
   top: 222px;
 
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  border-radius: 30px;
+
+  
 }
 .text {
   /* You’ve just found the easiest online auction platform to use */
@@ -208,8 +208,8 @@
   left: 650px;
   top: 461px;
 
-  background: #ffffff;
-  border: 1px solid #468e8a;
+  background-color: #FFFFED !important;
+  border: 1px solid #000000;
   box-sizing: border-box;
   border-radius: 20px;
 }
@@ -222,8 +222,8 @@
   left: 650px;
   top: 547px;
 
-  background: #ffffff;
-  border: 1px solid #468e8a;
+  background-color: #FFFFED !important;
+  border: 1px solid #000000;
   box-sizing: border-box;
   border-radius: 20px;
 }
@@ -233,14 +233,14 @@
   position: absolute;
   width: 156px;
   height: 46px;
-  left: 790px;
+  left: 780px;
   top: 701px;
   color: white;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 30px;
 
-  background: #394bf2;
-  border: 1px solid #394bf2;
+  background: #CA183B;
+  border: 1px solid #CA183B;
   box-sizing: border-box;
   border-radius: 20px;
 }
@@ -262,8 +262,8 @@
   left: 650px;
   top: 530px;
 
-  background: #ffffff;
-  border: 1px solid #468e8a;
+  background-color: #FFFFED !important;
+  border: 1px solid black;
   box-sizing: border-box;
   border-radius: 20px;
 }
@@ -276,8 +276,8 @@
   left: 650px;
   top: 580px;
 
-  background: #ffffff;
-  border: 1px solid #468e8a;
+  background-color: #FFFFED !important;
+  border: 1px solid black;
   box-sizing: border-box;
   border-radius: 20px;
 }
@@ -290,8 +290,8 @@
   left: 650px;
   top: 630px;
 
-  background: #ffffff;
-  border: 1px solid #468e8a;
+  background-color: #FFFFED !important;
+  border: 1px solid black;
   box-sizing: border-box;
   border-radius: 20px;
 }
@@ -304,8 +304,8 @@
   left: 650px;
   top: 680px;
 
-  background: #ffffff;
-  border: 1px solid #468e8a;
+  background-color: #FFFFED !important;
+  border: 1px solid black;
   box-sizing: border-box;
   border-radius: 20px;
 }
@@ -318,8 +318,8 @@
   left: 650px;
   top: 430px;
 
-  background: #ffffff;
-  border: 1px solid #468e8a;
+  background-color: #FFFFED !important;
+  border: 1px solid black;
   box-sizing: border-box;
   border-radius: 20px;
 }
@@ -332,8 +332,8 @@
   left: 650px;
   top: 480px;
 
-  background: #ffffff;
-  border: 1px solid #468e8a;
+  background-color: #FFFFED !important;
+  border: 1px solid black;
   box-sizing: border-box;
   border-radius: 20px;
 }
@@ -349,8 +349,8 @@
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 30px;
 
-  background: #394bf2;
-  border: 1px solid #394bf2;
+  background: #CA183B;
+  border: 1px solid #CA183B;
   box-sizing: border-box;
   border-radius: 20px;
 }
@@ -368,7 +368,7 @@
   /* Rectangle Copy */
 width: 195px  ;
  
-  border: 2px solid #394bf2;
+  border: 2px solid #CA183B;
   border-radius: 200px;
 position: relative;
 top: 140px;
@@ -382,8 +382,8 @@ margin: 15px;
   font-size: 25px;
   line-height: 45px;
   text-align: center;
-background-color: #394bf2;
-color: white;
+background-color: #FFFFED;
+color: black;
 
 }
 .category2 {
@@ -522,13 +522,13 @@ top: 200px;
   color: #ffffff;
 }
 .addauction2 {
-  background-color: #394bf2;
-  border: 2px solid #394bf2;
+  background-color: #CA183B;
+  border: 2px solid #CA183B;
   border-radius: 30px;
-  width: 150px;
+  width: 180px;
   height: 54px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  color: #ffffff;
+  color: #FFFFED;
   font-size: 25px;
 }
 
@@ -543,33 +543,91 @@ top: 200px;
   width: 600px;
   height: 10px;
 }
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  border:0px solid transparent;
+ border-radius: 20px;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position:absolute;
+  width: 190%;
+  height: 150%;
+  left: -5px;
+  top: -1px;
+  text-align: center;
+  transition: transform 0.8s;
+  border:0px solid transparent;
+  border-radius: 20px;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+ left: 0px;
+ border:0px solid transparent;
+ border-radius: 20px;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+  border:0px solid transparent;
+ border-radius: 20px;
+}
+
+/* Style the back side */
+.flip-card-back {
+  position: absolute;
+  top: 0px;
+  background-color: #CA183B;
+  color: white;
+  transform: rotateY(180deg);
+}
 
 .box{
   /* Rectangle 53 */
 
 position: relative;
-width: 604px;
-height: 276px;
-left: 230px;
+width: 550px;
+height: 250px;
+left: 250px;
 top: 190px;
-margin-right: 50px;
+margin-right: 150px;
 margin-bottom: 50px;
-border: 2px solid #394bf2;
-background:transparent;
-border-radius: 30px;
+margin-top: 50px;
+
+background:#FFFFED;
+border-radius: 10px;
 
 
 }
 
 .vehicle{
   /* Rectangle 54 */
+width: 100%;
+height: 100%;
+border:0px solid transparent;
+ border-radius: 20px;
+position:absolute;
+left: 0px;
 
-position: absolute;
-width: 230px;
-height: 242px;
-left: 20px;
-top: 17px;
-border-radius: 30px;
 
 }
 .name{
@@ -578,17 +636,17 @@ border-radius: 30px;
 position: absolute;
 width: 273px;
 height: 40px;
-left:180px;
-top: 30px;
+left: 20px;
+top: 60px;
 
 font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 font-style: normal;
 font-weight: 600;
-font-size: 25px;
+font-size: 50px;
 line-height: 34px;
 text-align: center;
 
-color:black;
+color:#FFFFED;
 
 
 }
@@ -604,13 +662,13 @@ color:black;
   /* Current Bid */
 
 position: absolute;
-width:300px;
+width:350px;
 height: 13px;
-left: 289px;
-top: 120px;
-color:black;
+
+top: 200px;
+color:#FFFFED;
 font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-font-size: 25px;
+font-size: 35px;
 }
 .time1{
   /* Current Bid */
@@ -642,10 +700,10 @@ height: 69px;
 left: 250px;
 top: 720px;
 
-background: transparent;
+background: #CA183B;
 box-sizing: border-box;
 border-radius: 50px;
-border: 2px solid #394bf2;
+border: 2px solid #CA183B;
 
 /* Vehicles */
 
@@ -659,8 +717,7 @@ line-height: 67px;
 /* identical to box height */
 text-align: center;
 
-color: black;
-
+color: white
 
 
 }
@@ -814,7 +871,7 @@ color: black;
 .fav4{
   position: absolute;
   top: 45px;
-  left: 1120px;
+  left: 1140px;
 }
 
 .fav1{
@@ -834,8 +891,8 @@ color: black;
   position: absolute;
   width: 45px;
   height: 45px;
-  left:520px ;
-  top: 0px;
+  left:470px ;
+  top: 45px;
  border: none;
   background-color: transparent;
   text-decoration: none;
@@ -895,9 +952,9 @@ height: 35px;
 left: 300px;
 top: 230px;
 background-color: transparent;
-border: 3px solid #394BF2;
+border: 3px solid #CA183B;
 box-sizing: border-box;
-box-shadow: 1px 1px 4px 1px #394BF2;
+box-shadow: 1px 1px 4px 1px #CA183B;
 border-radius: 30px;
 color: white;
 
@@ -939,7 +996,7 @@ color: white;
 
 .top{
   position:absolute;
-  border: 2px solid #394bf2;
+  border: 1px solid black;
   left:1265px ;
   width: 370px;
   top: 200px;
@@ -949,7 +1006,7 @@ color: white;
   margin-top: 10px;
 }
 .top1{
-  color: black;
+  color: #CA183B;
   
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 35px;
@@ -1079,10 +1136,10 @@ color: white;
 }
 .checkout{
 position: absolute;
-top:220px;
+top:295px;
 left: 500px;
   background-color: transparent;
-  border: 2px solid #394bf2;
+  border: 3px solid #CA183B;
 font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   color: black;
   border-radius: 30px ;
@@ -1102,21 +1159,22 @@ width: 1730px;
 }
 
 .eye{
-  width: 60px;
-  height: 60px;
+  width: 75px;
+  height: 75px;
 }
 .eye1{
   position: absolute;
   top: 120px;
-  left: 1420px; ;
+  left: 1410px; ;
 }
 .eye2{
   position: absolute;
-  top: 121px;
-  left: 1460px; ;
+  top: 137px;
+  left: 1440px; ;
   z-index: 1;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: bolder;
+  color: #CA183B;
 }
 
 .b22{
@@ -1124,4 +1182,8 @@ width: 1730px;
   font-weight: bolder;
   font-size: 20PX;
 }
-  
+.b221{
+  color: #CA183B;
+  font-weight: bolder;
+  font-size: 20PX;
+}

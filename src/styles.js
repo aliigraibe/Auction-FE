@@ -157,19 +157,12 @@ position: absolute;
   top:150px;
   left:600px;
   width: 500px;
-  border: 3px solid #394BF2;
-  border-radius: 30px;
+  border: 2px solid black;
+  border-radius: 10px;
   padding: 20px;
   color: white;
   text-align: center;
-  animation-name: example;
-animation-duration: 2s;
-animation-iteration-count: infinite;
-animation-direction: alternate;
-}
-@keyframes example {
-  from {border: 2px solid #394BF2;;}
-  to {border: 2px solid white;;}
+ 
 }
 `;
 
@@ -177,10 +170,7 @@ export const GlobalStyle = createGlobalStyle`
 body{
   
  
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background-color: #FFFFED;
 }
 `;
 
@@ -264,7 +254,7 @@ position: absolute;
   left:1270px;
   width: 370px;
   border-radius: 50px;
-  border: 3px solid #394BF2;
+  border: 3px solid #CA183B;
   height:350px ;
   padding: 20px;
   color: white;

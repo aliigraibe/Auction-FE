@@ -36,9 +36,12 @@ const AuctionItem = ({ auction, props }) => {
   };
   return (
     <div className="box">
-      <Link to={`/auctions/${auction.slug}`}>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+      <Link class="flip-card-front" to={`/auctions/${auction.slug}`}>
         <img className="vehicle" src={auction.image[0]} alt={auction.name} />
       </Link>
+      <div class="flip-card-back">
       <Link to={`/auctions/${auction.slug}`}>
         <p className="name">{auction.name}</p>
       </Link>{" "}
@@ -59,7 +62,7 @@ const AuctionItem = ({ auction, props }) => {
           <img className="fav1" src={pic6} />
         </button>
       )}
-      {new Date(auction.endTime) <= new Date() ? (
+       {new Date(auction.endTime) <= new Date() ? (
         <>
           {!auction.winner && handleWinner()}
           <p className="time"> !! Auction ended !! </p>
@@ -68,15 +71,23 @@ const AuctionItem = ({ auction, props }) => {
         <>
           {new Date(auction.startTime) >= new Date() ? (
             <p className="time">
-              Auction start on :{timeAgo.format(new Date(auction.startTime))}
+            Starts in :{timeAgo.format(new Date(auction.startTime))}
             </p>
           ) : (
             <p className="time">
-              Auction end in :{timeAgo.format(new Date(auction.endTime))}
+            Ends in :{timeAgo.format(new Date(auction.endTime))}
             </p>
           )}
         </>
       )}
+      
+      
+      </div>
+      </div>
+      </div>
+     
+     
+     
     </div>
   );
 };
