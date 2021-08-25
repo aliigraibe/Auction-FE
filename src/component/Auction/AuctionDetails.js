@@ -4,9 +4,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { io } from "socket.io-client";
-import TimeAgo from "javascript-time-ago";
-import en from "javascript-time-ago/locale/en";
 import SimpleImageSlider from "react-simple-image-slider";
+
 //images
 import pic10 from "../../images/pic10.png";
 import pic11 from "../../images/pic11.png";
@@ -18,10 +17,7 @@ import AddBid from "./AddBid";
 import Top3 from "./Top3";
 import ActiveUsers from "./ActiveUsers";
 import Loading from "../Loading/Loading";
-
-//TimeAgo
-TimeAgo.addLocale(en);
-const timeAgo = new TimeAgo("en-US");
+import CountDown from "../CountDown/CountDown";
 
 const AuctionDetails = (props) => {
   const auctions = useSelector((state) => state.auctions.auctions);
@@ -64,6 +60,9 @@ const AuctionDetails = (props) => {
 
   const highestUser = users.find((user) => user._id === sort[0]?.userId);
 
+  var endDif = new Date(auction.endTime).getTime() - new Date().getTime();
+  var startDif = new Date(auction.startTime).getTime() - new Date().getTime();
+
   return (
     <div>
       <p style={{ color: "black" }}></p>
@@ -89,15 +88,14 @@ const AuctionDetails = (props) => {
           <>
             {new Date(auction.startTime) >= new Date() ? (
               <p className="p4">
-                Auction start on :{timeAgo.format(new Date(auction.startTime))}
+                Auction start in : {<CountDown dif={startDif} />}
               </p>
             ) : (
-              <p className="p4">
-                Auction end in :{timeAgo.format(new Date(auction.endTime))}
-              </p>
+              <p className="p4">Auction end in :{<CountDown dif={endDif} />}</p>
             )}
           </>
         )}
+
         <Link className="p8" to="/combine">
           <img className="p8" src={pic10} alt="go back" />
         </Link>
