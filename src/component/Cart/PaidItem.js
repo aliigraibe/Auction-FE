@@ -7,16 +7,16 @@ import { FlexStyleVer } from "../../styles";
 
 import { Modal, Button } from "react-bootstrap";
 
-import Checkout from "../Payment/Checkout";
+import Paid from "../Invoice/Invoice";
 import { useState } from "react";
 
-const CartItem = ({ auction, props }) => {
+const PaidItem = ({ auction, props }) => {
   const { user, users } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
   const sort = auction.bidding.sort((b, a) =>
     a.bid > b.bid ? 1 : b.bid > a.bid ? -1 : 0
   );
@@ -26,29 +26,11 @@ const CartItem = ({ auction, props }) => {
       <img className="check" src={auction.image[0]} alt={auction.name} />
       <p className="name">{auction.name}</p>
       <p className="time">Price: {sort[0].bid}$</p>
-      {!auction.payStatus ? (
-        <button className="checkout" onClick={handleShow}>
-          Checkout
-        </button>
-      ) : (
-        <Link to="/invoice">
-          <p className="checkout">paid</p>
-        </Link>
-      )}
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Body>
-          <FlexStyleVer>
-            <img className="images" src={auction.image[0]} alt={auction.name} />
+      {!auction.payStatus && (
+   )}
 
-            <p>{auction.name}</p>
-
-            <p>Price: {sort[0].bid}$</p>
-            <Checkout auction={auction} handleClose={handleClose} />
-          </FlexStyleVer>
-        </Modal.Body>
-      </Modal>
     </div>
   );
 };
 
-export default CartItem;
+export default PaidItem;

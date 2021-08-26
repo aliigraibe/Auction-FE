@@ -2,14 +2,14 @@ import { useSelector } from "react-redux";
 import Loading from "../Loading/Loading";
 import CartItem from "./CartItem";
 
-const Cart = () => {
+const Paid = () => {
   const { user } = useSelector((state) => state.user);
   const { auctions, loading } = useSelector((state) => state.auctions);
 
   if (loading) return <Loading />;
   const list = auctions
     .filter((auction) => auction.winner === user.id)
-    .filter((auction) => auction.payStatus === false)
+    .filter((auction) => auction.payStatus === true)
 
     .map((auction) => <CartItem auction={auction} key={auction.id} />);
   return (
@@ -18,4 +18,4 @@ const Cart = () => {
     </>
   );
 };
-export default Cart;
+export default Paid;

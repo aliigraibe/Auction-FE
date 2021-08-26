@@ -15,6 +15,7 @@ import AddWallet from "../Wallet/AddWallet";
 import FavList from "../Fav/FavList";
 import Loading from "../Loading/Loading";
 import Cart from "../Cart/Cart";
+import Paid from "../Cart/Paid";
 import Checkout from "../Payment/Checkout";
 import Invoice from "../Invoice/Invoice";
 
@@ -55,6 +56,9 @@ const Routes = () => {
       </Route>{" "}
       <Route path="/cart">
         <Cart auctions={auctions} />
+      </Route>{" "}
+      <Route path="/paid">
+        <Paid auctions={auctions} />
       </Route>{" "}
       <Route path="/checkout">
         <Checkout />
