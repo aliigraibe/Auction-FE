@@ -50,9 +50,10 @@ const NavBar = () => {
             <Link className="fav" to="/fav">
               <img className="fav1" src={pic5} alt="fav" />
             </Link>
-            <Button className="fav3" onClick={handleShow}>
+            <Link to="/paid">
+            <Button className="fav3" >
               <img className="fav1" src={pic8} alt="fav" />
-            </Button>
+            </Button></Link>
           </>
         ) : (
           <>
