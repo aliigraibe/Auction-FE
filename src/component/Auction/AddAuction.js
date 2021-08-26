@@ -16,7 +16,6 @@ const AddAuction = () => {
   const [auction, setAuction] = useState({
     name: "",
     description: "",
-    quantity: "",
     startingPrice: "",
     startTime: "",
     endTime: "",
@@ -26,7 +25,7 @@ const AddAuction = () => {
     minBiddingIncrement: "",
   });
 
-  if (loading) return <Loading/>
+  if (loading) return <Loading />;
 
   const foundCategories = categories.map((category) => (
     <option key={category.name} value={category._id}>
@@ -43,7 +42,7 @@ const AddAuction = () => {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(addAuction(auction,history));
+    dispatch(addAuction(auction, history));
   };
 
   return (
@@ -68,16 +67,7 @@ const AddAuction = () => {
           onChange={handleChange}
         />
       </div>
-      <div class="form-group">
-        <label className="b22">Quantity</label>
-        <input
-          type="number"
-          class="form-control"
-          name="quantity"
-          value={auction.quantity}
-          onChange={handleChange}
-        />
-      </div>
+
       <div class="form-group">
         <label className="b22">Starting Price</label>
         <input

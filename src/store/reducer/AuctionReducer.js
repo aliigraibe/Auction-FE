@@ -3,6 +3,7 @@ const initialState = {
   auctions: null,
   auction: null,
   loading: true,
+  refresher: false,
 };
 
 const reducer = (state = initialState, action) => {
@@ -12,6 +13,11 @@ const reducer = (state = initialState, action) => {
         ...state,
         auctions: action.payload,
         loading: false,
+      };
+    case actionType.REFRESHER:
+      return {
+        ...state,
+        auctions: [...state.auctions],
       };
     case actionType.FETCH:
       return {
@@ -63,7 +69,14 @@ const reducer = (state = initialState, action) => {
           auction._id === newWinner._id ? newWinner : auction
         ),
       };
-
+    case actionType.PAY:
+      const updatePay = action.payload;
+      return {
+        ...state,
+        auctions: state.auctions.map((auction) =>
+          auction._id === updatePay._id ? updatePay : auction
+        ),
+      };
     default:
       return state;
   }

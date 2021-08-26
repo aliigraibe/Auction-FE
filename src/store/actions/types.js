@@ -14,6 +14,7 @@ export const UPDATE_AUCTION = "UPDATE_AUCTION";
 export const BID = "BID";
 export const WINNER = "WINNER";
 export const FETCH = "FETCH";
+export const REFRESHER = "REFRESHER";
 
 // Wallet Actions
 export const FETCH_WALLET = "FETCH_WALLET";
@@ -26,3 +27,4 @@ export const DELETE_FAVOURITE = "DELETE_FAVOURITE";
 
 // Payment
 export const PAYMENT_INTENT = "PAYMENT_INTENT";
+export const PAY = "PAY";

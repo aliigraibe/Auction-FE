@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
+import { useDispatch, useSelector } from "react-redux";
+import { refresh } from "../../store/actions/AuctionAction";
 import "./CountDown.css";
-
 const minuteSeconds = 60;
 const hourSeconds = 3600;
 const daySeconds = 86400;
@@ -29,12 +30,15 @@ const getTimeDays = (time) => (time / daySeconds) | 0;
 export default function CountDown({ dif }) {
   const stratTime = Date.now() / 1000; // use UNIX timestamp in seconds
   const endTime = stratTime + dif / 1000; // use UNIX timestamp in seconds
-
+  const dispatch = useDispatch();
   const remainingTime = endTime - stratTime;
   const days = Math.ceil(remainingTime / daySeconds);
   const daysDuration = days * daySeconds;
-
-  return (
+  const refresher = useSelector((state) => state.auctions.refresher);
+  const ref = () => {
+    dispatch(refresh())
+   }
+    return (
     <div className="App">
       <CountdownCircleTimer
         {...timerProps}
@@ -79,8 +83,8 @@ export default function CountDown({ dif }) {
         initialRemainingTime={remainingTime % minuteSeconds}
         onComplete={(totalElapsedTime) => [
           remainingTime - totalElapsedTime > 0,
-        ]}
-      >
+      ref( )  ]}
+     >
         {({ elapsedTime }) =>
           renderTime("seconds", getTimeSeconds(elapsedTime))
         }

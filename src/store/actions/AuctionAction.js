@@ -99,10 +99,34 @@ export const fetch = (auctionSlug) => {
     try {
       const res = await instance.get(`/auction/${auctionSlug}`);
 
-      console.log(res.data);
       dispatch({
         type: actionTypes.WINNER,
         payload: res.data,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+export const pay = (auctionSlug) => {
+  return async (dispatch) => {
+    try {
+      const res = await instance.post(`/pay/${auctionSlug}`);
+
+      dispatch({
+        type: actionTypes.PAY,
+        payload: res.data,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+export const refresh = () => {
+  return async (dispatch) => {
+    try {
+      dispatch({
+        type: actionTypes.REFRESHER,
       });
     } catch (error) {
       console.log(error);

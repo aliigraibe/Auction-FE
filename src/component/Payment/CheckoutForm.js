@@ -3,6 +3,7 @@ import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import "./Checkout.css";
 import { useDispatch, useSelector } from "react-redux";
 import { paymentIntent } from "../../store/actions/paymentAction";
+import { pay } from "../../store/actions/AuctionAction";
 
 const CheckoutForm = ({ auction }) => {
   const dispatch = useDispatch();
@@ -62,6 +63,7 @@ const CheckoutForm = ({ auction }) => {
       setError(null);
       setProcessing(false);
       setSucceeded(true);
+      dispatch(pay(auction.slug))
     }
   };
 

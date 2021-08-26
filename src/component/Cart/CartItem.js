@@ -23,10 +23,16 @@ const CartItem = ({ auction, props }) => {
 
   return (
     <div className="box">
-      <img className="vehicle" src={auction.image[0]} alt={auction.name} />
+      <img className="check" src={auction.image[0]} alt={auction.name} />
       <p className="name">{auction.name}</p>
       <p className="time">Price: {sort[0].bid}$</p>
-      <button  className="checkout" onClick={handleShow}>Checkout</button>
+      {!auction.payStatus ? (
+        <button className="checkout" onClick={handleShow}>
+          Checkout
+        </button>
+      ) : (
+        <p className="checkout">paid</p>
+      )}
       <Modal show={show} onHide={handleClose}>
         <Modal.Body>
           <FlexStyleVer>

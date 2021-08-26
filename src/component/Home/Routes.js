@@ -16,6 +16,7 @@ import FavList from "../Fav/FavList";
 import Loading from "../Loading/Loading";
 import Cart from "../Cart/Cart";
 import Checkout from "../Payment/Checkout";
+import Invoice from "../Invoice/Invoice";
 
 const Routes = () => {
   const loading = useSelector((state) => state.auctions.loading);
@@ -63,6 +64,9 @@ const Routes = () => {
       </Route>
       <Route path="/fav">
         <FavList />
+      </Route>{" "}
+      <Route path="/invoice">
+        <Invoice />
       </Route>
       <Route exact path="/">
         <Home />
