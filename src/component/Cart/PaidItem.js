@@ -9,6 +9,7 @@ import { Modal, Button } from "react-bootstrap";
 
 import Paid from "../Invoice/Invoice";
 import { useState } from "react";
+import Invoice from "../Invoice/Invoice";
 
 const PaidItem = ({ auction, props }) => {
   const { user, users } = useSelector((state) => state.user);
@@ -26,9 +27,16 @@ const PaidItem = ({ auction, props }) => {
       <img className="check" src={auction.image[0]} alt={auction.name} />
       <p className="name">{auction.name}</p>
       <p className="time">Price: {sort[0].bid}$</p>
-      {!auction.payStatus && (
-   )}
-
+      {auction.payStatus && (
+        <button className="checkout" onClick={handleShow}>
+          Paid
+        </button>
+      )}
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Body>
+          <Invoice sort={sort} auction={auction} handleClose={handleClose} />
+        </Modal.Body>
+      </Modal>
     </div>
   );
 };
