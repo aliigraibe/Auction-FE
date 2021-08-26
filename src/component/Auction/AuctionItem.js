@@ -8,6 +8,7 @@ import { addFouvarite, deleteFavourite } from "../../store/actions/favActions";
 import { useDispatch, useSelector } from "react-redux";
 import Loading from "../Loading/Loading";
 import { winner } from "../../store/actions/AuctionAction";
+import CountDown from "../CountDown/CountDown";
 //
 TimeAgo.addLocale(en);
 const timeAgo = new TimeAgo("en-US");
@@ -35,6 +36,8 @@ const AuctionItem = ({ auction, props }) => {
       dispatch(winner(newWinner));
     }
   };
+  var endDif = new Date(auction.endTime).getTime() - new Date().getTime();
+  var startDif = new Date(auction.startTime).getTime() - new Date().getTime();
   return (
     <div className="box">
       <div class="flip-card">
@@ -63,10 +66,19 @@ const AuctionItem = ({ auction, props }) => {
       </Link>
      
       <div class="flip-card-back">
-      <Link to={`/auctions/${auction.slug}`}>
-      <img className="vehicle1" src={auction.image[1]} alt={auction.name} />
-        
-      </Link>{" "}
+      {new Date(auction.endTime) <= new Date() ? (
+          <p className="p4"> !! Auction ended !! </p>
+        ) : (
+          <>
+            {new Date(auction.startTime) >= new Date() ? (
+              <p className="p4">
+                Auction start in : {<CountDown dif={startDif} />}
+              </p>
+            ) : (
+              <p className="p4">Auction end in :{<CountDown dif={endDif} />}</p>
+            )}
+          </>
+        )}
       {!status ? (
         <button
           type="button"

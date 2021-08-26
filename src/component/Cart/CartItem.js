@@ -25,7 +25,7 @@ const CartItem = ({ auction, props }) => {
     <div className="box">
       <img className="check" src={auction.image[0]} alt={auction.name} />
       <p className="name">{auction.name}</p>
-      <p className="time">Price: {sort[0].bid}$</p>
+      {/* <p className="time">Price: {sort[0].bid}$</p> */}
       {!auction.payStatus ? (
         <button className="checkout" onClick={handleShow}>
           Checkout

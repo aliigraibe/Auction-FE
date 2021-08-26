@@ -9,6 +9,7 @@ const Invoice = ({ auctions }) => {
   const { user } = useSelector((state) => state.user);
   
   return (
+  <div className="postion">
     <div class="page-content container">
       <div class="page-header text-blue-d2">
         <h1 class="page-title text-secondary-d1">
@@ -168,6 +169,7 @@ const Invoice = ({ auctions }) => {
         </div>
       </div>
     </div>
+  </div>
   );
 };
 export default Invoice;

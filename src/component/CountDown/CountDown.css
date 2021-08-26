@@ -1,9 +1,13 @@
 .App {
-    display: flex;
-    justify-content: space-around;
+  position: absolute;;
+  top:-250px;
+  left: -650px;
+  display: flex;
+    justify-content: space-around ;
     font-family: sans-serif;
     text-align: center;
-    padding-top: 40px;
+    margin-right: 10px;
+    z-index: -1;
   }
   
   .time {
