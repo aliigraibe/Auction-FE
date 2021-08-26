@@ -70,7 +70,7 @@ const Routes = () => {
         <FavList />
       </Route>{" "}
       <Route path="/invoice">
-        <Invoice />
+        <Invoice auctions={auctions}  />
       </Route>
       <Route exact path="/">
         <Home />
