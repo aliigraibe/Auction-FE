@@ -254,7 +254,7 @@ position: absolute;
   left:1270px;
   width: 370px;
   border-radius: 50px;
-  border: 3px solid #CA183B;
+  border: 3px solid black;
   height:350px ;
   padding: 20px;
   color: white;
