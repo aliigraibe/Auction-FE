@@ -45,9 +45,9 @@ const AddAuction = () => {
   if (loading) return <Loading />;
 
   const foundCategories = categories.map((category) => (
-    <option key={category.name} value={category._id}>
+    <MenuItem key={category.name} value={category._id}>
       {category.name}
-    </option>
+    </MenuItem>
   ));
 
   const handleChange = (event) => {
@@ -64,7 +64,7 @@ const AddAuction = () => {
 
   return (
     <FormCenter onSubmit={handleSubmit}>
-      <form noValidate autoComplete="off">
+      <form autoComplete="off">
         <div>
           <TextField
             style={{ marginRight: "35px" }}
@@ -127,10 +127,10 @@ const AddAuction = () => {
           <br />
           <TextField
             type="file"
-            multiple="multiple"
             class="form-control"
             name="image"
             onChange={handleImage}
+            inputProps={{ multiple: true }}
           />
         </div>
 
@@ -141,6 +141,7 @@ const AddAuction = () => {
           value={auction.categoryId}
           onChange={handleChange}
           style={{ width: "150px" }}
+          name="categoryId"
         >
           <MenuItem value="" disabled="disabled">
             Choose...
@@ -150,7 +151,11 @@ const AddAuction = () => {
         <br />
         <br />
 
-        <Button style={{ left: "180px", background: "#CCCCCC " }} type="submit">
+        <Button
+          onClick={handleSubmit}
+          style={{ left: "180px", background: "#CCCCCC " }}
+          type="submit"
+        >
           Add Auction
         </Button>
       </form>

@@ -18,6 +18,7 @@ import Cart from "../Cart/Cart";
 import Paid from "../Cart/Paid";
 import Checkout from "../Payment/Checkout";
 import Invoice from "../Invoice/Invoice";
+import TemporaryDrawer from "../Drawer/Drawer";
 
 const Routes = () => {
   const loading = useSelector((state) => state.auctions.loading);
@@ -70,7 +71,10 @@ const Routes = () => {
         <FavList />
       </Route>{" "}
       <Route path="/invoice">
-        <Invoice auctions={auctions}  />
+        <Invoice auctions={auctions} />
+      </Route>
+      <Route path="/drawer">
+        <TemporaryDrawer />
       </Route>
       <Route exact path="/">
         <Home />

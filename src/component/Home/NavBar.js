@@ -11,6 +11,7 @@ import { signout } from "../../store/actions/authActions";
 import { Modal, Button } from "react-bootstrap";
 import { useState } from "react";
 import AddWallet from "../Wallet/AddWallet";
+import TemporaryDrawer from "../Drawer/Drawer";
 
 const NavBar = () => {
   const user = useSelector((state) => state.user.user);
@@ -33,27 +34,18 @@ const NavBar = () => {
         <Link className="logo" exact to="/">
           <img className="logo" src={pic1} alt={"pic1"} />
         </Link>
+
         {user ? (
           <>
+            <div className="signin1">
+              <TemporaryDrawer />
+            </div>
             <Link className="category" to="/categories">
-            <img className="fav1" src={pic14} alt="CART" />
-            </Link>{" "}
-            <Link className="fav4" to="/cart">
-            <img className="fav1" src={pic13} alt="CART" />
+              Categories
             </Link>
             <Link className="addauction" to="/addauction">
-            <img className="fav1" src={pic15} alt="CART" />
+              Add Auction
             </Link>
-            <button className="signin1" onClick={handelSignout}>
-            <img className="fav1" src={pic16} alt="fav" />
-            </button>
-            <Link className="fav" to="/fav">
-              <img className="fav1" src={pic5} alt="fav" />
-            </Link>
-            <Link to="/paid">
-            <Button className="fav3" >
-              <img className="fav1" src={pic8} alt="fav" />
-            </Button></Link>
           </>
         ) : (
           <>

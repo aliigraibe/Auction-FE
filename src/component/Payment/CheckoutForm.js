@@ -63,7 +63,7 @@ const CheckoutForm = ({ auction }) => {
       setError(null);
       setProcessing(false);
       setSucceeded(true);
-      dispatch(pay(auction.slug))
+      dispatch(pay(auction.slug));
     }
   };
 
