@@ -1,7 +1,7 @@
 
-import pic18 from "../../images/pic18.png";
+import pic18 from "../../images/pic18.png"
 const ActiveUsers = ({ roomUsers }) => {
-  roomUsers = [...new Set(roomUsers)];
+  roomUsers = [...new Set(roomUsers)]
 
   return <div>
     <div className="eye2">
@@ -10,7 +10,7 @@ const ActiveUsers = ({ roomUsers }) => {
     <div className="eye1">
     <img className="eye" src={pic18} alt="go back" />
     </div>
-    </div>;
-};
+    </div>
+}
 
-export default ActiveUsers;
+export default ActiveUsers

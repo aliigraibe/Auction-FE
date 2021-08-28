@@ -1,15 +1,15 @@
-import { useSelector } from "react-redux";
-import { FlexStyleVer } from "../../styles";
-import Loading from "../Loading/Loading";
+import { useSelector } from "react-redux"
+import { FlexStyleVer } from "../../styles"
+import Loading from "../Loading/Loading"
 
 const Top3 = ({ sort }) => {
-  const { users, loading } = useSelector((state) => state.user);
+  const { users, loading } = useSelector((state) => state.user)
 
-  const top1 = users.find((user) => user._id === sort[0]?.userId);
-  const top2 = users.find((user) => user._id === sort[1]?.userId);
-  const top3 = users.find((user) => user._id === sort[2]?.userId);
+  const top1 = users.find((user) => user._id === sort[0]?.userId)
+  const top2 = users.find((user) => user._id === sort[1]?.userId)
+  const top3 = users.find((user) => user._id === sort[2]?.userId)
 
-  if (loading) return <Loading />;
+  if (loading) return <Loading />
 
   return (
     <FlexStyleVer >
@@ -25,7 +25,7 @@ const Top3 = ({ sort }) => {
       </h3>
       </div>
     </FlexStyleVer>
-  );
-};
+  )
+}
 
-export default Top3;
+export default Top3

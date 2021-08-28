@@ -1,26 +1,26 @@
-import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router";
+import React, { useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { useHistory } from "react-router"
 //
-import { addAuction } from "../../store/actions/AuctionAction";
-import { FormCenter } from "../../styles";
-import Loading from "../Loading/Loading";
+import { addAuction } from "../../store/actions/AuctionAction"
+import { FormCenter } from "../../styles"
+import Loading from "../Loading/Loading"
 //
-import TextField from "@material-ui/core/TextField";
-import { makeStyles } from "@material-ui/core/styles";
-import InputLabel from "@material-ui/core/InputLabel";
-import MenuItem from "@material-ui/core/MenuItem";
-import FormHelperText from "@material-ui/core/FormHelperText";
-import FormControl from "@material-ui/core/FormControl";
-import Select from "@material-ui/core/Select";
-import Button from "@material-ui/core/Button";
+import TextField from "@material-ui/core/TextField"
+import { makeStyles } from "@material-ui/core/styles"
+import InputLabel from "@material-ui/core/InputLabel"
+import MenuItem from "@material-ui/core/MenuItem"
+import FormHelperText from "@material-ui/core/FormHelperText"
+import FormControl from "@material-ui/core/FormControl"
+import Select from "@material-ui/core/Select"
+import Button from "@material-ui/core/Button"
 
 const AddAuction = () => {
-  const dispatch = useDispatch();
-  const categories = useSelector((state) => state.categories.categories);
-  const loading = useSelector((state) => state.categories.loading);
-  const user = useSelector((state) => state.user.user);
-  const history = useHistory();
+  const dispatch = useDispatch()
+  const categories = useSelector((state) => state.categories.categories)
+  const loading = useSelector((state) => state.categories.loading)
+  const user = useSelector((state) => state.user.user)
+  const history = useHistory()
   const useStyles = makeStyles((theme) => ({
     root: {
       "& .MuiTextField-root": {
@@ -28,8 +28,8 @@ const AddAuction = () => {
         width: "25ch",
       },
     },
-  }));
-  const classes = useStyles();
+  }))
+  const classes = useStyles()
   const [auction, setAuction] = useState({
     name: "",
     description: "",
@@ -40,27 +40,27 @@ const AddAuction = () => {
     categoryId: "",
     userId: user.id,
     minBiddingIncrement: "",
-  });
+  })
 
-  if (loading) return <Loading />;
+  if (loading) return <Loading />
 
   const foundCategories = categories.map((category) => (
     <MenuItem key={category.name} value={category._id}>
       {category.name}
     </MenuItem>
-  ));
+  ))
 
   const handleChange = (event) => {
-    setAuction({ ...auction, [event.target.name]: event.target.value });
-  };
+    setAuction({ ...auction, [event.target.name]: event.target.value })
+  }
 
   const handleImage = (event) => {
-    setAuction({ ...auction, image: [...event.target.files] });
-  };
+    setAuction({ ...auction, image: [...event.target.files] })
+  }
   const handleSubmit = (event) => {
-    event.preventDefault();
-    dispatch(addAuction(auction, history));
-  };
+    event.preventDefault()
+    dispatch(addAuction(auction, history))
+  }
 
   return (
     <FormCenter onSubmit={handleSubmit}>
@@ -139,6 +139,9 @@ const AddAuction = () => {
         </div>
 
         <br />
+        <div>
+          <label style={{ color: "black" ,marginRight:"15px",marginTop:"25px"}}>Choose Category :  </label>
+       
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
@@ -152,7 +155,7 @@ const AddAuction = () => {
           </MenuItem>
 
           {foundCategories}
-        </Select>
+        </Select> </div>
         <br />
         <br />
 
@@ -261,7 +264,7 @@ const AddAuction = () => {
     //     Add Auction
     //   </button>
     // </FormCenter>
-  );
-};
+  )
+}
 
-export default AddAuction;
+export default AddAuction

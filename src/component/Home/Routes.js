@@ -1,30 +1,30 @@
-import { Switch, Route } from "react-router";
-import Home from "./Home";
+import { Switch, Route } from "react-router"
+import Home from "./Home"
 
-import Signup from "../Auth/Signup";
-import Signin from "../Auth/Signin";
-import CategoryList from "../Category/CategoryList";
-import AuctionList from "../Auction/AuctionList";
-import AddAuction from "../Auction/AddAuction";
-import CategoryDetails from "../Category/CategoryDetails";
-import AuctionDetails from "../Auction/AuctionDetails";
-import { useSelector } from "react-redux";
-import UpdateAuction from "../Auction/UpdateAuction";
-import Combine from "../Auction/combine";
-import AddWallet from "../Wallet/AddWallet";
-import FavList from "../Fav/FavList";
-import Loading from "../Loading/Loading";
-import Cart from "../Cart/Cart";
-import Paid from "../Cart/Paid";
-import Checkout from "../Payment/Checkout";
-import Invoice from "../Invoice/Invoice";
-import TemporaryDrawer from "../Drawer/Drawer";
+import Signup from "../Auth/Signup"
+import Signin from "../Auth/Signin"
+import CategoryList from "../Category/CategoryList"
+import AuctionList from "../Auction/AuctionList"
+import AddAuction from "../Auction/AddAuction"
+import CategoryDetails from "../Category/CategoryDetails"
+import AuctionDetails from "../Auction/AuctionDetails"
+import { useSelector } from "react-redux"
+import UpdateAuction from "../Auction/UpdateAuction"
+import Combine from "../Auction/combine"
+import AddWallet from "../Wallet/AddWallet"
+import FavList from "../Fav/FavList"
+import Loading from "../Loading/Loading"
+import Cart from "../Cart/Cart"
+import Paid from "../Cart/Paid"
+import Checkout from "../Payment/Checkout"
+import Invoice from "../Invoice/Invoice"
+import TemporaryDrawer from "../Drawer/Drawer"
 
 const Routes = () => {
-  const loading = useSelector((state) => state.auctions.loading);
+  const loading = useSelector((state) => state.auctions.loading)
 
-  const auctions = useSelector((state) => state.auctions.auctions);
-  if (loading) return <Loading />;
+  const auctions = useSelector((state) => state.auctions.auctions)
+  if (loading) return <Loading />
 
   return (
     <Switch>
@@ -80,6 +80,6 @@ const Routes = () => {
         <Home />
       </Route>
     </Switch>
-  );
-};
-export default Routes;
+  )
+}
+export default Routes

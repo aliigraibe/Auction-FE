@@ -1,31 +1,31 @@
-import { Center2 } from "../../styles";
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { addBid } from "../../store/actions/AuctionAction";
+import { Center2 } from "../../styles"
+import { useState } from "react"
+import { useDispatch } from "react-redux"
+import { addBid } from "../../store/actions/AuctionAction"
 
 const AddBid = ({ highest, user, auction, socket }) => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
   const [placeBid, setPlaceBid] = useState({
     ...highest,
     userId: user.id,
     auctionId: auction._id,
-  });
+  })
 
   const handleIncrease = (event) => {
     setPlaceBid({
       ...placeBid,
       bid: parseInt(placeBid.bid) + parseInt(event.target.name),
-    });
-  };
+    })
+  }
 
   const handleSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault()
     if (placeBid.bid <= highest?.bid || placeBid.bid <= auction.startingPrice) {
-      console.log("failed");
+      console.log("failed")
     } else {
-      dispatch(addBid(placeBid, socket));
+      dispatch(addBid(placeBid, socket))
     }
-  };
+  }
 
   return (
     <Center2 onSubmit={handleSubmit}>
@@ -93,7 +93,7 @@ const AddBid = ({ highest, user, auction, socket }) => {
         </>
       )}{" "}
     </Center2>
-  );
-};
+  )
+}
 
-export default AddBid;
+export default AddBid

@@ -24,20 +24,34 @@ const PaidItem = ({ auction, props }) => {
 
   return (
     <div className="box">
-      <img className="check" src={auction.image[0]} alt={auction.name} />
-      <p className="name">{auction.name}</p>
-      <p className="time">Price: {sort[0].bid}$</p>
-      {auction.payStatus && (
-        <button className="checkout" onClick={handleShow}>
-          Recite
-        </button>
-      )}
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Body>
-          <Invoice  sort={sort} auction={auction} handleClose={handleClose} />
-        </Modal.Body>
-      </Modal>  
-
+      <div class="card">
+        <div class="card-inner">
+          {" "}
+          <img className="vehicle" src={auction.image[0]} alt={auction.name} />
+          <p className="name">{auction.name}</p>
+          <p className="pri">Price: {sort[0].bid}$</p>
+          {auction.payStatus && (
+            <div className="checkout">
+              <button
+                type="button"
+                class="btn btn-primary"
+                onClick={handleShow}
+              >
+                Recite
+              </button>{" "}
+            </div>
+          )}
+          <Modal show={show} onHide={handleClose}>
+            <Modal.Body>
+              <Invoice
+                sort={sort}
+                auction={auction}
+                handleClose={handleClose}
+              />
+            </Modal.Body>
+          </Modal>
+        </div>
+      </div>
     </div>
   );
 };

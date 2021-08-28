@@ -1,67 +1,67 @@
-import * as actionTypes from "../../store/actions/types";
-import { useHistory, useParams } from "react-router";
-import { useSelector, useDispatch } from "react-redux";
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { io } from "socket.io-client";
-import SimpleImageSlider from "react-simple-image-slider";
+import * as actionTypes from "../../store/actions/types"
+import { useHistory, useParams } from "react-router"
+import { useSelector, useDispatch } from "react-redux"
+import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
+import { io } from "socket.io-client"
+import SimpleImageSlider from "react-simple-image-slider"
 
 //images
-import pic10 from "../../images/pic10.png";
-import pic11 from "../../images/pic11.png";
-import pic12 from "../../images/pic12.png";
+import pic10 from "../../images/pic10.png"
+import pic11 from "../../images/pic11.png"
+import pic12 from "../../images/pic12.png"
 //Actions
-import { deleteAuction } from "../../store/actions/AuctionAction";
+import { deleteAuction } from "../../store/actions/AuctionAction"
 //components
-import AddBid from "./AddBid";
-import Top3 from "./Top3";
-import ActiveUsers from "./ActiveUsers";
-import Loading from "../Loading/Loading";
-import CountDown from "../CountDown/CountDown";
+import AddBid from "./AddBid"
+import Top3 from "./Top3"
+import ActiveUsers from "./ActiveUsers"
+import Loading from "../Loading/Loading"
+import CountDown from "../CountDown/CountDown"
 
 const AuctionDetails = (props) => {
-  const auctions = useSelector((state) => state.auctions.auctions);
-  // const loading = useSelector((state) => state.auctions.loading);
-  const { user, users, loading } = useSelector((state) => state.user);
-  const auctionSlug = useParams().auctionSlug;
-  const dispatch = useDispatch();
-  const history = useHistory();
+  const auctions = useSelector((state) => state.auctions.auctions)
+  // const loading = useSelector((state) => state.auctions.loading)
+  const { user, users, loading } = useSelector((state) => state.user)
+  const auctionSlug = useParams().auctionSlug
+  const dispatch = useDispatch()
+  const history = useHistory()
 
-  const [roomUsers, setRoomUsers] = useState([]);
-  const [socket, setSocket] = useState();
+  const [roomUsers, setRoomUsers] = useState([])
+  const [socket, setSocket] = useState()
 
   useEffect(() => {
-    setSocket(io("http://localhost:5000"));
-  }, []);
+    setSocket(io("http://localhost:5000"))
+  }, [])
 
   useEffect(() => {
     if (socket) {
-      socket.emit("join", { user, auctionSlug });
+      socket.emit("join", { user, auctionSlug })
       socket.on("message", (message) => {
-        setRoomUsers(message.map((u) => u.username));
-      });
+        setRoomUsers(message.map((u) => u.username))
+      })
 
       socket.on("newBid", (bid) => {
         dispatch({
           type: actionTypes.BID,
           payload: { bid },
-        });
-      });
+        })
+      })
     }
-  }, [socket]);
+  }, [socket])
 
-  if (loading) return <Loading />;
-  const auction = auctions.find((auction) => auction.slug === auctionSlug);
-  const images = auction.image.map((img) => ({ url: img }));
+  if (loading) return <Loading />
+  const auction = auctions.find((auction) => auction.slug === auctionSlug)
+  const images = auction.image.map((img) => ({ url: img }))
 
   const sort = auction.bidding.sort((b, a) =>
     a.bid > b.bid ? 1 : b.bid > a.bid ? -1 : 0
-  );
+  )
 
-  const highestUser = users.find((user) => user._id === sort[0]?.userId);
+  const highestUser = users.find((user) => user._id === sort[0]?.userId)
 
-  var endDif = new Date(auction.endTime).getTime() - new Date().getTime();
-  var startDif = new Date(auction.startTime).getTime() - new Date().getTime();
+  var endDif = new Date(auction.endTime).getTime() - new Date().getTime()
+  var startDif = new Date(auction.startTime).getTime() - new Date().getTime()
 
   return (
     <div>
@@ -101,7 +101,7 @@ const AuctionDetails = (props) => {
           </>
         )}
 
-        <Link className="p8" to="/combine">
+        <Link className="p8" to="/categories">
           <img className="p8" src={pic10} alt="go back" />
         </Link>
         {user.id === auction.userId._id && (
@@ -135,7 +135,7 @@ const AuctionDetails = (props) => {
         <ActiveUsers roomUsers={roomUsers} />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default AuctionDetails;
+export default AuctionDetails

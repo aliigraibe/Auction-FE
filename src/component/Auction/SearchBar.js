@@ -5,9 +5,9 @@ const SearchBar = (props) => {
      <input className="search" placeholder="Search" onChange={(event)  => props.setQuery(event.target.value)} />
      
      
-     ;</div>
+     </div>
 
   )
   
-};
-export default SearchBar;
+}
+export default SearchBar

@@ -1,18 +1,18 @@
-import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useHistory, useParams } from "react-router";
+import { useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { useHistory, useParams } from "react-router"
 //
-import { updateAuction } from "../../store/actions/AuctionAction";
-import { FormCenter } from "../../styles";
-import Loading from "../Loading/Loading";
+import { updateAuction } from "../../store/actions/AuctionAction"
+import { FormCenter } from "../../styles"
+import Loading from "../Loading/Loading"
 
 const UpdateAuction = () => {
-  const dispatch = useDispatch();
-  const auctionId = useParams().auctionId;
-  const categories = useSelector((state) => state.categories.categories);
-  const loading = useSelector((state) => state.categories.loading);
-  const user = useSelector((state) => state.user.user);
-  const history = useHistory();
+  const dispatch = useDispatch()
+  const auctionId = useParams().auctionId
+  const categories = useSelector((state) => state.categories.categories)
+  const loading = useSelector((state) => state.categories.loading)
+  const user = useSelector((state) => state.user.user)
+  const history = useHistory()
 
   const [auction, setAuction] = useState({
     name: "",
@@ -24,29 +24,29 @@ const UpdateAuction = () => {
     image: "",
     categoryId: "",
     minBiddingIncrement: "",
-  });
+  })
 
-  if (loading) return <Loading />;
+  if (loading) return <Loading />
 
   const foundCategories = categories.map((category) => (
     <option key={category.name} value={category._id}>
       {category.name}
     </option>
-  ));
+  ))
 
   const handleChange = (event) => {
-    setAuction({ ...auction, [event.target.name]: event.target.value });
-  };
+    setAuction({ ...auction, [event.target.name]: event.target.value })
+  }
 
   const handleImage = (event) => {
-    setAuction({ ...auction, image: [...event.target.files] });
-  };
+    setAuction({ ...auction, image: [...event.target.files] })
+  }
 
   const handleSubmit = (event) => {
-    event.preventDefault();
-    setAuction({ ...auction, userId: user.id });
-    dispatch(updateAuction(auctionId, auction), history.push("/categories"));
-  };
+    event.preventDefault()
+    setAuction({ ...auction, userId: user.id })
+    dispatch(updateAuction(auctionId, auction), history.push("/categories"))
+  }
 
   return (
     <FormCenter onSubmit={handleSubmit}>
@@ -154,7 +154,7 @@ const UpdateAuction = () => {
         Update Auction
       </button>
     </FormCenter>
-  );
-};
+  )
+}
 
-export default UpdateAuction;
+export default UpdateAuction

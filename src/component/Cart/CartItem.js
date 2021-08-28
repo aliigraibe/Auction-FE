@@ -23,30 +23,44 @@ const CartItem = ({ auction, props }) => {
 
   return (
     <div className="box">
-      <img className="check" src={auction.image[0]} alt={auction.name} />
-      <p className="name">{auction.name}</p>
-      {/* <p className="time">Price: {sort[0].bid}$</p> */}
-      {!auction.payStatus ? (
-        <button className="checkout" onClick={handleShow}>
-          Checkout
-        </button>
-      ) : (
-        <Link to="/invoice">
-          <p className="checkout">paid</p>
-        </Link>
-      )}
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Body>
-          <FlexStyleVer>
-            <img className="images" src={auction.image[0]} alt={auction.name} />
+      <div class="card">
+        <div class="card-inner">
+          <img className="vehicle" src={auction.image[0]} alt={auction.name} />
+          <p className="name">{auction.name}</p>
+          {/* <p className="time">Price: {sort[0].bid}$</p> */}
+          {!auction.payStatus ? (
+            <div className="checkout">
+              <button
+                type="button"
+                class="btn btn-primary"
+                onClick={handleShow}
+              >
+                Checkout
+              </button>
+            </div>
+          ) : (
+            <Link to="/invoice">
+              <p className="checkout">paid</p>
+            </Link>
+          )}
+          <Modal show={show} onHide={handleClose}>
+            <Modal.Body>
+              <FlexStyleVer>
+                <img
+                  className="images"
+                  src={auction.image[0]}
+                  alt={auction.name}
+                />
 
-            <p>{auction.name}</p>
+                <p>{auction.name}</p>
 
-            <p>Price: {sort[0].bid}$</p>
-            <Checkout auction={auction} handleClose={handleClose} />
-          </FlexStyleVer>
-        </Modal.Body>
-      </Modal>
+                <p>Price: {sort[0].bid}$</p>
+                <Checkout auction={auction} handleClose={handleClose} />
+              </FlexStyleVer>
+            </Modal.Body>
+          </Modal>
+        </div>
+      </div>
     </div>
   );
 };

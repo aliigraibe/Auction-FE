@@ -1,8 +1,8 @@
-import AuctionList from "./AuctionList";
-import CategoryList from "../Category/CategoryList";
-import { useSelector } from "react-redux";
-import { useState } from "react";
-import { Redirect } from "react-router";
+import AuctionList from "./AuctionList"
+import CategoryList from "../Category/CategoryList"
+import { useSelector } from "react-redux"
+import { useState } from "react"
+import { Redirect } from "react-router"
 
 const Combine = () => {
   const [select, setSelect] = useState()

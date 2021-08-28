@@ -73,7 +73,7 @@
   position: absolute;
   width: 54px;
   height: 21px;
-  right: 450px;
+  right: 430px;
   top: 57px;
   text-decoration: none;
 
@@ -526,7 +526,25 @@
   color: #ffffed;
   font-size: 25px;
 }
-
+.card {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  border: 0px solid transparent;
+  border-radius: 20px;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+.card-inner {
+  position: absolute;
+  width: 190%;
+  height: 170%;
+  left: -5px;
+  top: -1px;
+  text-align: center;
+  transition: transform 0.8s;
+  border: 0px solid transparent;
+  border-radius: 20px;
+}
 .centered {
   position: fixed; /* or absolute */
   top: 25%;
@@ -597,7 +615,6 @@
   color: white;
   transform: rotateY(180deg);
 }
-
 .box {
   /* Rectangle 53 */
 
@@ -660,7 +677,7 @@
   height: 40px;
 
   left: 10px;
-  top: 60px;
+  top: 40px;
 
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-style: normal;
@@ -678,7 +695,18 @@
   flex-wrap: wrap;
   width: 1400px;
 }
+.pri {
+  /* Current Bid */
 
+  position: absolute;
+  margin-left: 20px;
+  height: 13px;
+  float: inline-start;
+  top: 275px;
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 35px;
+}
 .time {
   /* Current Bid */
 
@@ -1108,12 +1136,10 @@
 }
 .checkout {
   position: absolute;
-  top: 295px;
-  left: 500px;
+  top: 275px;
+  left: 450px;
   background-color: transparent;
-  border: 3px solid #ca183b;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  color: black;
   border-radius: 30px;
   padding: 10px;
 }
@@ -1125,10 +1151,10 @@
 
 .images {
   position: relative;
-  left: 80px;
-  width: 300px;
+  left: 0px;
+  width: 100%;
   height: 300px;
-  margin-bottom: 100px;
+  margin-bottom: 20px;
 }
 
 .eye {
