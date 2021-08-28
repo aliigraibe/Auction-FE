@@ -103,7 +103,7 @@
   /* identical to box height */
   text-align: right;
 
-  color:black;
+  color: black;
 }
 
 .signin {
@@ -627,12 +627,11 @@
   margin-bottom: 100px;
 
   margin-top: 20px;
-border: 2px solid black;
+  border: 2px solid black;
   background: #ffffed;
   border-radius: 10px;
   /* Rectangle 55 */
 }
-
 
 .vehicle {
   /* Rectangle 54 */
@@ -788,7 +787,7 @@ border: 2px solid black;
   width: 500px;
   height: 397px;
   left: 700px;
-  top: 350px;
+  top: 360px;
 }
 .p5 {
   position: absolute;
@@ -826,6 +825,16 @@ border: 2px solid black;
   top: 300px;
 }
 
+.p888 {
+  position: absolute;
+  width: 45px;
+  height: 45px;
+
+  left: 1350px;
+  top: 650px;
+  background-color: transparent;
+  border: 0px solid transparent;
+}
 .p8 {
   position: absolute;
   width: 45px;
@@ -1106,7 +1115,7 @@ border: 2px solid black;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   color: black;
   border-radius: 30px;
-  padding: 10PX;
+  padding: 10px;
 }
 
 .nb {
@@ -1195,15 +1204,19 @@ border: 2px solid black;
   margin-bottom: 280px;
 }
 
-.postion{
+.postion {
   position: relative;
   top: 150px;
-
 }
 
-
-.link{
+.link {
   text-decoration: none;
-   color: black;
+  color: black;
 }
 
+.startData {
+  color: grey;
+  position: absolute;
+  left: 25px;
+  margin-top: 10px;
+}

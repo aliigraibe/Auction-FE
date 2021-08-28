@@ -60,8 +60,8 @@ const AuctionDetails = (props) => {
 
   const highestUser = users.find((user) => user._id === sort[0]?.userId);
 
-  // var endDif = new Date(auction.endTime).getTime() - new Date().getTime();
-  // var startDif = new Date(auction.startTime).getTime() - new Date().getTime();
+  var endDif = new Date(auction.endTime).getTime() - new Date().getTime();
+  var startDif = new Date(auction.startTime).getTime() - new Date().getTime();
 
   return (
     <div>
@@ -82,19 +82,24 @@ const AuctionDetails = (props) => {
         <p className="p3">
           highest bid : {sort[0]?.bid} JOD by {highestUser?.username}
         </p>
-        {/* {new Date(auction.endTime) <= new Date() ? (
+
+        {new Date(auction.endTime) <= new Date() ? (
           <p className="p4"> !! Auction ended !! </p>
         ) : (
           <>
             {new Date(auction.startTime) >= new Date() ? (
-              <p className="p4">
-                Auction start in : {<CountDown dif={startDif} />}
-              </p>
+              <>
+                <p className="p4"> Auction start in :</p>
+                <p className="p888">{<CountDown dif={startDif} />}</p>
+              </>
             ) : (
-              <p className="p4">Auction end in :{<CountDown dif={endDif} />}</p>
+              <>
+                <p className="p4">Auction end in :</p>
+                <p className="p888">{<CountDown dif={endDif} />}</p>
+              </>
             )}
           </>
-        )} */}
+        )}
 
         <Link className="p8" to="/combine">
           <img className="p8" src={pic10} alt="go back" />

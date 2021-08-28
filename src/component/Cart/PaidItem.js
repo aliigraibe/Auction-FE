@@ -29,14 +29,15 @@ const PaidItem = ({ auction, props }) => {
       <p className="time">Price: {sort[0].bid}$</p>
       {auction.payStatus && (
         <button className="checkout" onClick={handleShow}>
-          Paid
+          Recite
         </button>
       )}
       <Modal show={show} onHide={handleClose}>
         <Modal.Body>
-          <Invoice sort={sort} auction={auction} handleClose={handleClose} />
+          <Invoice  sort={sort} auction={auction} handleClose={handleClose} />
         </Modal.Body>
-      </Modal>
+      </Modal>  
+
     </div>
   );
 };

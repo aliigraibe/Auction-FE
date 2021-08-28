@@ -118,9 +118,7 @@ export default function TemporaryDrawer() {
     <div>
       <React.Fragment key="right">
         <Button onClick={toggleDrawer("right", true)}>
-          <Badge badgeContent={6} color="primary">
-            <AiOutlineMenu size={30} />
-          </Badge>
+          <AiOutlineMenu size={30} />
         </Button>
         <Drawer
           anchor="right"
@@ -133,3 +131,5 @@ export default function TemporaryDrawer() {
     </div>
   );
 }
+{/* <Badge badgeContent={6} color="primary">
+</Badge>          */}

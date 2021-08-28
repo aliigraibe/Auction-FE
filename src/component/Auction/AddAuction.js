@@ -67,7 +67,7 @@ const AddAuction = () => {
       <form autoComplete="off">
         <div>
           <TextField
-            style={{ marginRight: "35px" }}
+            style={{ marginRight: "70px" }}
             required
             name="name"
             type="text"
@@ -88,7 +88,7 @@ const AddAuction = () => {
           <br />
 
           <TextField
-            style={{ marginRight: "35px" }}
+            style={{ marginRight: "70px" }}
             type="number"
             name="startingPrice"
             label="Starting Price"
@@ -107,6 +107,7 @@ const AddAuction = () => {
           <br />
         </div>
         <div>
+          <div className="startData">Starting time </div>
           <TextField
             type="datetime-local"
             class="form-control"
@@ -114,12 +115,15 @@ const AddAuction = () => {
             value={auction.startTime}
             name="startTime"
             onChange={handleChange}
+            id="Start Date"
           />
+
           <br />
+          <div className="startData">End time</div>
+
           <TextField
             type="datetime-local"
             class="form-control"
-            placeholder="add your endTime  "
             value={auction.endTime}
             name="endTime"
             onChange={handleChange}
@@ -144,8 +148,9 @@ const AddAuction = () => {
           name="categoryId"
         >
           <MenuItem value="" disabled="disabled">
-            Choose...
+            Choose
           </MenuItem>
+
           {foundCategories}
         </Select>
         <br />
