@@ -34,10 +34,11 @@ const PaidItem = ({ auction, props }) => {
             <div className="checkout">
               <button
                 type="button"
-                class="btn btn-primary"
+                class="btn btn-danger"
+                
                 onClick={handleShow}
               >
-                Recite
+                Receipt
               </button>{" "}
             </div>
           )}
